@@ -1,0 +1,382 @@
+2020-07-31 06:30:22.150101: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_101.dll
+07/31/2020 06:30:25 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+07/31/2020 06:30:25 - INFO - __main__ -   reload model from ./models/sql\checkpoint-last, resume from 1 epoch
+07/31/2020 06:30:25 - INFO - transformers.configuration_utils -   loading configuration file ./models/sql\checkpoint-last\config.json
+07/31/2020 06:30:25 - INFO - transformers.configuration_utils -   Model config RobertaConfig {
+  "architectures": [
+    "RobertaForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "codesearch",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 50265
+}
+
+07/31/2020 06:30:26 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/roberta-base-vocab.json from cache at C:\Users\Administrator\.cache\torch\transformers\d0c5776499adc1ded22493fae699da0971c1ee4c2587111707a4d177d20257a2.ef00af9e673c7160b4d41cfda1f48c5f4cba57d5142754525572a846a1ab1b9b
+07/31/2020 06:30:26 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/roberta-base-merges.txt from cache at C:\Users\Administrator\.cache\torch\transformers\b35e7cd126cd4229a746b5d5c29a749e8e84438b14bcdb575950584fe33207e8.70bec105b4158ed9a1747fea67a43f5dee97855c64d62b6ec3742f4cfdb5feda
+07/31/2020 06:30:26 - INFO - transformers.modeling_utils -   loading weights file ./models/sql\checkpoint-last\pytorch_model.bin
+07/31/2020 06:30:32 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, cache_dir='', config_name='./models/sql\\checkpoint-last\\config.json', data_dir='../data/train_valid/sql', dev_file='valid.txt', device=device(type='cuda'), do_eval=True, do_lower_case=False, do_predict=False, do_train=True, eval_all_checkpoints=True, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=1, learning_rate=1e-05, local_rank=-1, logging_steps=50, max_grad_norm=1.0, max_seq_length=200, max_steps=-1, model_name_or_path='./models/sql\\checkpoint-last\\pytorch_model.bin', model_type='roberta', n_gpu=1, no_cuda=False, num_train_epochs=5.0, output_dir='./models/sql', output_mode='classification', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=16, per_gpu_train_batch_size=16, pred_model_dir=None, save_steps=50, seed=42, server_ip='', server_port='', start_epoch=1, start_step=431, task_name='codesearch', test_file='shared_task_dev_top10_concat.tsv', test_result_dir='test_results.tsv', tokenizer_name='', train_file='train.txt', warmup_steps=0, weight_decay=0.0)
+07/31/2020 06:30:32 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_train_train_sql\checkpoint-last\pytorch_model.bin_200_codesearch
+07/31/2020 06:30:32 - INFO - __main__ -   ***** Running training *****
+07/31/2020 06:30:32 - INFO - __main__ -     Num examples = 6779
+07/31/2020 06:30:32 - INFO - __main__ -     Num Epochs = 5
+07/31/2020 06:30:32 - INFO - __main__ -     Instantaneous batch size per GPU = 16
+07/31/2020 06:30:32 - INFO - __main__ -     Total train batch size (w. parallel, distributed & accumulation) = 16
+07/31/2020 06:30:32 - INFO - __main__ -     Gradient Accumulation steps = 1
+07/31/2020 06:30:32 - INFO - __main__ -     Total optimization steps = 2120
+Epoch:   0%|                                                                                                                                                           | 0/4 [00:00<?, ?it/sD 
+:\tools\Python37\lib\site-packages\torch\optim\lr_scheduler.py:224: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+07/31/2020 06:34:54 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_dev_valid_sql\checkpoint-last\pytorch_model.bin_200_codesearch
+07/31/2020 06:34:54 - INFO - __main__ -   ***** Running evaluation  *****
+07/31/2020 06:34:54 - INFO - __main__ -     Num examples = 205
+07/31/2020 06:34:54 - INFO - __main__ -     Batch size = 16
+Evaluating: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 13/13 [00:02<00:00,  5.85it/s]
+07/31/2020 06:34:56 - INFO - __main__ -   ***** Eval results  *****¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 13/13 [00:02<00:00,  6.11it/s]
+07/31/2020 06:34:56 - INFO - __main__ -     acc = 0.5756097560975609
+07/31/2020 06:34:56 - INFO - __main__ -     acc_and_f1 = 0.6073069527375772
+07/31/2020 06:34:56 - INFO - __main__ -     f1 = 0.6390041493775934
+07/31/2020 06:34:57 - INFO - transformers.configuration_utils -   Configuration saved in ./models/sql\checkpoint-last\config.json
+07/31/2020 06:34:58 - INFO - transformers.modeling_utils -   Model weights saved in ./models/sql\checkpoint-last\pytorch_model.bin
+07/31/2020 06:34:58 - INFO - __main__ -   Saving model checkpoint to ./models/sql\checkpoint-last
+07/31/2020 06:35:00 - INFO - __main__ -   Saving optimizer and scheduler states to ./models/sql\checkpoint-last
+07/31/2020 06:35:00 - INFO - transformers.configuration_utils -   Configuration saved in ./models/sql\checkpoint-best\config.json
+07/31/2020 06:35:03 - INFO - transformers.modeling_utils -   Model weights saved in ./models/sql\checkpoint-best\pytorch_model.bin
+07/31/2020 06:35:03 - INFO - __main__ -   Saving model checkpoint to ./models/sql\checkpoint-best
+07/31/2020 06:35:07 - INFO - __main__ -   Saving optimizer and scheduler states to ./models/sql\checkpoint-best
+Epoch:  25%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨„                                                                                                             | 1/4 [04:34<13:44, 274.86s/it0 
+7/31/2020 06:39:29 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_dev_valid_sql\checkpoint-last\pytorch_model.bin_200_codesearch
+07/31/2020 06:39:29 - INFO - __main__ -   ***** Running evaluation  *****
+07/31/2020 06:39:29 - INFO - __main__ -     Num examples = 205
+07/31/2020 06:39:29 - INFO - __main__ -     Batch size = 16
+Evaluating: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 13/13 [00:02<00:00,  5.40it/s]
+07/31/2020 06:39:31 - INFO - __main__ -   ***** Eval results  *****¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 13/13 [00:02<00:00,  5.36it/s] 
+07/31/2020 06:39:31 - INFO - __main__ -     acc = 0.6048780487804878
+07/31/2020 06:39:31 - INFO - __main__ -     acc_and_f1 = 0.630098598858329
+07/31/2020 06:39:31 - INFO - __main__ -     f1 = 0.6553191489361702
+07/31/2020 06:39:31 - INFO - transformers.configuration_utils -   Configuration saved in ./models/sql\checkpoint-last\config.json
+07/31/2020 06:39:33 - INFO - transformers.modeling_utils -   Model weights saved in ./models/sql\checkpoint-last\pytorch_model.bin
+07/31/2020 06:39:33 - INFO - __main__ -   Saving model checkpoint to ./models/sql\checkpoint-last
+07/31/2020 06:39:38 - INFO - __main__ -   Saving optimizer and scheduler states to ./models/sql\checkpoint-last
+07/31/2020 06:39:38 - INFO - transformers.configuration_utils -   Configuration saved in ./models/sql\checkpoint-best\config.json
+07/31/2020 06:39:42 - INFO - transformers.modeling_utils -   Model weights saved in ./models/sql\checkpoint-best\pytorch_model.bin
+07/31/2020 06:39:42 - INFO - __main__ -   Saving model checkpoint to ./models/sql\checkpoint-best
+07/31/2020 06:39:44 - INFO - __main__ -   Saving optimizer and scheduler states to ./models/sql\checkpoint-best
+Epoch:  50%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€                                                                         | 2/4 [09:12<09:11, 275.59s/it0 
+7/31/2020 06:44:09 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_dev_valid_sql\checkpoint-last\pytorch_model.bin_200_codesearch
+07/31/2020 06:44:09 - INFO - __main__ -   ***** Running evaluation  *****
+07/31/2020 06:44:09 - INFO - __main__ -     Num examples = 205
+07/31/2020 06:44:09 - INFO - __main__ -     Batch size = 16
+Evaluating: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 13/13 [00:02<00:00,  5.59it/s]
+07/31/2020 06:44:11 - INFO - __main__ -   ***** Eval results  *****¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 13/13 [00:02<00:00,  5.75it/s] 
+07/31/2020 06:44:11 - INFO - __main__ -     acc = 0.6731707317073171
+07/31/2020 06:44:11 - INFO - __main__ -     acc_and_f1 = 0.6665346044323388
+07/31/2020 06:44:11 - INFO - __main__ -     f1 = 0.6598984771573604
+07/31/2020 06:44:11 - INFO - transformers.configuration_utils -   Configuration saved in ./models/sql\checkpoint-last\config.json
+07/31/2020 06:44:12 - INFO - transformers.modeling_utils -   Model weights saved in ./models/sql\checkpoint-last\pytorch_model.bin
+07/31/2020 06:44:12 - INFO - __main__ -   Saving model checkpoint to ./models/sql\checkpoint-last
+07/31/2020 06:44:15 - INFO - __main__ -   Saving optimizer and scheduler states to ./models/sql\checkpoint-last
+07/31/2020 06:44:15 - INFO - transformers.configuration_utils -   Configuration saved in ./models/sql\checkpoint-best\config.json
+07/31/2020 06:44:17 - INFO - transformers.modeling_utils -   Model weights saved in ./models/sql\checkpoint-best\pytorch_model.bin
+07/31/2020 06:44:17 - INFO - __main__ -   Saving model checkpoint to ./models/sql\checkpoint-best
+07/31/2020 06:44:19 - INFO - __main__ -   Saving optimizer and scheduler states to ./models/sql\checkpoint-best
+Epoch:  75%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨„                                    | 3/4 [13:46<04:35, 275.28s/it0 
+7/31/2020 06:48:49 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_dev_valid_sql\checkpoint-last\pytorch_model.bin_200_codesearch
+07/31/2020 06:48:49 - INFO - __main__ -   ***** Running evaluation  *****
+07/31/2020 06:48:49 - INFO - __main__ -     Num examples = 205
+07/31/2020 06:48:49 - INFO - __main__ -     Batch size = 16
+Evaluating: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 13/13 [00:02<00:00,  5.57it/s]
+07/31/2020 06:48:52 - INFO - __main__ -   ***** Eval results  *****¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 13/13 [00:02<00:00,  5.86it/s]
+07/31/2020 06:48:52 - INFO - __main__ -     acc = 0.6439024390243903
+07/31/2020 06:48:52 - INFO - __main__ -     acc_and_f1 = 0.6473100711868363
+07/31/2020 06:48:52 - INFO - __main__ -     f1 = 0.6507177033492823
+07/31/2020 06:48:52 - INFO - transformers.configuration_utils -   Configuration saved in ./models/sql\checkpoint-last\config.json
+07/31/2020 06:48:53 - INFO - transformers.modeling_utils -   Model weights saved in ./models/sql\checkpoint-last\pytorch_model.bin
+07/31/2020 06:48:53 - INFO - __main__ -   Saving model checkpoint to ./models/sql\checkpoint-last
+07/31/2020 06:48:56 - INFO - __main__ -   Saving optimizer and scheduler states to ./models/sql\checkpoint-last
+Epoch: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 4/4 [18:23<00:00, 275.86s/it] 
+07/31/2020 06:48:56 - INFO - __main__ -    global_step = 2127, average loss = 0.010839654286411737
+07/31/2020 06:48:56 - INFO - __main__ -   Saving model checkpoint to ./models/sql
+07/31/2020 06:48:56 - INFO - transformers.configuration_utils -   Configuration saved in ./models/sql\config.json
+07/31/2020 06:48:58 - INFO - transformers.modeling_utils -   Model weights saved in ./models/sql\pytorch_model.bin
+07/31/2020 06:48:58 - INFO - transformers.configuration_utils -   loading configuration file ./models/sql\config.json
+07/31/2020 06:48:58 - INFO - transformers.configuration_utils -   Model config RobertaConfig {
+  "architectures": [
+    "RobertaForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "codesearch",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 50265
+}
+
+07/31/2020 06:48:59 - INFO - transformers.modeling_utils -   loading weights file ./models/sql\pytorch_model.bin
+07/31/2020 06:49:03 - INFO - transformers.tokenization_utils -   Model name './models/sql' not found in model shortcut name list (roberta-base, roberta-large, roberta-large-mnli, distilroberta-base, roberta-base-openai-detector, roberta-large-openai-detector). Assuming './models/sql' is a path, a model identifier, or url to a directory containing tokenizer files.
+07/31/2020 06:49:03 - INFO - transformers.tokenization_utils -   Didn't find file ./models/sql\added_tokens.json. We won't load it.
+07/31/2020 06:49:03 - INFO - transformers.tokenization_utils -   loading file ./models/sql\vocab.json
+07/31/2020 06:49:03 - INFO - transformers.tokenization_utils -   loading file ./models/sql\merges.txt
+07/31/2020 06:49:03 - INFO - transformers.tokenization_utils -   loading file None
+07/31/2020 06:49:03 - INFO - transformers.tokenization_utils -   loading file ./models/sql\special_tokens_map.json
+07/31/2020 06:49:03 - INFO - transformers.tokenization_utils -   loading file ./models/sql\tokenizer_config.json
+07/31/2020 06:49:04 - INFO - __main__ -   Evaluate the following checkpoints: ['./models/sql\\checkpoint-best', './models/sql\\checkpoint-last', './models/sql']
+./models/sql\checkpoint-best
+07/31/2020 06:49:04 - INFO - transformers.configuration_utils -   loading configuration file ./models/sql\checkpoint-best\config.json
+07/31/2020 06:49:04 - INFO - transformers.configuration_utils -   Model config RobertaConfig {
+  "architectures": [
+    "RobertaForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "codesearch",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 50265
+}
+
+07/31/2020 06:49:05 - INFO - transformers.modeling_utils -   loading weights file ./models/sql\checkpoint-best\pytorch_model.bin
+07/31/2020 06:49:10 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_dev_valid_sql\checkpoint-last\pytorch_model.bin_200_codesearch
+07/31/2020 06:49:10 - INFO - __main__ -   ***** Running evaluation best *****
+07/31/2020 06:49:10 - INFO - __main__ -     Num examples = 205
+07/31/2020 06:49:10 - INFO - __main__ -     Batch size = 16
+Evaluating: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 13/13 [00:02<00:00,  5.88it/s] 
+07/31/2020 06:49:12 - INFO - __main__ -   ***** Eval results best *****
+07/31/2020 06:49:12 - INFO - __main__ -     acc = 0.6731707317073171
+07/31/2020 06:49:12 - INFO - __main__ -     acc_and_f1 = 0.6665346044323388
+07/31/2020 06:49:12 - INFO - __main__ -     f1 = 0.6598984771573604
+./models/sql\checkpoint-last
+07/31/2020 06:49:12 - INFO - transformers.configuration_utils -   loading configuration file ./models/sql\checkpoint-last\config.json
+07/31/2020 06:49:12 - INFO - transformers.configuration_utils -   Model config RobertaConfig {
+  "architectures": [
+    "RobertaForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "codesearch",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 50265
+}
+
+07/31/2020 06:49:12 - INFO - transformers.modeling_utils -   loading weights file ./models/sql\checkpoint-last\pytorch_model.bin
+07/31/2020 06:49:17 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_dev_valid_sql\checkpoint-last\pytorch_model.bin_200_codesearch
+07/31/2020 06:49:17 - INFO - __main__ -   ***** Running evaluation last *****
+07/31/2020 06:49:17 - INFO - __main__ -     Num examples = 205
+07/31/2020 06:49:17 - INFO - __main__ -     Batch size = 16
+Evaluating: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 13/13 [00:02<00:00,  5.90it/s]
+07/31/2020 06:49:19 - INFO - __main__ -   ***** Eval results last *****
+07/31/2020 06:49:19 - INFO - __main__ -     acc = 0.6439024390243903
+07/31/2020 06:49:19 - INFO - __main__ -     acc_and_f1 = 0.6473100711868363
+07/31/2020 06:49:19 - INFO - __main__ -     f1 = 0.6507177033492823
+./models/sql
+07/31/2020 06:49:19 - INFO - transformers.configuration_utils -   loading configuration file ./models/sql\config.json
+07/31/2020 06:49:19 - INFO - transformers.configuration_utils -   Model config RobertaConfig {
+  "architectures": [
+    "RobertaForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "codesearch",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 50265
+}
+
+07/31/2020 06:49:19 - INFO - transformers.modeling_utils -   loading weights file ./models/sql\pytorch_model.bin
+07/31/2020 06:49:23 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_dev_valid_sql\checkpoint-last\pytorch_model.bin_200_codesearch
+07/31/2020 06:49:23 - INFO - __main__ -   ***** Running evaluation ./models/sql *****
+07/31/2020 06:49:23 - INFO - __main__ -     Num examples = 205
+07/31/2020 06:49:23 - INFO - __main__ -     Batch size = 16
+Evaluating: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 13/13 [00:02<00:00,  5.94it/s] 
+07/31/2020 06:49:26 - INFO - __main__ -   ***** Eval results ./models/sql *****
+07/31/2020 06:49:26 - INFO - __main__ -     acc = 0.6439024390243903
+07/31/2020 06:49:26 - INFO - __main__ -     acc_and_f1 = 0.6473100711868363
+07/31/2020 06:49:26 - INFO - __main__ -     f1 = 0.6507177033492823

@@ -1,0 +1,1000 @@
+5238	SELECT COUNT ( Laps ) FROM table_2_181835_2 WHERE Year > 3 AND Year > 3 AND Year > 0
+912	SELECT COUNT ( Year ) FROM table_1_146835_1 WHERE Year = 2009
+204	SELECT SUM ( Total ) FROM table_2_187943_1 WHERE Population = 21
+2253	SELECT COUNT ( Rank ) FROM table_1_174547_1 WHERE Name = mm
+2006	SELECT Opponent FROM table_2_171729_3 WHERE Date = 2
+1828	SELECT Nationality FROM table_2_18457767_1 WHERE Country = state AND Country = s
+1143	SELECT COUNT ( Attendance ) FROM table_2_187775_1 WHERE Time = 0 . 12 . 4 . 0
+839	SELECT MIN ( Laps ) FROM table_2_181729_1 WHERE Player = m AND Year > 17
+5543	SELECT COUNT ( Year ) FROM table_2_189947_1 WHERE Name = 1
+4467	SELECT COUNT ( Year ) FROM table_2_184544_1 WHERE Population ( km ( km ) = km )
+712	SELECT COUNT ( Attendance ) FROM table_2_186568_1 WHERE Year < 1 AND Year < 1
+4837	SELECT Attendance FROM table_2_181829_1 WHERE Date = 31
+3456	SELECT COUNT ( Laps ) FROM table_2_181899_1 WHERE Name = t1
+260	SELECT COUNT ( Attendance ) FROM table_2_187775_3 WHERE Date = 15
+244	SELECT MIN ( Wins ) FROM table_2_181838_2 WHERE Score = 4 AND Score = 5
+767	SELECT COUNT ( Wins ) FROM table_2_186849_1 WHERE Wins > 0
+1791	SELECT COUNT ( Attendance ) FROM table_2_18187901_1 WHERE Year > 24
+1905	SELECT AVG ( Attendance ) FROM table_2_187775_1 WHERE Total = 21
+4139	SELECT COUNT ( Year ) FROM table_1_122844_1 WHERE Year = 1
+4931	SELECT Opponent FROM table_2_17756835_1 WHERE Attendance = 13
+217	SELECT Away team score FROM table_2_117711_2 WHERE Home team = mart
+4597	SELECT Opponent FROM table_2_12457770_1 WHERE Venue = melbourne
+1628	SELECT COUNT ( Attendance ) FROM table_2_187775_1 WHERE Date = 18
+5865	SELECT Date FROM table_2_127775_1 WHERE Date = 2009
+5323	SELECT MIN ( Year ) FROM table_2_181835_1 WHERE Date = 2009
+5745	SELECT COUNT ( Attendance ) FROM table_1_187723_1 WHERE Year = 3
+4464	SELECT Opponent FROM table_2_187744_1 WHERE Opponent = lallas
+3436	SELECT COUNT ( Attendance ) FROM table_2_187901_1 WHERE Year = wo
+1805	SELECT Opponent FROM table_2_183875_2 WHERE Date = 5 . 9 . 9 . 7
+3679	SELECT Home team FROM table_2_187738_1 WHERE Home team team = m
+4827	SELECT COUNT ( Year ) FROM table_2_126829_1 WHERE Year = 2008
+2278	SELECT Nationality FROM table_2_187744_1 WHERE Nationality = s
+53	SELECT COUNT ( Round ) FROM table_2_156829_1 WHERE Player = m
+1307	SELECT COUNT ( Attendance ) FROM table_2_184544_1 WHERE Venue = m
+5719	SELECT Opponent FROM table_2_12771277_2 WHERE Opponent = mart
+3462	SELECT Away team score FROM table_2_117775_7 WHERE Away team = 11
+2787	SELECT COUNT ( Attendance ) FROM table_2_186868_1 WHERE Location = 21
+2276	SELECT COUNT ( Wins ) FROM table_2_17757549_1 WHERE Opponent = 25
+1273	SELECT COUNT ( Year ) FROM table_2_18451899_1 WHERE Year = 13
+1763	SELECT COUNT ( Total ) FROM table_2_186549_1 WHERE Total > 5 AND Total > 0
+2757	SELECT MIN ( Wins ) FROM table_2_123870_1 WHERE Points < 11
+837	SELECT COUNT ( Points ) FROM table_2_187975_1 WHERE Points = 0
+759	SELECT AVG ( Attendance ) FROM table_2_181835_1 WHERE Opponent = 17
+3112	SELECT COUNT ( Year ) FROM table_2_17757575_1 WHERE Year = 12
+792	SELECT COUNT ( Wins ) FROM table_2_187949_1 WHERE Total > 1 AND Wins > 1 AND Wins > 0
+2940	SELECT COUNT ( Year ) FROM table_2_186829_1 WHERE Year = m
+2817	SELECT Opponent FROM table_2_184538_4 WHERE Date = 4 AND Date = 4
+4945	SELECT AVG ( Wins ) FROM table_2_177935_2 WHERE Game < 11 AND Played < 11
+2166	SELECT COUNT ( Attendance ) FROM table_2_181745_3 WHERE Player = 5 AND Points > 5 AND Points > 0
+355	SELECT COUNT ( Time ) FROM table_2_181835_1 WHERE Time = 1
+3763	SELECT COUNT ( Year ) FROM table_1_178901_1 WHERE Year = 1
+4392	SELECT Opponent FROM table_2_171711_2 WHERE Opponent = 2
+1022	SELECT COUNT ( Attendance ) FROM table_2_123870_1 WHERE Record = 1
+3100	SELECT Opponent FROM table_2_18776834_1 WHERE Opponent = v
+645	SELECT Name FROM table_2_177775_1 WHERE Name = 1
+4522	SELECT Opponent FROM table_2_177744_1 WHERE Opponent = no
+2401	SELECT Home team FROM table_2_12771877_1 WHERE Home team = jia
+5149	SELECT COUNT ( Round ) FROM table_2_173838_1 WHERE Record = 1
+5066	SELECT Venue FROM table_2_187744_1 WHERE Title =
+2962	SELECT Opponent FROM table_2_156868_1 WHERE Opponent = jember
+4729	SELECT COUNT ( Year ) FROM table_2_181744_1 WHERE Name = s
+1575	SELECT Opponent FROM table_2_177768_1 WHERE Opponent = no
+5771	SELECT COUNT ( Attendance ) FROM table_2_124545_1 WHERE Player = lale
+569	SELECT Away team score FROM table_2_117976_7 WHERE Away team score = 11 . 8 . 8
+375	SELECT Venue FROM table_2_187744_1 WHERE Opponent =
+5417	SELECT COUNT ( Year ) FROM table_2_146835_1 WHERE Year > 24
+1866	SELECT COUNT ( Points ) FROM table_2_176868_1 WHERE Points = 0 AND Points < 8
+2370	SELECT COUNT ( Year ) FROM table_2_184544_1 WHERE Year = s
+653	SELECT Opponent FROM table_2_177568_7 WHERE Score = 71 - 71 - 71 - 71
+1907	SELECT COUNT ( Points ) FROM table_2_176849_1 WHERE Points > 0 AND Points > 0 AND Points > 0
+827	SELECT COUNT ( Attendance ) FROM table_2_183875_2 WHERE Date = 12 AND Date = 2 - 2 - 12
+3113	SELECT Away team score FROM table_2_117777_7 WHERE Away team score = 17
+2277	SELECT COUNT ( Attendance ) FROM table_2_18658035_1 WHERE Opponent = jo
+3714	SELECT COUNT ( Year ) FROM table_2_17171760_1 WHERE Player = 3
+5207	SELECT Opponent FROM table_2_17171735_1 WHERE Team = 4
+2988	SELECT COUNT ( Attendance ) FROM table_2_117668_1 WHERE Opponent = w AND Opponent = 0
+1332	SELECT AVG ( Attendance ) FROM table_2_123868_2 WHERE Attendance = 31 AND Attendance = 31
+3032	SELECT Home team FROM table_2_12777777_1 WHERE Home team = lston
+2910	SELECT AVG ( Attendance ) FROM table_2_187975_1 WHERE Total < 11 AND Total < 18
+1716	SELECT Opponent FROM table_2_187714_1 WHERE Opponent = 1
+5490	SELECT Opponent FROM table_2_173877_2 WHERE Team = 4
+2187	SELECT COUNT ( Attendance ) FROM table_2_181845_1 WHERE Date = 25 AND Date = 18
+5749	SELECT Away team score FROM table_2_117775_2 WHERE Venue = mart
+5599	SELECT Score FROM table_2_17756868_1 WHERE Score = 71 - 68
+5308	SELECT Opponent FROM table_2_181829_4 WHERE Home team =
+584	SELECT Home team FROM table_2_187744_1 WHERE Date = 3
+4990	SELECT COUNT ( Year ) FROM table_2_126818_1 WHERE Date = 31
+5201	SELECT COUNT ( Round ) FROM table_2_12777069_1 WHERE Player = jio
+1401	SELECT COUNT ( Attendance ) FROM table_2_17757538_7 WHERE Record = 15
+4375	SELECT Opponent FROM table_2_18189929_1 WHERE Venue = arford
+2005	SELECT COUNT ( Attendance ) FROM table_2_186868_1 WHERE Year = liana
+1338	SELECT Away team score FROM table_2_11777777_2 WHERE Home team = mart
+3786	SELECT Away team score FROM table_2_11777767_1 WHERE Opponent = melbourne
+3108	SELECT COUNT ( Year ) FROM table_2_187775_1 WHERE Date = 2009
+2211	SELECT COUNT ( Attendance ) FROM table_2_184534_1 WHERE Opponent = laps
+5242	SELECT Opponent FROM table_2_177770_7 WHERE Score = 71 - 71
+5637	SELECT COUNT ( Year ) FROM table_1_167575_1 WHERE Year = 1
+4562	SELECT Opponent FROM table_2_177638_2 WHERE Score = 0 AND Score = 0
+1799	SELECT COUNT ( Round ) FROM table_2_17179924_1 WHERE Player = 1
+5608	SELECT COUNT ( Attendance ) FROM table_2_187775_1 WHERE Date = 31
+2656	SELECT COUNT ( Year ) FROM table_2_184535_1 WHERE Position =
+458	SELECT COUNT ( Year ) FROM table_2_180811_1 WHERE Year = 2007
+1876	SELECT COUNT ( Year ) FROM table_2_18757575_1 WHERE Name = 1
+262	SELECT COUNT ( Year ) FROM table_2_187968_1 WHERE Year < 2008
+2584	SELECT Opponent FROM table_2_187775_7 WHERE Score = 23 - 71 - 71
+3286	SELECT Opponent FROM table_2_117775_2 WHERE Date = 31
+2193	SELECT MIN ( Wins ) FROM table_2_186849_1 WHERE Points > 0 AND Points > 0
+542	SELECT COUNT ( Attendance ) FROM table_2_186896_1 WHERE Venue = jio
+1728	SELECT Opponent FROM table_2_177775_3 WHERE Record = 15
+4646	SELECT COUNT ( Year ) FROM table_2_184547_1 WHERE Name = m AND Name = m
+5881	SELECT MAX ( Laps ) FROM table_2_182949_1 WHERE Laps < 18
+2577	SELECT COUNT ( Year ) FROM table_2_182744_1 WHERE Name = s
+1741	SELECT MIN ( Wins ) FROM table_2_177049_2 WHERE Goals < 11 AND Points < 14
+5369	SELECT COUNT ( Attendance ) FROM table_2_187767_1 WHERE Date = 31
+4089	SELECT COUNT ( Attendance ) FROM table_2_181835_1 WHERE Points = 1 AND Position = 0
+3241	SELECT Opponent FROM table_2_156868_1 WHERE Opponent = las
+5266	SELECT COUNT ( Year ) FROM table_2_15756823_1 WHERE Player = losa
+3758	SELECT Opponent FROM table_2_172688_2 WHERE Score = 2 - 6
+1170	SELECT COUNT ( Year ) FROM table_2_186868_1 WHERE Position = jio
+2169	SELECT Date FROM table_2_181829_1 WHERE Date = october
+2020	SELECT Away team score FROM table_2_10807777_7 WHERE Home team = home
+4598	SELECT COUNT ( Gold ) FROM table_2_181835_2 WHERE Points < 11
+4415	SELECT COUNT ( Year ) FROM table_2_12457767_1 WHERE Title = s
+2152	SELECT COUNT ( Year ) FROM table_2_146868_1 WHERE Year > 24
+4788	SELECT MAX ( Laps ) FROM table_2_181864_1 WHERE Name = 4
+3509	SELECT Country FROM table_2_178934_1 WHERE Name = 4
+4780	SELECT COUNT ( Total ) FROM table_2_183868_1 WHERE Total > 5 AND Total > 5
+3271	SELECT MIN ( Wins ) FROM table_2_176849_1 WHERE Points < 1 AND Points < 1
+2965	SELECT Opponent FROM table_2_183838_1 WHERE Date = 2009
+1796	SELECT Home team FROM table_2_18777770_1 WHERE Home team = jaro
+1133	SELECT Opponent FROM table_2_187775_2 WHERE Date = 18
+4174	SELECT MIN ( Year ) FROM table_2_174443_1 WHERE Name =
+4042	SELECT Away team score FROM table_2_117775_7 WHERE Home team = home
+744	SELECT Record FROM table_2_174534_1 WHERE Title = 1
+385	SELECT COUNT ( Attendance ) FROM table_1_123875_1 WHERE Year = 2009
+898	SELECT COUNT ( Points ) FROM table_2_183549_1 WHERE Position = 13 AND Points < 14 AND Points < 18
+1252	SELECT COUNT ( Year ) FROM table_2_15686823_1 WHERE Year = v
+5140	SELECT AVG ( Attendance ) FROM table_2_187549_1 WHERE Total > 2 AND Total > 12 AND Total > 0 . 12 AND Total > 0
+1310	SELECT COUNT ( Attendance ) FROM table_2_186868_1 WHERE Total ( km ( km )
+5574	SELECT COUNT ( Total ) FROM table_2_14686848_1 WHERE Population = 5
+3458	SELECT COUNT ( Year ) FROM table_2_17171823_3 WHERE Player = 3
+4885	SELECT COUNT ( Time ) FROM table_1_146823_1 WHERE Location = 1
+520	SELECT COUNT ( Attendance ) FROM table_1_126823_1 WHERE Year = 1
+3152	SELECT Opponent FROM table_2_1818094_3 WHERE Date = 10
+3126	SELECT Home team score FROM table_2_127612_2 WHERE Away team score = 9 . 8 . 8
+4881	SELECT Opponent FROM table_2_187775_1 WHERE Date = 3
+3834	SELECT COUNT ( Attendance ) FROM table_2_187775_1 WHERE Date = 25
+4334	SELECT COUNT ( Year ) FROM table_1_152844_1 WHERE Name = John
+2059	SELECT COUNT ( Attendance ) FROM table_2_186080_1 WHERE Player = 1
+4532	SELECT COUNT ( Attendance ) FROM table_2_126868_2 WHERE Home team score = 2
+94	SELECT COUNT ( Attendance ) FROM table_2_17458037_1 WHERE Opponent = m
+5572	SELECT Opponent FROM table_2_156868_1 WHERE Opponent = lallas
+5904	SELECT Score FROM table_2_177568_1 WHERE Score = 69 - 69 - 69 - 69 - 69 - 69
+938	SELECT Opponent FROM table_2_18180811_1 WHERE Opponent = las
+5584	SELECT Away team score FROM table_2_117775_7 WHERE Opponent = 15
+4398	SELECT COUNT ( Attendance ) FROM table_2_183549_2 WHERE Points = 3 AND Points > 4
+2185	SELECT Date FROM table_2_181829_4 WHERE Date = 31
+5250	SELECT COUNT ( Year ) FROM table_2_156849_1 WHERE Opponent = lallas
+2786	SELECT COUNT ( Attendance ) FROM table_2_181845_1 WHERE Date = 18
+913	SELECT COUNT ( Population ) FROM table_2_186868_1 WHERE Population ( s ) = 5
+2404	SELECT Opponent FROM table_2_17777770_1 WHERE Opponent = king
+3561	SELECT COUNT ( Year ) FROM table_2_186825_1 WHERE Year > 12 AND Year = 2009
+1295	SELECT COUNT ( Year ) FROM table_1_167599_1 WHERE Name = mkm
+3716	SELECT COUNT ( Rank ) FROM table_2_171744_1 WHERE Name = 4
+26	SELECT COUNT ( Year ) FROM table_2_186829_1 WHERE Date = 13 AND Year < 14
+5915	SELECT Opponent FROM table_2_117775_7 WHERE Date = 31
+5895	SELECT Home team score FROM table_2_127976_7 WHERE Home team score = 10 )
+2157	SELECT COUNT ( Time ) FROM table_2_146868_2 WHERE Time = 4 . 4
+4100	SELECT COUNT ( Year ) FROM table_2_187901_1 WHERE Total > 9 AND Total = 0 . 0
+1463	SELECT COUNT ( Attendance ) FROM table_2_117775_2 WHERE Opponent = 15
+4158	SELECT COUNT ( Year ) FROM table_1_142844_1 WHERE Year = 13
+871	SELECT COUNT ( Year ) FROM table_2_184544_1 WHERE Time = 0 . 4 . 7
+5122	SELECT Opponent FROM table_2_117775_7 WHERE Attendance = 31
+2444	SELECT COUNT ( Laps ) FROM table_2_181749_1 WHERE Laps = 3
+5234	SELECT COUNT ( Year ) FROM table_2_17170145_1 WHERE Year = 5
+4988	SELECT COUNT ( Year ) FROM table_2_184535_1 WHERE Driver = las
+1629	SELECT COUNT ( Attendance ) FROM table_2_184544_1 WHERE Time = m . 4
+3063	SELECT COUNT ( Gold ) FROM table_2_182949_1 WHERE Bronze > 3 AND Bronze > 4 AND Gold > 0
+1323	SELECT Opponent FROM table_2_18182929_1 WHERE Player = jan
+4418	SELECT COUNT ( Year ) FROM table_2_187744_1 WHERE Location = 1
+4344	SELECT COUNT ( Gold ) FROM table_2_186549_1 WHERE Total > 0 AND Bronze > 0
+4	SELECT Date FROM table_2_181829_1 WHERE Date = octuary
+4906	SELECT COUNT ( Rank ) FROM table_2_1818058_2 WHERE Rank = 4
+2655	SELECT Title FROM table_1_142744_1 WHERE Title =
+4002	SELECT Opponent FROM table_2_177775_7 WHERE Score = 71 - 71
+159	SELECT COUNT ( Attendance ) FROM table_2_123875_1 WHERE Points = 1
+916	SELECT COUNT ( Year ) FROM table_2_146844_1 WHERE Population = 1
+2973	SELECT Away team score FROM table_2_11777777_2 WHERE Home team score = mart
+2519	SELECT COUNT ( Round ) FROM table_2_14687770_1 WHERE Player = lo
+1961	SELECT Opponent FROM table_2_187775_1 WHERE Date = 12
+474	SELECT COUNT ( Attendance ) FROM table_2_187975_1 WHERE Average = 25 AND Played < 11
+1973	SELECT COUNT ( Year ) FROM table_2_186868_1 WHERE Year = 2006
+4647	SELECT COUNT ( Attendance ) FROM table_2_186568_1 WHERE Player = jio
+701	SELECT COUNT ( Time ) FROM table_2_183875_1 WHERE Time = 1
+3981	SELECT Away team score FROM table_2_173875_7 WHERE Home team = 5–7
+566	SELECT COUNT ( Year ) FROM table_2_146829_1 WHERE Population ( 000 ( 000 ) = 5
+4363	SELECT COUNT ( Points ) FROM table_2_126849_1 WHERE Points > 0
+1030	SELECT COUNT ( Rank ) FROM table_2_172998_1 WHERE Rank = 1
+1051	SELECT MAX ( Rank ) FROM table_2_17171729_1 WHERE Player = jas
+5404	SELECT Opponent FROM table_2_187725_1 WHERE Date = 23
+3893	SELECT Opponent FROM table_2_183838_1 WHERE Date = 14
+4503	SELECT COUNT ( Attendance ) FROM table_2_126868_1 WHERE Wins > 10 AND Points < 10
+1352	SELECT Date FROM table_2_187775_1 WHERE Year = 1985
+2171	SELECT Date FROM table_2_187775_1 WHERE Location = 13
+4322	SELECT Opponent FROM table_2_187775_7 WHERE Score = 23 - 71 - 71
+4969	SELECT COUNT ( Laps ) FROM table_2_181855_1 WHERE Player = jio
+3466	SELECT COUNT ( Attendance ) FROM table_1_146835_1 WHERE Name = m
+1735	SELECT COUNT ( Year ) FROM table_1_117775_1 WHERE Year = 2009
+4417	SELECT COUNT ( Points ) FROM table_2_176868_3 WHERE Points = 8
+5651	SELECT COUNT ( Year ) FROM table_2_187744_1 WHERE Time = 1
+1647	SELECT Date FROM table_2_181829_4 WHERE Date = 31
+5840	SELECT Opponent FROM table_2_180811_1 WHERE Player = 0
+2553	SELECT COUNT ( Wins ) FROM table_2_171729_1 WHERE Points = 1
+3268	SELECT Venue FROM table_2_187744_1 WHERE Venue = jan
+5502	SELECT Name FROM table_2_1717899_1 WHERE Number = 1
+3059	SELECT Attendance FROM table_2_18180931_1 WHERE Date = 31
+3588	SELECT COUNT ( Attendance ) FROM table_2_187775_1 WHERE Record = 23
+4239	SELECT Attendance FROM table_2_187767_1 WHERE Date = 2009 AND Date = 18
+3698	SELECT COUNT ( Attendance ) FROM table_2_184575_1 WHERE Population ( km ) = 0 . 4
+991	SELECT COUNT ( Attendance ) FROM table_2_186868_1 WHERE Date = 1 . 7 . 1
+2030	SELECT COUNT ( Time ) FROM table_2_183875_1 WHERE Time = 1
+1840	SELECT COUNT ( Year ) FROM table_1_174586_1 WHERE Name = s
+524	SELECT MIN ( Wins ) FROM table_2_176849_1 WHERE Wins < 1
+2769	SELECT MIN ( Wins ) FROM table_2_187935_1 WHERE Points < 11
+172	SELECT COUNT ( Gold ) FROM table_2_184848_1 WHERE Bronze > 1 AND Bronze > 0 AND Bronze > 0 AND Bronze > 1 AND Bronze > 0 AND Bronze > 0 AND Silver > 0 AND Silver > 0 AND Silver > 0
+4819	SELECT COUNT ( Year ) FROM table_2_184544_1 WHERE Name = 1
+4537	SELECT Venue FROM table_2_187744_1 WHERE Venue = jia
+1885	SELECT Opponent FROM table_2_187744_1 WHERE Opponent = j
+4820	SELECT Away team score FROM table_2_11777770_1 WHERE Opponent = 71
+1804	SELECT COUNT ( Laps ) FROM table_2_181799_1 WHERE Player = 1
+58	SELECT COUNT ( Attendance ) FROM table_2_126868_1 WHERE Opponent = via
+581	SELECT COUNT ( Attendance ) FROM table_2_181845_1 WHERE Player = jos AND Player = jo
+5798	SELECT Opponent FROM table_2_187775_1 WHERE Date = 31
+5169	SELECT COUNT ( Attendance ) FROM table_2_187575_1 WHERE Year > 25 AND Year > 25 ) = 0
+482	SELECT COUNT ( Laps ) FROM table_2_171859_1 WHERE Points = 1 AND Points = 0
+1875	SELECT Opponent FROM table_2_187735_1 WHERE Date = 3
+552	SELECT COUNT ( Attendance ) FROM table_2_123838_2 WHERE Year = lallas AND Year = lallas
+257	SELECT COUNT ( Year ) FROM table_2_18452744_1 WHERE Name = jander
+2706	SELECT COUNT ( Year ) FROM table_2_17451855_1 WHERE Year = s
+580	SELECT Away team score FROM table_2_11777777_2 WHERE Home team = melbourne
+4211	SELECT COUNT ( Total ) FROM table_2_146868_1 WHERE Player =
+1949	SELECT COUNT ( Attendance ) FROM table_2_127945_1 WHERE Score = 5 AND Score = 1
+2281	SELECT COUNT ( Attendance ) FROM table_2_117775_2 WHERE Opponent = 31
+5480	SELECT Name FROM table_2_178964_1 WHERE Name =
+3976	SELECT COUNT ( Year ) FROM table_2_187775_1 WHERE Year = 4
+1755	SELECT COUNT ( Attendance ) FROM table_2_18777568_1 WHERE Player =
+1083	SELECT COUNT ( Year ) FROM table_2_183568_1 WHERE Year = lale AND Year = 2009
+5925	SELECT COUNT ( Attendance ) FROM table_2_186835_1 WHERE Year > 25 AND Year > 25 AND Year > 24
+4677	SELECT COUNT ( Total ) FROM table_2_187944_1 WHERE Population = 1
+4720	SELECT COUNT ( Year ) FROM table_2_181835_1 WHERE Name = 1
+3872	SELECT COUNT ( Attendance ) FROM table_2_189929_1 WHERE Player = jio
+1990	SELECT COUNT ( Year ) FROM table_2_183544_1 WHERE Year = 2008
+3874	SELECT Opponent FROM table_2_173875_7 WHERE Date = 31
+3334	SELECT MIN ( Score ) FROM table_2_178038_2 WHERE Score = 1
+1559	SELECT COUNT ( Attendance ) FROM table_2_185950_1 WHERE Year > 9 AND Year > 6 AND City = 4 AND Population = 4
+772	SELECT COUNT ( Attendance ) FROM table_2_187575_1 WHERE Record = 25 AND Total = 15
+794	SELECT Opponent FROM table_2_177549_2 WHERE Score = 4 AND Score = 4
+5398	SELECT AVG ( Wins ) FROM table_2_178037_7 WHERE Game = 0
+3531	SELECT COUNT ( Attendance ) FROM table_2_18458035_1 WHERE Player = v
+2902	SELECT Venue FROM table_2_187750_1 WHERE Venue = j
+3469	SELECT COUNT ( Attendance ) FROM table_2_146835_1 WHERE Time = 1
+3367	SELECT COUNT ( Year ) FROM table_2_146829_1 WHERE Player = 3
+3825	SELECT Attendance FROM table_2_183875_1 WHERE Date = 23 - 71
+443	SELECT COUNT ( Year ) FROM table_2_186868_1 WHERE Year = 2009
+5516	SELECT Date FROM table_2_18777567_1 WHERE Date = 2009
+5353	SELECT COUNT ( Attendance ) FROM table_2_176868_2 WHERE Opponent = gore AND Opponent = lallas
+5293	SELECT COUNT ( Year ) FROM table_2_177575_1 WHERE Total = m .
+806	SELECT COUNT ( Year ) FROM table_1_15682424_1 WHERE Player = jati
+496	SELECT Score FROM table_2_181899_1 WHERE Score = 2 - 2
+3298	SELECT COUNT ( Attendance ) FROM table_1_123847_1 WHERE Year = 2009
+2779	SELECT COUNT ( Year ) FROM table_2_187744_1 WHERE Name = 18
+895	SELECT COUNT ( Year ) FROM table_2_177775_1 WHERE Name = 1
+2036	SELECT COUNT ( Total ) FROM table_1_164744_1 WHERE Name =
+1569	SELECT COUNT ( Rank ) FROM table_2_181835_1 WHERE Name = 1
+1558	SELECT COUNT ( Wins ) FROM table_2_176849_1 WHERE Wins > 2 AND Wins > 0
+4393	SELECT COUNT ( Total ) FROM table_2_17457750_1 WHERE Total =
+3675	SELECT Attendance FROM table_2_187775_1 WHERE Date = 31
+1148	SELECT Opponent FROM table_2_12777777_2 WHERE Opponent = lallas
+1503	SELECT COUNT ( Year ) FROM table_2_15756896_1 WHERE Venue = jati
+3789	SELECT COUNT ( Attendance ) FROM table_2_184535_1 WHERE Player = jio
+2046	SELECT SUM ( Population ) FROM table_2_161644_1 WHERE Population = 4
+617	SELECT MAX ( Rank ) FROM table_2_172849_1 WHERE Total > 1
+3630	SELECT Opponent FROM table_2_17777770_5 WHERE Record = 23
+4508	SELECT Opponent FROM table_2_187729_1 WHERE Date = 1980
+802	SELECT MAX ( Laps ) FROM table_2_184534_1 WHERE Opponent = jio
+414	SELECT Opponent FROM table_2_177735_1 WHERE Opponent = no
+5342	SELECT COUNT ( Year ) FROM table_2_186848_1 WHERE Name = liana
+4428	SELECT AVG ( Attendance ) FROM table_2_17757575_2 WHERE Attendance = 17
+120	SELECT Opponent FROM table_2_177638_2 WHERE Home team score = 5
+764	SELECT Opponent FROM table_2_187729_4 WHERE Score = 3
+1936	SELECT COUNT ( Attendance ) FROM table_2_187575_1 WHERE Player = las
+1362	SELECT COUNT ( Year ) FROM table_2_16457744_1 WHERE Year = John
+3329	SELECT COUNT ( Attendance ) FROM table_2_187768_1 WHERE Date = town
+3978	SELECT MAX ( Rank ) FROM table_2_181835_1 WHERE Rank = 13
+3943	SELECT COUNT ( Attendance ) FROM table_2_18790145_1 WHERE Year = m
+1751	SELECT COUNT ( Attendance ) FROM table_2_181818_1 WHERE Record = 3
+3285	SELECT COUNT ( Population ) FROM table_2_186834_1 WHERE Population < 11 AND Population < 11
+480	SELECT COUNT ( Attendance ) FROM table_2_176868_1 WHERE Opponent = lallas
+1348	SELECT MAX ( Laps ) FROM table_2_17757549_2 WHERE Rank = 5
+3104	SELECT COUNT ( Rank ) FROM table_1_162364_1 WHERE Name = 1
+17	SELECT Away team score FROM table_2_187718_7 WHERE Date = 31
+3198	SELECT Attendance FROM table_2_18183870_3 WHERE Date = 10
+2172	SELECT COUNT ( Total ) FROM table_2_186835_1 WHERE Opponent = las
+3727	SELECT COUNT ( Year ) FROM table_2_18170701_1 WHERE Year = ji
+2336	SELECT COUNT ( Year ) FROM table_2_127901_1 WHERE Year = 2009
+3465	SELECT MAX ( Rank ) FROM table_2_171744_1 WHERE Rank =
+5706	SELECT Opponent FROM table_2_187729_1 WHERE Opponent = 1
+4552	SELECT COUNT ( Gold ) FROM table_2_186848_1 WHERE Bronze > 1 AND Bronze > 0 AND Silver > 0
+5422	SELECT COUNT ( Population ) FROM table_2_16161664_1 WHERE Name = 4 . 4 . 1
+5885	SELECT COUNT ( Year ) FROM table_2_186868_1 WHERE Nationality =
+3986	SELECT COUNT ( Year ) FROM table_2_186868_1 WHERE Year > 9 AND Year > 6 AND Year > 9 AND Year > 9 AND Year > 9 AND Year > 9 AND Year > 5
+1268	SELECT Attendance FROM table_2_187775_1 WHERE Date = 31
+1555	SELECT Opponent FROM table_2_156827_1 WHERE Opponent = jan
+2430	SELECT Away team score FROM table_2_108010_11 WHERE Away team score = melbourne
+1783	SELECT COUNT ( Year ) FROM table_2_12387767_1 WHERE Year = 2007
+479	SELECT Name FROM table_2_18991899_1 WHERE Name = m
+4744	SELECT Venue FROM table_2_187744_1 WHERE Location = m AND City
+4441	SELECT COUNT ( Bronze ) FROM table_2_184849_1 WHERE Bronze > 0 AND Bronze > 0 AND Bronze > 0
+499	SELECT Location FROM table_2_183589_1 WHERE Location = m
+2569	SELECT COUNT ( Attendance ) FROM table_2_187945_1 WHERE Total = v
+468	SELECT COUNT ( Year ) FROM table_2_17170101_1 WHERE Year = w AND Country = w AND Country = w
+410	SELECT COUNT ( Round ) FROM table_1_15756823_1 WHERE Player = v
+4785	SELECT Venue FROM table_2_187744_1 WHERE Country = 13
+3905	SELECT COUNT ( Attendance ) FROM table_2_186868_1 WHERE Venue =
+4119	SELECT Opponent FROM table_2_187729_1 WHERE Year = 2009
+4350	SELECT Opponent FROM table_2_189929_1 WHERE Opponent = loman
+1289	SELECT AVG ( Score ) FROM table_2_17758036_1 WHERE Score = 15
+465	SELECT COUNT ( Attendance ) FROM table_2_186835_1 WHERE Opponent = laps < 18
+4160	SELECT COUNT ( Year ) FROM table_2_186835_1 WHERE Year = 25
+656	SELECT COUNT ( Gold ) FROM table_2_181870_1 WHERE Player > 9 AND Player = 0
+1522	SELECT Opponent FROM table_2_173838_2 WHERE Score = 4 AND Score = 4
+561	SELECT COUNT ( Attendance ) FROM table_2_181835_1 WHERE Player = 3
+4874	SELECT COUNT ( Round ) FROM table_2_17290860_1 WHERE Player = 4
+556	SELECT Country FROM table_2_180834_1 WHERE Name = 3
+5531	SELECT COUNT ( Round ) FROM table_2_156829_1 WHERE Opponent = lallas
+1926	SELECT COUNT ( Year ) FROM table_2_181835_1 WHERE Time = 1 . 1
+3307	SELECT MAX ( Rank ) FROM table_2_181835_1 WHERE Position = 4
+982	SELECT COUNT ( Score ) FROM table_2_187775_1 WHERE Score = 73
+4666	SELECT Venue FROM table_2_18771877_1 WHERE Venue = oval
+2016	SELECT COUNT ( Year ) FROM table_2_183838_1 WHERE Year = 4–3
+4742	SELECT COUNT ( Attendance ) FROM table_2_181825_1 WHERE Date = 2009
+4870	SELECT COUNT ( Year ) FROM table_2_156829_1 WHERE Opponent = jio
+325	SELECT MAX ( Points ) FROM table_2_176835_1 WHERE Points = 1
+5073	SELECT COUNT ( Attendance ) FROM table_2_176823_1 WHERE Player = losa
+671	SELECT COUNT ( Year ) FROM table_2_18290701_1 WHERE Date = 12
+3434	SELECT Opponent FROM table_2_123838_2 WHERE Opponent = 4
+5385	SELECT COUNT ( Points ) FROM table_2_146896_1 WHERE Points = 1
+4781	SELECT COUNT ( Year ) FROM table_2_186827_1 WHERE Name = lford
+4630	SELECT COUNT ( Year ) FROM table_2_18770701_1 WHERE Year = 2013
+4282	SELECT COUNT ( Round ) FROM table_1_142844_1 WHERE Player = 1
+2591	SELECT COUNT ( Points ) FROM table_2_146834_1 WHERE Points > 1 AND Points = 0
+2136	SELECT COUNT ( Year ) FROM table_1_162323_1 WHERE Player = 3
+1673	SELECT Opponent FROM table_2_181829_3 WHERE Date = 12
+5486	SELECT COUNT ( Points ) FROM table_2_177775_1 WHERE Points = 1
+5867	SELECT COUNT ( Points ) FROM table_2_126849_1 WHERE Points = 0 AND Points = 0
+2573	SELECT Score FROM table_2_17686868_1 WHERE Score = 71 - 71 - 69 - 69 - 69 - 69 - 68
+1955	SELECT Opponent FROM table_2_176834_1 WHERE Opponent = jas
+2175	SELECT COUNT ( Attendance ) FROM table_2_183875_1 WHERE Date = 13 AND Date = 18
+3242	SELECT Opponent FROM table_2_186835_1 WHERE Venue = jan
+1072	SELECT Name FROM table_2_187775_1 WHERE Name = j
+5287	SELECT COUNT ( Attendance ) FROM table_2_187775_7 WHERE Attendance = 25
+2457	SELECT Opponent FROM table_2_18187729_3 WHERE Date = 31
+3745	SELECT Home team score FROM table_2_117770_2 WHERE Home team = mart
+2590	SELECT Opponent FROM table_2_17171729_1 WHERE Opponent = no
+594	SELECT AVG ( Wins ) FROM table_2_178069_1 WHERE Points < 11 AND Points < 6
+76	SELECT COUNT ( Round ) FROM table_2_123838_1 WHERE Record = 1 - 1 - 1
+3754	SELECT COUNT ( Attendance ) FROM table_2_186868_1 WHERE Time = 1
+5088	SELECT Opponent FROM table_2_171744_1 WHERE Opponent = no
+4612	SELECT COUNT ( Attendance ) FROM table_2_184576_1 WHERE Opponent = 25
+819	SELECT COUNT ( Laps ) FROM table_2_171729_1 WHERE Player = 1
+600	SELECT Opponent FROM table_2_157575_2 WHERE Team = wson ( s )
+4404	SELECT Opponent FROM table_2_171729_1 WHERE Venue = jan
+1746	SELECT MAX ( Laps ) FROM table_2_182949_1 WHERE Total > 1 AND Rank = 0
+4144	SELECT Opponent FROM table_2_187767_1 WHERE Year = 2009
+1085	SELECT AVG ( Attendance ) FROM table_2_184544_1 WHERE Total = 35
+2859	SELECT MAX ( Position ) FROM table_2_18187769_1 WHERE Position = 0
+563	SELECT Venue FROM table_2_187744_1 WHERE Venue = western
+2001	SELECT Away team score FROM table_2_11777777_2 WHERE Home team = home
+3027	SELECT MIN ( Total ) FROM table_2_186834_1 WHERE Total > 1 AND Total > 1
+2334	SELECT COUNT ( Year ) FROM table_2_18451899_1 WHERE Name = John
+1292	SELECT Away team FROM table_2_187775_2 WHERE Home team = melbourne
+3589	SELECT COUNT ( Attendance ) FROM table_2_18258925_1 WHERE Year < 14 AND Year < 14
+4450	SELECT COUNT ( Attendance ) FROM table_2_183875_1 WHERE Time = 3 AND Time = 0
+5763	SELECT COUNT ( Year ) FROM table_1_14682748_1 WHERE Opponent = western
+2478	SELECT MIN ( Wins ) FROM table_2_177549_1 WHERE Points = 5 AND Points < 2
+5010	SELECT AVG ( Wins ) FROM table_2_18187770_2 WHERE Played < 11
+5357	SELECT Opponent FROM table_2_171711_2 WHERE Opponent = lallas
+4333	SELECT MAX ( Rank ) FROM table_2_181835_1 WHERE Name = 1
+64	SELECT Opponent FROM table_2_117767_1 WHERE Opponent = no
+5471	SELECT Opponent FROM table_2_187775_1 WHERE Opponent = no
+4543	SELECT COUNT ( Total ) FROM table_2_187950_1 WHERE Name = 0
+2452	SELECT Opponent FROM table_2_177777_2 WHERE Away team = 0
+5434	SELECT COUNT ( Total ) FROM table_2_186868_1 WHERE Total < 25 AND Total < 34
+848	SELECT COUNT ( Year ) FROM table_2_178849_1 WHERE Year = 0 AND Year = 0
+1100	SELECT COUNT ( Rank ) FROM table_2_183564_1 WHERE Rank =
+945	SELECT COUNT ( Bronze ) FROM table_2_186849_2 WHERE Rank > 1 AND Rank > 0 AND Rank > 0
+876	SELECT Opponent FROM table_2_173877_7 WHERE Opponent = 7
+2231	SELECT Country FROM table_2_18998940_1 WHERE Name = m
+2308	SELECT Date FROM table_2_18778939_1 WHERE Date =
+4954	SELECT COUNT ( Attendance ) FROM table_2_186868_1 WHERE Year < 14 AND Year < 14
+1725	SELECT COUNT ( Laps ) FROM table_2_171760_1 WHERE Player = 1
+5878	SELECT COUNT ( Year ) FROM table_2_187901_1 WHERE Name = 4
+2808	SELECT Opponent FROM table_2_171729_1 WHERE Venue = j
+1667	SELECT Opponent FROM table_2_181829_3 WHERE Date = 31
+5631	SELECT Opponent FROM table_2_177775_7 WHERE Opponent = 7
+5195	SELECT MIN ( Year ) FROM table_2_18187901_1 WHERE Date =
+2162	SELECT COUNT ( Attendance ) FROM table_2_174538_1 WHERE Opponent = 0
+4140	SELECT Attendance FROM table_2_187775_1 WHERE Date = 31
+2057	SELECT COUNT ( Year ) FROM table_2_181701_1 WHERE Year = 3
+416	SELECT COUNT ( Year ) FROM table_2_18772747_1 WHERE Player = las
+756	SELECT COUNT ( Year ) FROM table_1_146835_1 WHERE Date = 13
+5196	SELECT COUNT ( Attendance ) FROM table_2_187575_1 WHERE Year = 5
+2266	SELECT Opponent FROM table_2_189929_1 WHERE Date = jember
+361	SELECT Away team score FROM table_2_11777770_2 WHERE Home team = k
+29	SELECT COUNT ( Round ) FROM table_2_157680_1 WHERE Opponent = 0
+2732	SELECT AVG ( Attendance ) FROM table_2_177949_1 WHERE Goals < 11 AND Goals < 11
+1071	SELECT COUNT ( Year ) FROM table_2_157575_1 WHERE Name = ji
+5219	SELECT COUNT ( Attendance ) FROM table_2_187575_1 WHERE Date = 18
+2145	SELECT COUNT ( Year ) FROM table_2_187744_1 WHERE Year =
+3619	SELECT Location FROM table_2_187764_1 WHERE Location =
+4519	SELECT COUNT ( Attendance ) FROM table_2_171960_1 WHERE Record = 5–7
+5780	SELECT COUNT ( Laps ) FROM table_2_186868_1 WHERE Player = jalo
+3503	SELECT COUNT ( Attendance ) FROM table_2_185960_1 WHERE Year > 0 AND Year > 0 AND Year > 0
+4594	SELECT Away team score FROM table_2_17173877_2 WHERE Home team = 31
+79	SELECT COUNT ( Year ) FROM table_2_187744_1 WHERE Year = 21
+616	SELECT Opponent FROM table_2_183838_4 WHERE Record = 4
+5660	SELECT Venue FROM table_2_187768_1 WHERE Opponent = jan
+1221	SELECT Name FROM table_2_146844_1 WHERE Name =
+4469	SELECT COUNT ( Year ) FROM table_2_181744_1 WHERE Name = miana
+295	SELECT COUNT ( Year ) FROM table_2_189929_1 WHERE Player = mm
+3024	SELECT COUNT ( Attendance ) FROM table_2_181825_1 WHERE Date = 2009
+4771	SELECT Home team score FROM table_2_1276_7 WHERE Away team score = 10 . 11 ( 11 )
+4526	SELECT Venue FROM table_2_18777544_1 WHERE Date = lallas
+1213	SELECT COUNT ( Laps ) FROM table_1_126868_1 WHERE Player = v
+3520	SELECT COUNT ( Attendance ) FROM table_2_187775_1 WHERE Opponent = no
+1044	SELECT COUNT ( Year ) FROM table_2_187901_1 WHERE Name = Victoria
+342	SELECT COUNT ( Attendance ) FROM table_2_187575_1 WHERE Year = jos - 12
+2525	SELECT Name FROM table_2_184747_1 WHERE Name = ê
+2987	SELECT COUNT ( Year ) FROM table_2_146825_2 WHERE Year > 3 AND Year > 4 . 4 . 4 . 4 . 4 . 4 . 4 . 4 . 4 . 4 . 4 . 4 . 4 . 4 . 5
+326	SELECT SUM ( Year ) FROM table_2_163875_1 WHERE Name = 4
+2931	SELECT Opponent FROM table_2_12777770_2 WHERE Home team = mor
+1720	SELECT COUNT ( Points ) FROM table_2_146868_1 WHERE Points < 1
+5587	SELECT Opponent FROM table_2_183868_1 WHERE Date = 10
+2044	SELECT COUNT ( Attendance ) FROM table_2_183875_1 WHERE Year < 10 AND Date = 0
+5463	SELECT COUNT ( Year ) FROM table_2_186868_1 WHERE Year < 2008
+842	SELECT COUNT ( Year ) FROM table_2_182668_1 WHERE Year = 4
+2897	SELECT COUNT ( Attendance ) FROM table_2_17457767_1 WHERE Player = m
+4586	SELECT COUNT ( Attendance ) FROM table_2_181845_1 WHERE Opponent = ji
+5084	SELECT COUNT ( Goals ) FROM table_2_177949_1 WHERE Goals < 11 AND Points < 11
+1266	SELECT Opponent FROM table_2_183838_7 WHERE Score = 7 - 7
+1939	SELECT Opponent FROM table_2_117775_2 WHERE Opponent = melbourne
+1331	SELECT Venue FROM table_2_12777744_1 WHERE Opponent = king
+1450	SELECT COUNT ( Year ) FROM table_1_164747_1 WHERE Name = ó
+3377	SELECT Venue FROM table_2_187775_1 WHERE Opponent = loman
+203	SELECT Date FROM table_2_18180801_1 WHERE Year = m
+1469	SELECT COUNT ( Year ) FROM table_1_146868_1 WHERE Player = m
+2721	SELECT COUNT ( Gold ) FROM table_2_182949_1 WHERE Bronze > 1 AND Bronze > 0 AND Gold > 0 AND Bronze > 0
+3372	SELECT COUNT ( Points ) FROM table_2_146835_1 WHERE Points = 1
+5487	SELECT Opponent FROM table_2_173877_2 WHERE Date = 12
+2032	SELECT COUNT ( Attendance ) FROM table_1_122344_1 WHERE Player = jio
+1304	SELECT Venue FROM table_2_187744_1 WHERE Opponent = lallas
+5744	SELECT COUNT ( Round ) FROM table_2_187744_1 WHERE Player =
+885	SELECT Score FROM table_2_185980_1 WHERE Year = 1 - 1 - 9 - 9 - 1
+3133	SELECT Date FROM table_2_18187726_2 WHERE Date = 31
+317	SELECT COUNT ( Year ) FROM table_2_15756823_1 WHERE Player = lo
+3855	SELECT COUNT ( Attendance ) FROM table_2_187945_2 WHERE Date = 31 AND Date = 31
+1822	SELECT COUNT ( Attendance ) FROM table_2_174586_2 WHERE Opponent = las
+1634	SELECT Opponent FROM table_2_181829_1 WHERE Venue = jio
+3770	SELECT Date FROM table_2_18181825_1 WHERE Date = 12
+2864	SELECT COUNT ( Year ) FROM table_2_15991899_1 WHERE Player = John
+2500	SELECT Venue FROM table_2_187744_1 WHERE Venue = k
+1864	SELECT Opponent FROM table_2_187775_7 WHERE Score = 71 - 71 - 71
+1826	SELECT Opponent FROM table_2_18777777_1 WHERE Opponent = jon
+193	SELECT COUNT ( Round ) FROM table_2_123823_1 WHERE Player = 1
+5406	SELECT COUNT ( Attendance ) FROM table_2_186868_1 WHERE Player = lallas
+1582	SELECT COUNT ( Round ) FROM table_2_17171701_1 WHERE Opponent = las
+3264	SELECT COUNT ( Attendance ) FROM table_2_181845_1 WHERE Year > 25 AND Points > 25 AND Points > 25
+2689	SELECT Away team score FROM table_2_117770_2 WHERE Home team = lallas
+2282	SELECT COUNT ( Year ) FROM table_1_17452422_1 WHERE Year = John
+568	SELECT Opponent FROM table_2_187744_1 WHERE Title =
+2286	SELECT Opponent FROM table_2_187775_1 WHERE Venue = arember
+2876	SELECT Venue FROM table_2_187744_1 WHERE Venue = j
+5255	SELECT COUNT ( Year ) FROM table_2_181835_1 WHERE Year = 1 . 1
+4173	SELECT COUNT ( Game ) FROM table_2_176868_2 WHERE Player = lallas
+3274	SELECT COUNT ( Year ) FROM table_2_186834_1 WHERE Name = via
+5566	SELECT Attendance FROM table_2_183848_1 WHERE Date = 2009 AND Date = octuary
+2712	SELECT Opponent FROM table_2_171711_7 WHERE Score = 4
+226	SELECT COUNT ( Round ) FROM table_2_156823_1 WHERE Player = lallas
+944	SELECT COUNT ( Year ) FROM table_1_146823_1 WHERE Player = 1
+2139	SELECT COUNT ( Year ) FROM table_2_126829_1 WHERE Year = 2009
+1462	SELECT COUNT ( Attendance ) FROM table_2_181868_1 WHERE Player = 1
+4756	SELECT Opponent FROM table_2_187768_1 WHERE Opponent = jember
+2174	SELECT COUNT ( Year ) FROM table_2_187744_1 WHERE Year = 1
+313	SELECT Nationality FROM table_2_181744_1 WHERE Name = m
+888	SELECT COUNT ( Year ) FROM table_2_18778099_1 WHERE Player = m
+4887	SELECT Attendance FROM table_2_18181829_1 WHERE Date = 31
+3559	SELECT COUNT ( Attendance ) FROM table_1_146834_1 WHERE Player =
+2831	SELECT Away team score FROM table_2_117780_7 WHERE Away team = 9 . 9 . 8
+3574	SELECT COUNT ( Wins ) FROM table_2_186849_1 WHERE Points < 0
+4966	SELECT Opponent FROM table_2_187729_1 WHERE Date = 31
+4189	SELECT COUNT ( Points ) FROM table_2_126834_1 WHERE Opponent = v
+947	SELECT COUNT ( Attendance ) FROM table_2_120811_1 WHERE Date = 10
+3155	SELECT COUNT ( Rank ) FROM table_2_177775_1 WHERE Name = 1
+4723	SELECT Opponent FROM table_2_17758035_2 WHERE Attendance = 2
+1557	SELECT COUNT ( Attendance ) FROM table_2_187775_1 WHERE Year = 15
+2086	SELECT COUNT ( Attendance ) FROM table_2_123870_1 WHERE Year = 2008
+363	SELECT Opponent FROM table_2_177549_1 WHERE Country = state
+5806	SELECT Venue FROM table_2_187744_1 WHERE Country = state
+3572	SELECT Away team score FROM table_2_11777770_2 WHERE Home team = stadium
+13	SELECT COUNT ( Year ) FROM table_2_187744_1 WHERE Venue = town
+4259	SELECT Away team score FROM table_2_10807777_7 WHERE Away team score = melbourne
+4410	SELECT Opponent FROM table_2_177568_1 WHERE Opponent = king
+5626	SELECT COUNT ( Year ) FROM table_2_186868_1 WHERE Date = 2009
+5893	SELECT COUNT ( Year ) FROM table_2_146835_1 WHERE Year = 1
+5493	SELECT AVG ( Attendance ) FROM table_2_187775_1 WHERE Attendance = 31
+1614	SELECT Opponent FROM table_2_187744_1 WHERE Opponent = k
+2983	SELECT Opponent FROM table_2_186868_1 WHERE Venue = jbourne
+3533	SELECT COUNT ( Year ) FROM table_2_146835_1 WHERE Year = 2008
+573	SELECT COUNT ( Attendance ) FROM table_2_181729_1 WHERE Player = 3
+5441	SELECT Opponent FROM table_2_18777770_1 WHERE Opponent = se
+2704	SELECT COUNT ( Year ) FROM table_1_142844_1 WHERE Title =
+5104	SELECT COUNT ( Attendance ) FROM table_2_186868_1 WHERE Opponent = jalo
+2571	SELECT Opponent FROM table_2_117775_2 WHERE Attendance = 15
+1020	SELECT Date FROM table_2_181829_4 WHERE Date = 3
+5896	SELECT Opponent FROM table_2_187775_1 WHERE Opponent = 3
+2460	SELECT Score FROM table_2_187718_4 WHERE Score = 4
+4154	SELECT COUNT ( Rank ) FROM table_2_187935_1 WHERE Name = m
+2533	SELECT COUNT ( Year ) FROM table_2_182968_1 WHERE Player = loman
+3345	SELECT Opponent FROM table_2_187775_1 WHERE Date = 2009
+2672	SELECT Nationality FROM table_2_186868_1 WHERE Country = christral
+3296	SELECT COUNT ( Points ) FROM table_2_186849_2 WHERE Points > 5 AND Points > 5 AND Points = 0
+5711	SELECT COUNT ( Attendance ) FROM table_2_11768037_1 WHERE Attendance = 15
+2422	SELECT Opponent FROM table_2_171711_1 WHERE Player = 3
+4541	SELECT COUNT ( Attendance ) FROM table_2_181835_1 WHERE Position = 1
+1042	SELECT COUNT ( Attendance ) FROM table_2_17457767_1 WHERE Name = John
+1571	SELECT Opponent FROM table_2_18778035_1 WHERE Opponent = jember
+3444	SELECT COUNT ( Attendance ) FROM table_2_187775_2 WHERE Points = 17
+5447	SELECT COUNT ( Attendance ) FROM table_2_157675_1 WHERE Opponent = 15
+3105	SELECT COUNT ( Points ) FROM table_2_128849_1 WHERE Player = 0
+5548	SELECT COUNT ( Wins ) FROM table_2_176849_1 WHERE Points < 1 AND Points < 0
+1425	SELECT Away team score FROM table_2_117775_2 WHERE Home team = melbourne
+5042	SELECT COUNT ( Laps ) FROM table_2_181855_1 WHERE Time = 1
+4662	SELECT Opponent FROM table_2_127775_1 WHERE Opponent = no
+2465	SELECT Opponent FROM table_2_17183870_2 WHERE Record = 5 AND Record = 5
+3326	SELECT COUNT ( Total ) FROM table_2_186848_1 WHERE Total < 11 AND Total < 14
+4488	SELECT Opponent FROM table_2_177775_3 WHERE Attendance = 3
+3	SELECT COUNT ( Position ) FROM table_2_184544_1 WHERE Position = m
+2489	SELECT COUNT ( Round ) FROM table_2_156829_1 WHERE Opponent = lale
+2350	SELECT Opponent FROM table_2_17687770_1 WHERE Score = 71 - 71 - 71
+1721	SELECT COUNT ( Points ) FROM table_2_178849_1 WHERE Points = 0
+3521	SELECT Opponent FROM table_2_187768_1 WHERE Opponent =
+4751	SELECT COUNT ( Year ) FROM table_2_177549_1 WHERE Name = losa
+5363	SELECT Date FROM table_2_187775_1 WHERE Date = 2007
+2639	SELECT Opponent FROM table_2_156835_1 WHERE Opponent = s
+3809	SELECT COUNT ( Laps ) FROM table_2_181749_1 WHERE Player = laps AND Rank > 0
+3622	SELECT Opponent FROM table_2_176868_7 WHERE Score = 71 - 69 - 69 - 69 - 69 - 68
+5534	SELECT COUNT ( Attendance ) FROM table_2_187775_2 WHERE Date = 31
+1750	SELECT Opponent FROM table_2_18771829_1 WHERE Date = 31
+4187	SELECT MAX ( Laps ) FROM table_2_18181835_1 WHERE Year > 24
+3876	SELECT COUNT ( Round ) FROM table_2_17171744_1 WHERE Player =
+1390	SELECT COUNT ( Laps ) FROM table_2_186868_1 WHERE Laps > 5
+5397	SELECT Score FROM table_2_17756868_2 WHERE Score = 71 - 69 - 69 - 69 - 71
+694	SELECT COUNT ( Points ) FROM table_2_146896_1 WHERE Points = 6
+2324	SELECT COUNT ( Attendance ) FROM table_1_146834_1 WHERE Name = jati
+4222	SELECT Opponent FROM table_2_156823_1 WHERE Opponent = no
+5438	SELECT COUNT ( Total ) FROM table_2_187775_1 WHERE Total = 76
+5185	SELECT Date FROM table_2_187775_1 WHERE Title =
+5072	SELECT Opponent FROM table_2_177735_1 WHERE Opponent =
+2745	SELECT Date FROM table_2_187775_1 WHERE Date = 12
+765	SELECT COUNT ( Year ) FROM table_2_186868_1 WHERE Year > 9 AND Year > 12 AND Year > 0
+1924	SELECT MIN ( Year ) FROM table_2_18181899_2 WHERE Date = october AND Date = october
+5511	SELECT COUNT ( Attendance ) FROM table_2_189929_1 WHERE Player = jua
+2542	SELECT COUNT ( Year ) FROM table_2_187775_1 WHERE Opponent = m
+1631	SELECT COUNT ( Year ) FROM table_2_187968_2 WHERE Year > 3 AND Year > 6 AND Year > 0
+1207	SELECT COUNT ( Year ) FROM table_2_186868_1 WHERE Year = 2009
+200	SELECT COUNT ( Attendance ) FROM table_2_187775_1 WHERE Date = 31
+378	SELECT Date FROM table_2_18451899_1 WHERE Date = jember
+3892	SELECT Score FROM table_2_17790199_2 WHERE Score = 4 AND Score = 4
+5007	SELECT COUNT ( Total ) FROM table_2_187901_1 WHERE Total > 0 AND Total = 0
+596	SELECT Opponent FROM table_2_177775_1 WHERE Opponent = las
+3730	SELECT COUNT ( Laps ) FROM table_2_181744_1 WHERE Location = jio
+3395	SELECT Home team score FROM table_2_127612_2 WHERE Away team score = 11 ( 11 )
+5159	SELECT COUNT ( Laps ) FROM table_2_18290839_1 WHERE Year = m
+4715	SELECT Opponent FROM table_2_187768_4 WHERE Date = mor
+1592	SELECT Opponent FROM table_2_187775_1 WHERE Date = 18
+5884	SELECT COUNT ( Attendance ) FROM table_2_184747_1 WHERE Year = 2009
+5704	SELECT Country FROM table_2_187744_1 WHERE Year = 2009
+3145	SELECT COUNT ( Year ) FROM table_2_18777767_1 WHERE Player = v
+4049	SELECT Opponent FROM table_2_123838_2 WHERE Date = 1
+3273	SELECT COUNT ( Attendance ) FROM table_2_17457775_1 WHERE Opponent = 0
+1998	SELECT Opponent FROM table_2_173838_2 WHERE Score = 5 AND Score = 3 AND Score = 3
+1208	SELECT COUNT ( Attendance ) FROM table_2_17457748_2 WHERE Opponent = 6 AND Opponent = 0
+5374	SELECT COUNT ( Year ) FROM table_2_181835_1 WHERE Location = 4 . 4 . 4 . 4 . 4 . 4 . 4 . 1
+5633	SELECT COUNT ( Year ) FROM table_2_184747_1 WHERE Title = s
+45	SELECT AVG ( Attendance ) FROM table_2_177948_1 WHERE Opponent = 5
+873	SELECT COUNT ( Year ) FROM table_2_187968_1 WHERE Year = 2009
+3482	SELECT COUNT ( Gold ) FROM table_2_182949_1 WHERE Bronze > 1 AND Bronze > 1
+1792	SELECT COUNT ( Wins ) FROM table_2_186818_1 WHERE Player = 0
+1440	SELECT Opponent FROM table_2_186868_1 WHERE Location = jember
+5700	SELECT COUNT ( Points ) FROM table_1_146823_1 WHERE Points =
+4243	SELECT COUNT ( Year ) FROM table_2_17457775_1 WHERE Name = v AND Country = v
+3805	SELECT COUNT ( Attendance ) FROM table_2_184544_1 WHERE Name = mkm
+411	SELECT Opponent FROM table_2_187775_2 WHERE Opponent = lallas
+4566	SELECT COUNT ( Laps ) FROM table_2_181845_1 WHERE Time = 4 . 4 . 4 . 4 . 4 . 4 . 1
+2041	SELECT Opponent FROM table_2_177775_1 WHERE Opponent = no
+994	SELECT Opponent FROM table_2_187725_1 WHERE Player = jan
+3739	SELECT Date FROM table_2_187775_2 WHERE Date = 31
+1092	SELECT MAX ( Attendance ) FROM table_2_17457735_1 WHERE Date = 1
+3806	SELECT COUNT ( Attendance ) FROM table_2_182998_1 WHERE Date = 9 - 1
+5468	SELECT COUNT ( Year ) FROM table_2_178901_1 WHERE Record = 1 - 1
+4351	SELECT Opponent FROM table_2_17681829_1 WHERE Opponent = jan
+4578	SELECT Venue FROM table_2_187744_1 WHERE Venue =
+4877	SELECT Home team FROM table_2_186834_1 WHERE Nationality = 2009
+2599	SELECT COUNT ( Attendance ) FROM table_2_177549_2 WHERE Year > 0 AND Year > 0 AND Year > 0 AND Year > 0 AND Wins > 0 AND Points = 0 AND Wins > 0 AND Wins > 0
+3625	SELECT COUNT ( Attendance ) FROM table_2_181860_1 WHERE Opponent = 5
+5018	SELECT MAX ( Rank ) FROM table_2_178829_2 WHERE Rank = 4
+5892	SELECT COUNT ( Year ) FROM table_2_181701_1 WHERE Venue = jio
+4135	SELECT COUNT ( Attendance ) FROM table_2_187575_1 WHERE Year = laps AND Time = 0
+3495	SELECT COUNT ( Points ) FROM table_2_186835_1 WHERE Points > 5 AND Points > 5 AND Points > 0
+3652	SELECT Away team score FROM table_2_117976_7 WHERE Away team score = 10 . 11 )
+1303	SELECT Opponent FROM table_2_117775_7 WHERE Attendance = 31
+3888	SELECT Venue FROM table_2_187768_1 WHERE Venue = j
+3686	SELECT COUNT ( Attendance ) FROM table_2_187775_1 WHERE Year = 12
+2123	SELECT COUNT ( Year ) FROM table_2_187744_1 WHERE Name = John
+2025	SELECT Name FROM table_2_178916_1 WHERE Name = 3
+5223	SELECT COUNT ( Gold ) FROM table_2_156829_1 WHERE Player > 1
+2271	SELECT Opponent FROM table_2_173875_7 WHERE Score = 71 - 68 - 71 - 71 - 71 - 68
+4270	SELECT COUNT ( Round ) FROM table_2_146829_1 WHERE Player = 3
+3969	SELECT Opponent FROM table_2_177775_1 WHERE Opponent = no
+5134	SELECT COUNT ( Attendance ) FROM table_2_185950_1 WHERE Average ( 000 . 6% ( km ) = 25%
+1959	SELECT SUM ( Rank ) FROM table_2_173870_1 WHERE Name =
+2249	SELECT COUNT ( Attendance ) FROM table_1_174575_1 WHERE Opponent = jio
+3603	SELECT Opponent FROM table_2_187768_1 WHERE Opponent = king
+634	SELECT COUNT ( Points ) FROM table_2_126834_1 WHERE Points = v
+5845	SELECT Away team score FROM table_2_10801177_7 WHERE Home team = home
+2340	SELECT COUNT ( Attendance ) FROM table_2_187775_2 WHERE Opponent = 2
+1920	SELECT COUNT ( Attendance ) FROM table_2_187575_2 WHERE Attendance = 15
+2225	SELECT COUNT ( Attendance ) FROM table_2_181835_1 WHERE Date = 3
+2751	SELECT Opponent FROM table_2_171711_1 WHERE Opponent = 1
+2619	SELECT COUNT ( Year ) FROM table_2_189929_1 WHERE Year = jio
+4424	SELECT COUNT ( Year ) FROM table_2_187775_1 WHERE Opponent =
+660	SELECT Opponent FROM table_2_156868_1 WHERE Opponent = j
+1235	SELECT COUNT ( Year ) FROM table_2_181835_1 WHERE Year = jio
+1894	SELECT COUNT ( Year ) FROM table_2_123875_1 WHERE Year = 1
+3137	SELECT Opponent FROM table_2_156829_1 WHERE Opponent = jan
+5684	SELECT COUNT ( Year ) FROM table_2_181829_1 WHERE Date = 2009
+1251	SELECT COUNT ( Attendance ) FROM table_2_186868_1 WHERE Time = 1
+5786	SELECT COUNT ( Attendance ) FROM table_2_17457735_1 WHERE Opponent = las
+1752	SELECT COUNT ( Year ) FROM table_2_18756896_1 WHERE Name = m
+526	SELECT Date FROM table_2_187775_1 WHERE Year = 2009
+3398	SELECT Opponent FROM table_2_187744_1 WHERE Opponent = lallas
+3339	SELECT COUNT ( Rank ) FROM table_2_176868_2 WHERE Rank = 4 AND Rank < 4
+2710	SELECT Date FROM table_2_183875_1 WHERE Points = 1
+4445	SELECT MIN ( Year ) FROM table_2_171735_3 WHERE Record = 4
+3816	SELECT COUNT ( Attendance ) FROM table_2_181865_2 WHERE Record = 3 AND Played > 2
+3406	SELECT Venue FROM table_2_187744_1 WHERE Venue = jbourne
+510	SELECT COUNT ( Total ) FROM table_1_146823_1 WHERE Total = 6
+1694	SELECT Venue FROM table_2_181560_1 WHERE Venue = ji
+3441	SELECT COUNT ( Year ) FROM table_2_182828_1 WHERE Year = 1
+3190	SELECT COUNT ( Round ) FROM table_2_182998_1 WHERE Player = 1
+4784	SELECT COUNT ( Attendance ) FROM table_2_177668_2 WHERE Opponent = 5
+5697	SELECT COUNT ( Attendance ) FROM table_2_177538_1 WHERE Record = 14
+160	SELECT COUNT ( Rank ) FROM table_2_178849_1 WHERE Rank = 0 AND Rank > 3
+4716	SELECT COUNT ( Attendance ) FROM table_2_186868_1 WHERE Opponent =
+3116	SELECT COUNT ( Population ) FROM table_2_146844_1 WHERE Population = miet
+3907	SELECT COUNT ( Year ) FROM table_1_164575_1 WHERE Name = mу
+48	SELECT MAX ( Wins ) FROM table_2_171711_1 WHERE Opponent = 1
+2881	SELECT COUNT ( Total ) FROM table_2_186839_1 WHERE Total =
+2446	SELECT Opponent FROM table_2_187725_1 WHERE Date = 31
+3194	SELECT COUNT ( Wins ) FROM table_2_176849_1 WHERE Points < 0
+3432	SELECT COUNT ( Attendance ) FROM table_2_187955_1 WHERE Date = 1
+4409	SELECT Opponent FROM table_2_187768_1 WHERE Opponent = jas
+4473	SELECT COUNT ( Attendance ) FROM table_2_186829_1 WHERE Position = 5 . 7
+4941	SELECT COUNT ( Attendance ) FROM table_1_123867_1 WHERE Year = 2007
+1806	SELECT COUNT ( Year ) FROM table_2_17998901_1 WHERE Year = 2009
+3999	SELECT Date FROM table_2_187775_1 WHERE Date = 1
+1797	SELECT COUNT ( Laps ) FROM table_2_171744_1 WHERE Name = mw
+2235	SELECT Opponent FROM table_2_181829_3 WHERE Date = 31
+3570	SELECT Opponent FROM table_2_178829_1 WHERE Record = 1 AND Record = 1
+237	SELECT COUNT ( Attendance ) FROM table_1_123823_1 WHERE Date = 2008
+3185	SELECT COUNT ( Year ) FROM table_2_184544_1 WHERE Time = 25 . 12 . 12
+2753	SELECT Opponent FROM table_2_11777777_2 WHERE Opponent = mart
+5479	SELECT COUNT ( Attendance ) FROM table_2_181859_1 WHERE Population ( km ) = 4 . 4 . 4 . 4 . 4 . 4 . 4
+5563	SELECT COUNT ( Attendance ) FROM table_2_184575_1 WHERE Time = 25
+3312	SELECT Opponent FROM table_2_177775_7 WHERE Score = 11
+5932	SELECT COUNT ( Percentage ) FROM table_2_187943_1 WHERE Population = 1
+3828	SELECT MAX ( Rank ) FROM table_2_177780_7 WHERE Score = 76
+1045	SELECT COUNT ( Attendance ) FROM table_2_182908_1 WHERE Opponent = 4
+5097	SELECT MIN ( Laps ) FROM table_2_126829_1 WHERE Player = m
+220	SELECT Venue FROM table_2_187744_1 WHERE Opponent =
+3227	SELECT COUNT ( Year ) FROM table_2_1818052_1 WHERE Year > 3 . 5
+4848	SELECT Venue FROM table_2_187744_1 WHERE Venue = apr
+4623	SELECT COUNT ( Attendance ) FROM table_1_171723_1 WHERE Record = 1
+5431	SELECT COUNT ( Year ) FROM table_2_186868_1 WHERE Venue = jio
+222	SELECT Opponent FROM table_2_177777_1 WHERE Opponent = no
+687	SELECT Opponent FROM table_2_181829_1 WHERE Venue = ji
+5265	SELECT COUNT ( Wins ) FROM table_2_181749_2 WHERE Wins > 2 AND Wins > 2 AND Wins > 3 AND Wins > 1
+3511	SELECT COUNT ( Year ) FROM table_2_123823_1 WHERE Record = 1
+1111	SELECT COUNT ( Attendance ) FROM table_2_172945_1 WHERE Opponent = las
+3782	SELECT Opponent FROM table_2_186834_1 WHERE Venue =
+1488	SELECT COUNT ( Total ) FROM table_2_186848_1 WHERE Total > 1 AND Bronze > 0 AND Bronze > 0
+2131	SELECT Date FROM table_2_187725_1 WHERE Date = 31
+2681	SELECT COUNT ( Attendance ) FROM table_2_182998_1 WHERE Record = 3
+1733	SELECT Opponent FROM table_2_177775_1 WHERE Opponent = no
+3724	SELECT Opponent FROM table_2_183875_3 WHERE Record = 2 - 3 - 3 - 3
+2677	SELECT COUNT ( Round ) FROM table_2_17082688_1 WHERE Record = 3
+2764	SELECT COUNT ( Attendance ) FROM table_2_18758035_1 WHERE Total = 25
+2279	SELECT COUNT ( Points ) FROM table_2_176834_1 WHERE Opponent = AND Points
+3453	SELECT Opponent FROM table_2_18777777_1 WHERE Opponent = se
+2066	SELECT COUNT ( Year ) FROM table_2_186868_1 WHERE Year > 9 AND Year > 0
+670	SELECT MAX ( Attendance ) FROM table_2_181829_1 WHERE Record = 1
+3852	SELECT COUNT ( Attendance ) FROM table_2_18990901_1 WHERE Year = 2009
+158	SELECT COUNT ( Attendance ) FROM table_2_181855_1 WHERE Player = 1
+426	SELECT COUNT ( Year ) FROM table_2_188964_1 WHERE Name = 0 AND Year > 0 AND Rank = 0
+2866	SELECT COUNT ( Year ) FROM table_2_18790101_1 WHERE Year = f
+1836	SELECT Attendance FROM table_2_187775_1 WHERE Date = 31
+5325	SELECT COUNT ( Points ) FROM table_2_14682998_1 WHERE Points = 14
+562	SELECT COUNT ( Round ) FROM table_2_146849_1 WHERE Points > 1 AND Points > 1
+5339	SELECT Away team score FROM table_2_117770_7 WHERE Away team score = 15
+329	SELECT COUNT ( Population ) FROM table_1_162844_1 WHERE Population = 1
+254	SELECT COUNT ( Attendance ) FROM table_2_187775_1 WHERE Opponent = s )
+1633	SELECT COUNT ( Points ) FROM table_2_17706580_1 WHERE Points = 15
+166	SELECT COUNT ( Year ) FROM table_2_187901_1 WHERE Year =
+5089	SELECT AVG ( Attendance ) FROM table_2_177949_1 WHERE Goals < 11 AND Goals = 0 AND Goals < 1
+1248	SELECT COUNT ( Attendance ) FROM table_2_181857_1 WHERE Record = 3
+1954	SELECT COUNT ( Rank ) FROM table_2_173875_1 WHERE Name = 1
+1034	SELECT Location FROM table_2_186868_1 WHERE Location = m AND Country = m AND Country = m
+3879	SELECT COUNT ( Attendance ) FROM table_2_181835_1 WHERE Record = 4 . 2
+5484	SELECT COUNT ( Wins ) FROM table_2_178849_1 WHERE Total = 0
+937	SELECT MAX ( Year ) FROM table_2_174444_1 WHERE Title =
+4620	SELECT COUNT ( Wins ) FROM table_2_176849_1 WHERE Points < 1 AND Points < 0
+1785	SELECT COUNT ( Year ) FROM table_2_14681899_1 WHERE Date = jember
+5730	SELECT COUNT ( Year ) FROM table_2_166835_1 WHERE District = 4
+2099	SELECT Opponent FROM table_2_183838_2 WHERE Date = no
+3021	SELECT Opponent FROM table_2_187744_1 WHERE Opponent = no
+1374	SELECT COUNT ( Attendance ) FROM table_2_187950_1 WHERE Population ( km ) = 25
+4963	SELECT COUNT ( Population ) FROM table_2_184534_1 WHERE Population = 35
+4974	SELECT COUNT ( Round ) FROM table_2_17173523_1 WHERE Player = 1
+1341	SELECT COUNT ( Attendance ) FROM table_2_187544_1 WHERE Time = 25 . 12 . 7
+2548	SELECT Opponent FROM table_2_187735_1 WHERE Position = 1
+4740	SELECT Opponent FROM table_2_181829_3 WHERE Date = 31
+210	SELECT Opponent FROM table_2_127568_7 WHERE Score = 5 - 71 - 71 - 69 - 71 - 69 - 71 - 69 - 71 - 69 - 69 - 71 - 69 - 69 - 69 - 69 - 71 - 69 - 69 - 71 )
+2555	SELECT MAX ( Laps ) FROM table_2_183549_1 WHERE Total > 1 AND Total > 1
+3074	SELECT COUNT ( Attendance ) FROM table_2_120707_1 WHERE Date = 2013
+3249	SELECT COUNT ( Attendance ) FROM table_2_157675_1 WHERE Year ( s ) = 0 )
+5857	SELECT COUNT ( Year ) FROM table_2_18290864_1 WHERE Date = 25
+1624	SELECT COUNT ( Points ) FROM table_2_186829_1 WHERE Points > 25
+622	SELECT COUNT ( Year ) FROM table_2_186834_1 WHERE Name = 4
+4850	SELECT Away team score FROM table_2_117780_7 WHERE Away team score = 15
+5657	SELECT SUM ( Total ) FROM table_2_18295980_1 WHERE Score = 25
+5138	SELECT COUNT ( Attendance ) FROM table_2_187775_1 WHERE Date = 17
+1989	SELECT COUNT ( Game ) FROM table_2_174511_2 WHERE Opponent = 5 AND Player = 2
+834	SELECT Opponent FROM table_2_187767_1 WHERE Date = 2013
+2470	SELECT COUNT ( Attendance ) FROM table_2_181835_1 WHERE Opponent = jember
+5605	SELECT COUNT ( Attendance ) FROM table_2_174511_2 WHERE Opponent = 4
+4918	SELECT Opponent FROM table_2_171829_3 WHERE Date = 3
+4636	SELECT Away team score FROM table_2_11777777_2 WHERE Home team = home
+336	SELECT COUNT ( Points ) FROM table_2_1879058_1 WHERE Points = 1
+2844	SELECT Opponent FROM table_2_187744_1 WHERE Opponent =
+4364	SELECT AVG ( Attendance ) FROM table_2_18457775_2 WHERE Date = 31
+5419	SELECT Country FROM table_2_186835_1 WHERE Player = v
+3035	SELECT COUNT ( Rank ) FROM table_2_181848_2 WHERE Rank > 2 AND Rank > 2
+564	SELECT COUNT ( Wins ) FROM table_2_186849_1 WHERE Points > 0 AND Points > 0
+5304	SELECT COUNT ( Round ) FROM table_2_156829_1 WHERE Player = jio
+2795	SELECT COUNT ( Wins ) FROM table_2_183549_1 WHERE Points > 1 AND Points > 1 AND Wins > 0
+103	SELECT COUNT ( Year ) FROM table_1_161644_1 WHERE Name = 1
+4015	SELECT Away team FROM table_2_11777777_2 WHERE Home team = mart
+864	SELECT Opponent FROM table_2_187775_7 WHERE Date = 7
+3551	SELECT COUNT ( Attendance ) FROM table_1_176868_1 WHERE Opponent = m
+2967	SELECT COUNT ( Attendance ) FROM table_2_183875_1 WHERE Record = 15
+5206	SELECT COUNT ( Attendance ) FROM table_2_186580_1 WHERE Opponent = sto
+3766	SELECT COUNT ( Year ) FROM table_2_187775_1 WHERE Year = 1
+5794	SELECT COUNT ( Attendance ) FROM table_2_181835_1 WHERE Player = 1
+1253	SELECT COUNT ( Year ) FROM table_2_146823_1 WHERE Name = 1
+3567	SELECT COUNT ( Game ) FROM table_2_123868_1 WHERE Player = 5 AND Player = 0
+1442	SELECT Opponent FROM table_2_156818_1 WHERE Opponent = jas
+4274	SELECT AVG ( Attendance ) FROM table_2_176848_1 WHERE Opponent = 18
+5328	SELECT Home team score FROM table_2_12777037_2 WHERE Opponent = sto
+2212	SELECT COUNT ( Round ) FROM table_2_181760_1 WHERE Score = 2 AND Year > 2 - 2 - 2
+5045	SELECT COUNT ( Year ) FROM table_2_121701_1 WHERE Venue = m . - 1 - 1 - 1
+4408	SELECT Home team FROM table_2_12771877_1 WHERE Home team = mart
+3960	SELECT COUNT ( Attendance ) FROM table_2_181865_1 WHERE Player = 1
+3808	SELECT Opponent FROM table_2_181829_1 WHERE Date = 1
+3568	SELECT Away team score FROM table_2_10807777_2 WHERE Home team = home
+4853	SELECT Nationality FROM table_2_184544_1 WHERE Name = � AND Name = �
+2198	SELECT COUNT ( Year ) FROM table_2_186868_1 WHERE Year > 1
+2640	SELECT Opponent FROM table_2_18187726_1 WHERE Date = no
+2011	SELECT COUNT ( Year ) FROM table_2_189943_1 WHERE Year = 2009
+709	SELECT COUNT ( Year ) FROM table_1_126835_1 WHERE Player = m
+2284	SELECT Opponent FROM table_2_177780_7 WHERE Opponent = 7
+3692	SELECT COUNT ( Total ) FROM table_2_186835_1 WHERE Total > 1 AND Total > 1
+1997	SELECT Opponent FROM table_2_18991899_1 WHERE Year = ja
+4668	SELECT Home team score FROM table_2_10809_10 WHERE Away team score = 10 . 11 ( 11 )
+4999	SELECT COUNT ( Year ) FROM table_1_146823_1 WHERE Player = John
+5473	SELECT Opponent FROM table_2_181829_7 WHERE Date = 31
+2755	SELECT Opponent FROM table_2_189929_1 WHERE Opponent = jember
+235	SELECT Opponent FROM table_2_187770_1 WHERE Opponent = lallas
+2662	SELECT Title FROM table_2_187744_1 WHERE Nationality =
+1489	SELECT COUNT ( Attendance ) FROM table_2_187575_1 WHERE Record = 5
+3994	SELECT AVG ( Attendance ) FROM table_2_177549_1 WHERE Points > 10 AND Points > 25 AND Points > 10 AND Points > 25 AND Goals < 10
+1737	SELECT Opponent FROM table_2_17753870_3 WHERE Record = 7 - 7
+2906	SELECT Country FROM table_2_186834_1 WHERE Player = via
+2116	SELECT COUNT ( Year ) FROM table_2_18771899_1 WHERE Year = jio
+2788	SELECT COUNT ( Gold ) FROM table_2_172949_1 WHERE Total > 1 AND Total > 1 AND Rank = 0
+2290	SELECT Opponent FROM table_2_187729_3 WHERE Date = 31
+4883	SELECT COUNT ( Year ) FROM table_1_163823_1 WHERE Title = 1
+2263	SELECT COUNT ( Year ) FROM table_2_186829_1 WHERE Year = 2009 AND Year = 12
+4553	SELECT Score FROM table_2_17686868_5 WHERE Score = 69 - 69 - 68
+83	SELECT COUNT ( Attendance ) FROM table_2_187775_1 WHERE Time = 25
+4232	SELECT Country FROM table_2_186834_1 WHERE Name = m AND Name = m
+1565	SELECT Date FROM table_2_187775_1 WHERE Date = 31
+1977	SELECT COUNT ( Round ) FROM table_2_126829_1 WHERE Player = jua
+5898	SELECT COUNT ( Year ) FROM table_2_126818_1 WHERE Date = 2009 AND Date = 2009
+4548	SELECT COUNT ( Year ) FROM table_2_18777535_1 WHERE Year = no
+1968	SELECT COUNT ( Attendance ) FROM table_2_187775_1 WHERE Date = 13
+3900	SELECT COUNT ( Attendance ) FROM table_2_127575_2 WHERE Attendance = 15
+5291	SELECT Attendance FROM table_2_183875_2 WHERE Date = 3 : 23
+5831	SELECT Opponent FROM table_2_187725_1 WHERE Date = 31
+4020	SELECT COUNT ( Year ) FROM table_2_181701_1 WHERE Year = 2 AND Year = 2
+3671	SELECT Date FROM table_2_187775_1 WHERE Date = 12
+141	SELECT COUNT ( Attendance ) FROM table_2_177549_1 WHERE Opponent = 12
+762	SELECT Opponent FROM table_2_183875_1 WHERE Date = 23
+2410	SELECT Opponent FROM table_2_156835_1 WHERE Opponent = jas
+1815	SELECT Country FROM table_2_183875_1 WHERE Country = east
+5667	SELECT Opponent FROM table_2_183875_1 WHERE Date = 18 - 11 - 22
+1993	SELECT Attendance FROM table_2_18777575_1 WHERE Date = 31
+2508	SELECT AVG ( Year ) FROM table_2_123875_4 WHERE Date = 2013
+5439	SELECT AVG ( Attendance ) FROM table_2_181829_2 WHERE Date = 14 AND Date = 14
+4764	SELECT AVG ( Rank ) FROM table_2_177780_2 WHERE Score = 4
+3023	SELECT AVG ( Attendance ) FROM table_2_183848_1 WHERE Location =
+4534	SELECT COUNT ( Attendance ) FROM table_2_12457767_2 WHERE Opponent = grand AND Opponent = no
+4349	SELECT COUNT ( Rank ) FROM table_2_17233823_2 WHERE Record = 2
+2816	SELECT COUNT ( Attendance ) FROM table_2_186568_1 WHERE Opponent = 5
+3485	SELECT Opponent FROM table_2_181829_1 WHERE Opponent = no
+2709	SELECT COUNT ( Attendance ) FROM table_2_18990801_1 WHERE Year = 2009 AND Year = 2007
+2882	SELECT COUNT ( Year ) FROM table_2_187744_1 WHERE Original Name =
+5757	SELECT COUNT ( Year ) FROM table_2_126868_1 WHERE Venue = jati
+3717	SELECT Opponent FROM table_2_187768_1 WHERE Opponent = jas
+2219	SELECT Opponent FROM table_2_187775_1 WHERE Year = 2009
+2511	SELECT COUNT ( Laps ) FROM table_2_186829_1 WHERE Player = jio
+1888	SELECT COUNT ( Attendance ) FROM table_2_17757575_1 WHERE Attendance = 15
+988	SELECT COUNT ( Attendance ) FROM table_2_187775_1 WHERE Name = r
+5908	SELECT COUNT ( Year ) FROM table_2_183875_1 WHERE Year = 1
+1577	SELECT COUNT ( Points ) FROM table_2_184544_1 WHERE Location = 4
+979	SELECT MAX ( Wins ) FROM table_2_171749_2 WHERE Points = 5 AND Points < 14
+4389	SELECT Score FROM table_2_187775_1 WHERE Name = 4
+5653	SELECT COUNT ( Year ) FROM table_2_17457744_1 WHERE Team Team = gford
+1516	SELECT COUNT ( Year ) FROM table_2_183807_1 WHERE Date = 2009
+1772	SELECT Venue FROM table_2_18777744_1 WHERE Opponent = m
+3966	SELECT COUNT ( Year ) FROM table_2_186568_1 WHERE Date = 2013
+2265	SELECT COUNT ( Rank ) FROM table_2_16172908_1 WHERE Player = via
+5935	SELECT Opponent FROM table_2_176868_7 WHERE Score = 71 - 68
+4829	SELECT AVG ( Attendance ) FROM table_2_17498035_2 WHERE Goals = 5 AND Played < 8
+4297	SELECT Away team score FROM table_2_11777777_2 WHERE Home team =
+4888	SELECT COUNT ( Year ) FROM table_2_14686896_1 WHERE Name = John
+2318	SELECT COUNT ( Year ) FROM table_1_123823_1 WHERE Year = 1
+823	SELECT Home team score FROM table_2_171711_1 WHERE Home team score = grand
+1590	SELECT Venue FROM table_2_11777777_2 WHERE Venue = mart
+2426	SELECT COUNT ( Attendance ) FROM table_2_181825_2 WHERE Year > 12
+1863	SELECT Date FROM table_2_18994534_1 WHERE Year = jember
+2956	SELECT Away team score FROM table_2_108076_10 WHERE Away team score = 11 . 11 . 11 )
+2476	SELECT COUNT ( Year ) FROM table_2_181799_1 WHERE Player = jio
+115	SELECT Away team score FROM table_2_10807777_7 WHERE Home team = home
+5800	SELECT COUNT ( Year ) FROM table_2_126825_1 WHERE Date = 3 AND Date = 3
+1036	SELECT Country FROM table_2_18991899_1 WHERE Name = ti
+2247	SELECT AVG ( Attendance ) FROM table_2_187975_1 WHERE Date = 25
+372	SELECT Opponent FROM table_2_156868_1 WHERE Opponent = jan
+446	SELECT Home team FROM table_2_187744_1 WHERE Home team = state
+4533	SELECT Date FROM table_2_187775_1 WHERE Date = 31
+2393	SELECT COUNT ( Points ) FROM table_2_176835_1 WHERE Points = 1
+5713	SELECT COUNT ( Year ) FROM table_2_156823_1 WHERE Venue = jio
+5225	SELECT COUNT ( Attendance ) FROM table_2_186060_2 WHERE Year = 2 AND Year > 2 AND Year < 15
+4021	SELECT COUNT ( Year ) FROM table_2_117775_1 WHERE Year = 2008
+840	SELECT COUNT ( Year ) FROM table_2_186868_1 WHERE Venue = m
+100	SELECT MAX ( Rank ) FROM table_2_187935_2 WHERE Rank = 13 AND Rank > 14
+4702	SELECT COUNT ( Round ) FROM table_2_156829_1 WHERE Player = jio
+2329	SELECT COUNT ( Points ) FROM table_2_123875_1 WHERE Points = 1
+3845	SELECT SUM ( Population ) FROM table_2_161644_1 WHERE Population = 13
+3921	SELECT Opponent FROM table_2_177575_1 WHERE Opponent = ji
+3608	SELECT COUNT ( Year ) FROM table_2_181829_1 WHERE Year = 2006
+2791	SELECT Opponent FROM table_2_17758038_1 WHERE Score = 23
+1510	SELECT COUNT ( Year ) FROM table_2_183875_1 WHERE Time = 1
+420	SELECT AVG ( Attendance ) FROM table_2_127775_2 WHERE Date = 31
+2068	SELECT COUNT ( Attendance ) FROM table_2_182945_1 WHERE Year = jas
+3913	SELECT Opponent FROM table_2_187744_1 WHERE Opponent = grand
+934	SELECT COUNT ( Rank ) FROM table_2_18296896_1 WHERE Player = m
+535	SELECT Opponent FROM table_2_183834_3 WHERE Team = 4
+3282	SELECT Date FROM table_2_181829_4 WHERE Date = 12
+4028	SELECT Away team score FROM table_2_10807777_2 WHERE Home team score =
+606	SELECT COUNT ( Percentage ) FROM table_2_187954_1 WHERE Population = 000
+4726	SELECT AVG ( Attendance ) FROM table_2_187725_2 WHERE Date = 31 AND Date = 31
+5156	SELECT Away team score FROM table_2_107710_7 WHERE Home team = home
+5623	SELECT COUNT ( Total ) FROM table_2_186868_1 WHERE Total = 1
+439	SELECT COUNT ( Attendance ) FROM table_2_183847_1 WHERE Total = 1
+1242	SELECT Name FROM table_2_187744_1 WHERE Name = k
+1222	SELECT MIN ( Round ) FROM table_2_17177049_2 WHERE Score = 4 AND Score = 4
+4610	SELECT Opponent FROM table_2_187770_7 WHERE Score = 15
+697	SELECT AVG ( Attendance ) FROM table_2_174849_1 WHERE Total > 0 AND Year > 0 AND Total = 0
+2033	SELECT COUNT ( Year ) FROM table_2_186868_1 WHERE Year = 2009 AND Year = 2008
+970	SELECT AVG ( Attendance ) FROM table_2_18794848_1 WHERE Date = 25
+4571	SELECT COUNT ( Laps ) FROM table_1_172424_1 WHERE Rank = 1
+3409	SELECT Opponent FROM table_2_171711_1 WHERE Year = 2007
+1848	SELECT COUNT ( Year ) FROM table_2_18777588_1 WHERE Player = v
+4280	SELECT Opponent FROM table_2_173875_2 WHERE Score = 0 AND Score = 0 AND Score = 0
+3690	SELECT COUNT ( Year ) FROM table_2_171744_1 WHERE Name =
+3626	SELECT MAX ( Rank ) FROM table_2_173875_2 WHERE Score = 3 AND Score < 14
+2435	SELECT COUNT ( Total ) FROM table_2_186834_1 WHERE Total > 1 AND Total = 1
+4821	SELECT COUNT ( Time ) FROM table_2_181835_1 WHERE Population ( km ) = 0 . 1
+3512	SELECT Home team FROM table_2_11777568_1 WHERE Home team = lford
+2501	SELECT Opponent FROM table_2_187775_2 WHERE Date = sebourne
+4658	SELECT Venue FROM table_2_187735_1 WHERE Position =
+5087	SELECT Opponent FROM table_2_187768_1 WHERE Player =
+493	SELECT COUNT ( Year ) FROM table_2_187903_1 WHERE Year > 1 AND Year > 6 AND Bronze = 1
+4994	SELECT COUNT ( Year ) FROM table_2_181825_1 WHERE Year = 2009
+812	SELECT COUNT ( Year ) FROM table_2_174443_1 WHERE Country = v
+1702	SELECT Venue FROM table_2_187744_1 WHERE Country =
+5124	SELECT COUNT ( Year ) FROM table_2_186829_1 WHERE Year < 14 AND Year < 14 AND Year < 14
+2167	SELECT COUNT ( Attendance ) FROM table_2_157680_1 WHERE Away team score = 35
+5410	SELECT MAX ( Laps ) FROM table_2_181829_1 WHERE Total < 14 AND Points < 14
+665	SELECT Opponent FROM table_2_156834_1 WHERE Opponent = lallas
+1286	SELECT Home team FROM table_2_187777_1 WHERE Home team = jaylor
+1964	SELECT Opponent FROM table_2_181829_4 WHERE Date = 31
+1423	SELECT COUNT ( Round ) FROM table_2_186868_1 WHERE Player = laps AND Opponent
+4521	SELECT COUNT ( Year ) FROM table_2_186868_1 WHERE Year < 1
+614	SELECT COUNT ( Attendance ) FROM table_2_189945_1 WHERE Opponent = laps AND Opponent = jio
+1282	SELECT COUNT ( Attendance ) FROM table_2_126868_1 WHERE Opponent = 15
+21	SELECT Opponent FROM table_2_15681899_1 WHERE Country = lallas
+3346	SELECT COUNT ( Year ) FROM table_2_157668_1 WHERE Opponent = jio
+5647	SELECT Name FROM table_2_161644_1 WHERE Name = 1
+4864	SELECT COUNT ( Attendance ) FROM table_2_184539_1 WHERE Population ( 000 ) = m )
+3849	SELECT COUNT ( Year ) FROM table_2_171701_1 WHERE Player = 1
+2385	SELECT Away team score FROM table_2_11777777_2 WHERE Venue = oval
+267	SELECT MIN ( Year ) FROM table_2_17457767_1 WHERE Home team =
+1896	SELECT COUNT ( Attendance ) FROM table_2_181835_1 WHERE Name = 21
+2360	SELECT COUNT ( Year ) FROM table_2_187775_1 WHERE Year = 12
+5791	SELECT Opponent FROM table_2_186835_1 WHERE Opponent = jan
+2316	SELECT Opponent FROM table_2_18187770_1 WHERE Opponent = jember
+5758	SELECT COUNT ( Year ) FROM table_1_12452424_1 WHERE Name = John
+3719	SELECT COUNT ( Attendance ) FROM table_2_186868_1 WHERE Total = 5 . 7 . 7
+583	SELECT Venue FROM table_2_18777744_1 WHERE Opponent = jina
+1912	SELECT COUNT ( Year ) FROM table_2_182929_1 WHERE 2011 < 14 AND Year < 14 AND Year < 14
+5120	SELECT COUNT ( Wins ) FROM table_2_177049_2 WHERE Wins > 0 AND Wins > 0 AND Wins > 0
+4831	SELECT COUNT ( Year ) FROM table_2_18757588_1 WHERE Name = $
+5416	SELECT Attendance FROM table_2_18777538_2 WHERE Date = 31
+1620	SELECT COUNT ( Attendance ) FROM table_2_176065_1 WHERE Points = 1 - 2 - 0
+940	SELECT COUNT ( Year ) FROM table_2_187775_1 WHERE Opponent = no
+4461	SELECT COUNT ( Year ) FROM table_2_184544_1 WHERE Position =
+1841	SELECT Opponent FROM table_2_177948_2 WHERE Score = 0 AND Score = 2 AND Score = 2
+5305	SELECT Opponent FROM table_2_186834_1 WHERE Opponent = lallas
+1220	SELECT Away team FROM table_2_187777_2 WHERE Venue = melbourne
+2176	SELECT COUNT ( Year ) FROM table_1_146835_1 WHERE Name =
+1165	SELECT Opponent FROM table_2_178911_1 WHERE Record = 1
+488	SELECT COUNT ( Round ) FROM table_2_171720_1 WHERE Player = 1
+1359	SELECT Date FROM table_2_187775_1 WHERE Date = 1980
+2364	SELECT MAX ( Attendance ) FROM table_2_181835_1 WHERE Date = 3
+3597	SELECT COUNT ( Attendance ) FROM table_2_186868_1 WHERE Opponent = 5
+1018	SELECT Date FROM table_2_187767_3 WHERE Date = october
+3839	SELECT Opponent FROM table_2_187775_3 WHERE Date = 31 - 31
+5641	SELECT Away team score FROM table_2_187775_7 WHERE Date = jember 11
+2491	SELECT COUNT ( Attendance ) FROM table_2_182547_1 WHERE Population ( 000 ( km ) = 0 . 4 . 4 . 4 . 4 . 4 . 4 . 4 . 4 . 4 . 4 . 4 . 4 . 7 ( 2000
+5732	SELECT Opponent FROM table_2_187729_1 WHERE Date = 31
+3297	SELECT MIN ( Laps ) FROM table_2_181835_1 WHERE Year < 13 AND Year < 18
+2230	SELECT COUNT ( Silver ) FROM table_2_176848_2 WHERE Score = 4 AND Bronze > 6
+4099	SELECT Opponent FROM table_2_177775_7 WHERE Score = 71 - 71 - 71 - 71
+4423	SELECT AVG ( Wins ) FROM table_2_171749_2 WHERE Score = 0 AND Year > 6 AND Score = 0 AND Score = 0
+4045	SELECT Away team score FROM table_2_177680_7 WHERE Score = 71
+3586	SELECT COUNT ( Year ) FROM table_2_181886_1 WHERE Year = 1
+658	SELECT COUNT ( Attendance ) FROM table_2_186568_1 WHERE Year = 1
+4899	SELECT Opponent FROM table_2_183838_2 WHERE Date = 5 . 7 . 7 . 7 - 7
+3539	SELECT MAX ( Rank ) FROM table_2_171744_1 WHERE Rank = 4
+2051	SELECT Opponent FROM table_2_173838_3 WHERE Score = 2 - 2 - 6 - 6 - 2 - 1
+211	SELECT Away team score FROM table_2_11777777_2 WHERE Away team = mart
+748	SELECT COUNT ( Attendance ) FROM table_2_176045_1 WHERE Opponent = lo
+5523	SELECT MIN ( Laps ) FROM table_2_171744_1 WHERE Player = 4
+4712	SELECT COUNT ( Attendance ) FROM table_2_18991899_1 WHERE Year = ji
+4809	SELECT Opponent FROM table_2_17457735_2 WHERE Opponent = oval
+169	SELECT COUNT ( Year ) FROM table_2_18451899_1 WHERE Year = jio
+5507	SELECT Opponent FROM table_2_117777_2 WHERE Score = 4
+2207	SELECT COUNT ( Total ) FROM table_2_187901_1 WHERE Total = 1
+1435	SELECT COUNT ( Round ) FROM table_2_146829_1 WHERE Player = jio
+3854	SELECT Opponent FROM table_2_171744_1 WHERE Opponent = jan
+4251	SELECT SUM ( Rank ) FROM table_1_164747_1 WHERE Name = ò౾� )
+5337	SELECT COUNT ( Attendance ) FROM table_2_181868_1 WHERE Year > 25 AND Year > 25
+1486	SELECT Attendance FROM table_2_187775_1 WHERE Date = 31
+4795	SELECT COUNT ( Attendance ) FROM table_2_176849_2 WHERE Points < 14 AND Points < 14 AND Points < 18
+5200	SELECT COUNT ( Year ) FROM table_2_187575_1 WHERE Time = 1 . 0 . 1
+747	SELECT COUNT ( Year ) FROM table_2_174576_1 WHERE Year = las
+3850	SELECT COUNT ( Year ) FROM table_2_186868_1 WHERE Year < 11 AND Year < 18
+2850	SELECT Attendance FROM table_2_187775_3 WHERE Date = october
+2730	SELECT Attendance FROM table_2_183875_2 WHERE Date = 23 AND Date = 23
+2630	SELECT Away team score FROM table_2_11777777_2 WHERE Venue = oval
+5489	SELECT Date FROM table_2_181825_2 WHERE Date = 12 AND Date = 18
+856	SELECT COUNT ( Points ) FROM table_2_146829_1 WHERE Points = 1
+1317	SELECT MAX ( Laps ) FROM table_2_146829_1 WHERE Position = 5
+2701	SELECT COUNT ( Laps ) FROM table_2_184544_1 WHERE Points = 1
+5682	SELECT COUNT ( Rank ) FROM table_2_177901_1 WHERE Rank = 1
+4058	SELECT Away team score FROM table_2_11776877_2 WHERE Venue = haw
+2361	SELECT COUNT ( Year ) FROM table_2_18681899_1 WHERE Year = jia
+5427	SELECT COUNT ( Attendance ) FROM table_2_187775_1 WHERE Record = 25
+3280	SELECT Opponent FROM table_2_173838_2 WHERE Opponent = 3 AND Record = 3

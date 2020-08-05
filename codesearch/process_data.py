@@ -8,7 +8,9 @@ import json
 import numpy as np
 from more_itertools import chunked
 
-DATA_DIR='../data/codesearch'
+# DATA_DIR='../data/codesearch'
+
+DATA_DIR='F:\AIForProgram\CodeBERT\data'
 
 def format_str(string):
     for char in ['\r\n', '\r', '\n']:
@@ -55,6 +57,7 @@ def preprocess_test_data(language, test_batch_size=1000):
             f.writelines('\n'.join(examples))
 
 if __name__ == '__main__':
-    languages = ['go', 'php', 'python', 'java', 'javascript', 'ruby']
+    # languages = ['go', 'php', 'python', 'java', 'javascript', 'ruby']
+    languages = ['python']
     for lang in languages:
         preprocess_test_data(lang)

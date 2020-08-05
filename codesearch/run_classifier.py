@@ -297,6 +297,9 @@ def load_and_cache_examples(args, task, tokenizer, ttype='train'):
         str(args.max_seq_length),
         str(task)))
 
+    if not os.path.exists(os.path.dirname(cached_features_file)):
+        os.makedirs(os.path.dirname(cached_features_file))
+
     # if os.path.exists(cached_features_file):
     try:
         logger.info("Loading features from cached file %s", cached_features_file)

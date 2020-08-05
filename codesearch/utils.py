@@ -24,7 +24,8 @@ import sys
 from io import open
 from sklearn.metrics import f1_score
 
-csv.field_size_limit(sys.maxsize)
+# csv.field_size_limit(sys.maxsize)
+csv.field_size_limit(min(sys.maxsize, 2147483646))
 logger = logging.getLogger(__name__)
 
 

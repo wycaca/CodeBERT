@@ -66,9 +66,11 @@ def read_examples(filename):
             js=json.loads(line)
             if 'idx' not in js:
                 js['idx']=idx
-            code=' '.join(js['code_tokens']).replace('\n',' ')
+            # code=' '.join(js['code_tokens']).replace('\n',' ')
+            code=' '.join(js['docstring_tokens']).replace('\n',' ')
             code=' '.join(code.strip().split())
-            nl=' '.join(js['docstring_tokens']).replace('\n','')
+            nl=' '.join(js['code_tokens']).replace('\n','')
+            # nl=' '.join(js['docstring_tokens']).replace('\n','')
             nl=' '.join(nl.strip().split())            
             examples.append(
                 Example(
@@ -447,7 +449,7 @@ def main():
                             p.append(text)
                 model.train()
                 predictions=[]
-                with open(os.path.join(args.output_dir,"dev.output"),'w') as f, open(os.path.join(args.output_dir,"dev.gold"),'w') as f1:
+                with open(os.path.join(args.output_dir,"dev.output"),'w', encoding='utf-8') as f, open(os.path.join(args.output_dir,"dev.gold"),'w', encoding='utf-8') as f1:
                     for ref,gold in zip(p,eval_examples):
                         predictions.append(str(gold.idx)+'\t'+ref)
                         f.write(str(gold.idx)+'\t'+ref+'\n')
@@ -503,7 +505,7 @@ def main():
                         p.append(text)
             model.train()
             predictions=[]
-            with open(os.path.join(args.output_dir,"test_{}.output".format(str(idx))),'w') as f, open(os.path.join(args.output_dir,"test_{}.gold".format(str(idx))),'w') as f1:
+            with open(os.path.join(args.output_dir,"test_{}.output".format(str(idx))),'w', encoding='utf-8') as f, open(os.path.join(args.output_dir,"test_{}.gold".format(str(idx))),'w', encoding='utf-8') as f1:
                 for ref,gold in zip(p,eval_examples):
                     predictions.append(str(gold.idx)+'\t'+ref)
                     f.write(str(gold.idx)+'\t'+ref+'\n')
