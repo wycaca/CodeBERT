@@ -422,6 +422,7 @@ def main():
                 else:
                     eval_examples = read_examples(args.dev_filename)
                     eval_examples = random.sample(eval_examples,min(1000,len(eval_examples)))
+                    # eval_examples = random.sample(eval_examples,min(500,len(eval_examples)))
                     eval_features = convert_examples_to_features(eval_examples, tokenizer, args,stage='test')
                     all_source_ids = torch.tensor([f.source_ids for f in eval_features], dtype=torch.long)
                     all_source_mask = torch.tensor([f.source_mask for f in eval_features], dtype=torch.long)    
