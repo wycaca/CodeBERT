@@ -156,14 +156,15 @@ def load_and_cache_examples(args, tokenizer, ttype='test'):
         file_name = args.dev_filename.split('.')[0]
     elif ttype == 'test':
         file_name = args.test_filename.split('.')[0]
-    cached_features_file = os.path.join(args.data_dir, 'cached_{}_{}_{}_{}'.format(
+    data_dir = os.path.dirname(file_name)
+    cached_features_file = os.path.join(data_dir, 'cached_{}_{}_{}_{}'.format(
         ttype,
         file_name,
         list(filter(None, args.model_name_or_path.split('/'))).pop(),
         str(args.max_source_length)))
 
-    if not os.path.exists(os.path.dirname(cached_features_file)):
-        os.makedirs(os.path.dirname(cached_features_file))
+    if not os.path.exists(data_dir):
+        os.makedirs(data_dir)
 
     files = []
     files.append(file_name)
@@ -173,7 +174,7 @@ def load_and_cache_examples(args, tokenizer, ttype='test'):
         logger.info("Loading features from cached file %s", cached_features_file)
         features = torch.load(cached_features_file)
     except:
-        logger.info("Creating features from dataset file at %s", args.data_dir)
+        logger.info("Creating features from dataset file at %s", data_dir)
         features = convert_examples_to_features(examples, tokenizer, args,stage='test')
         if args.local_rank in [-1, 0]:
             logger.info("Saving features into cached file %s", cached_features_file)
