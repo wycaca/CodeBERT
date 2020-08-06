@@ -148,23 +148,23 @@ def convert_examples_to_features(examples, tokenizer, args,stage=None):
         )
     return features
 
-def load_and_cache_examples(args, tokenizer, ttype='test'):
+def load_and_cache_examples(args, tokenizer, file_type='train', ttype='train', is_dev_bleu=False):
     # Load data features from cache or dataset file
-    if ttype == 'train':
+    if file_type == 'train':
         file_name = args.train_filename.split('.')[0]
         file_path = os.path.abspath(args.train_filename)
         data_dir = os.path.dirname(file_path)
-    elif ttype == 'dev':
+    elif file_type == 'dev':
         file_name = args.dev_filename.split('.')[0]
         file_path = os.path.abspath(args.dev_filename)
         data_dir = os.path.dirname(file_path)
-    elif ttype == 'test':
+    elif file_type == 'test':
         file_name = args.test_filename.split('.')[0]
         file_path = os.path.abspath(args.test_filename)
         data_dir = os.path.dirname(file_path)
     
     cached_features_file = os.path.join(data_dir, 'cached_{}_{}_{}_{}'.format(
-        ttype,
+        file_type,
         file_name,
         list(filter(None, args.model_name_or_path.split('/'))).pop(),
         str(args.max_source_length)))
@@ -173,20 +173,28 @@ def load_and_cache_examples(args, tokenizer, ttype='test'):
         os.makedirs(data_dir)
 
     examples = read_examples(file_path)
+    if is_dev_bleu:
+        examples = random.sample(examples,min(1000,len(examples)))
 
     try:
         logger.info("Loading features from cached file %s", cached_features_file)
         features = torch.load(cached_features_file)
     except:
         logger.info("Creating features from dataset file at %s", data_dir)
-        features = convert_examples_to_features(examples, tokenizer, args,stage='test')
+        features = convert_examples_to_features(examples, tokenizer, args,stage=ttype)
         if args.local_rank in [-1, 0]:
             logger.info("Saving features into cached file %s", cached_features_file)
             torch.save(features, cached_features_file)
     # Convert to Tensors and build dataset
     all_source_ids = torch.tensor([f.source_ids for f in features], dtype=torch.long)
     all_source_mask = torch.tensor([f.source_mask for f in features], dtype=torch.long)
-    dataset = TensorDataset(all_source_ids,all_source_mask) 
+
+    if ttype == "test":
+        dataset = TensorDataset(all_source_ids,all_source_mask)
+    else:
+        all_target_ids = torch.tensor([f.target_ids for f in features], dtype=torch.long)
+        all_target_mask = torch.tensor([f.target_mask for f in features], dtype=torch.long)    
+        dataset = TensorDataset(all_source_ids,all_source_mask,all_target_ids,all_target_mask)
     return examples, dataset
 
 def set_seed(args):
@@ -332,7 +340,7 @@ def main():
         # all_target_mask = torch.tensor([f.target_mask for f in train_features], dtype=torch.long)    
         # train_data = TensorDataset(all_source_ids,all_source_mask,all_target_ids,all_target_mask)
         
-        train_examples, train_data = load_and_cache_examples(args, tokenizer, 'train')
+        train_examples, train_data = load_and_cache_examples(args, tokenizer, 'train', 'train')
 
         if args.local_rank == -1:
             train_sampler = RandomSampler(train_data)
@@ -408,7 +416,7 @@ def main():
                     # all_target_mask = torch.tensor([f.target_mask for f in eval_features], dtype=torch.long)      
                     # eval_data = TensorDataset(all_source_ids,all_source_mask,all_target_ids,all_target_mask)   
 
-                    eval_examples, eval_data = load_and_cache_examples(args, tokenizer, 'dev')
+                    eval_examples, eval_data = load_and_cache_examples(args, tokenizer, 'dev', 'dev')
 
                     dev_dataset['dev_loss']=eval_examples,eval_data
 
@@ -472,7 +480,7 @@ def main():
                     # all_source_mask = torch.tensor([f.source_mask for f in eval_features], dtype=torch.long)    
                     # eval_data = TensorDataset(all_source_ids,all_source_mask)   
 
-                    eval_examples, eval_data = load_and_cache_examples(args, tokenizer, 'test')
+                    eval_examples, eval_data = load_and_cache_examples(args, tokenizer, 'dev', 'test', True)
 
                     dev_dataset['dev_bleu']=eval_examples,eval_data
                 

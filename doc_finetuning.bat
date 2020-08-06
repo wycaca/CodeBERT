@@ -12,9 +12,9 @@ set output_dir=model/%lang%
 set train_file=%data_dir%/%lang%/train.jsonl
 set dev_file=%data_dir%/%lang%/valid.jsonl
 ::400 for ruby, 600 for javascript, 1000 for others
-set eval_steps=600
+set eval_steps=1000
 ::20000 for ruby, 30000 for javascript, 50000 for others
-set train_steps=30000
+set train_steps=50000
 ::Roberta: roberta-base
 set pretrained_model=microsoft/codebert-base
 
