@@ -132,12 +132,17 @@ def load_and_cache_examples(args, tokenizer, ttype='test'):
     # Load data features from cache or dataset file
     if ttype == 'train':
         file_name = args.train_filename.split('.')[0]
+        file_path = os.path.abspath(args.train_filename)
+        data_dir = os.path.dirname(file_path)
     elif ttype == 'dev':
         file_name = args.dev_filename.split('.')[0]
+        file_path = os.path.abspath(args.dev_filename)
+        data_dir = os.path.dirname(file_path)
     elif ttype == 'test':
         file_name = args.test_filename.split('.')[0]
-
-    data_dir = os.path.dirname(file_name)
+        file_path = os.path.abspath(args.test_filename)
+        data_dir = os.path.dirname(file_path)
+    
     cached_features_file = os.path.join(data_dir, 'cached_{}_{}_{}_{}'.format(
         ttype,
         file_name,
@@ -147,9 +152,7 @@ def load_and_cache_examples(args, tokenizer, ttype='test'):
     if not os.path.exists(data_dir):
         os.makedirs(data_dir)
 
-    files = []
-    files.append(file_name)
-    examples = read_examples(files[0])
+    examples = read_examples(file_path)
 
     try:
         logger.info("Loading features from cached file %s", cached_features_file)
