@@ -148,7 +148,41 @@ def convert_examples_to_features(examples, tokenizer, args,stage=None):
         )
     return features
 
+def load_and_cache_examples(args, tokenizer, ttype='test'):
+    # Load data features from cache or dataset file
+    if ttype == 'train':
+        file_name = args.train_filename.split('.')[0]
+    elif ttype == 'dev':
+        file_name = args.dev_filename.split('.')[0]
+    elif ttype == 'test':
+        file_name = args.test_filename.split('.')[0]
+    cached_features_file = os.path.join(args.data_dir, 'cached_{}_{}_{}_{}'.format(
+        ttype,
+        file_name,
+        list(filter(None, args.model_name_or_path.split('/'))).pop(),
+        str(args.max_source_length)))
 
+    if not os.path.exists(os.path.dirname(cached_features_file)):
+        os.makedirs(os.path.dirname(cached_features_file))
+
+    files = []
+    files.append(file_name)
+    examples = read_examples(files[0])
+
+    try:
+        logger.info("Loading features from cached file %s", cached_features_file)
+        features = torch.load(cached_features_file)
+    except:
+        logger.info("Creating features from dataset file at %s", args.data_dir)
+        features = convert_examples_to_features(examples, tokenizer, args,stage='test')
+        if args.local_rank in [-1, 0]:
+            logger.info("Saving features into cached file %s", cached_features_file)
+            torch.save(features, cached_features_file)
+    # Convert to Tensors and build dataset
+    all_source_ids = torch.tensor([f.source_ids for f in features], dtype=torch.long)
+    all_source_mask = torch.tensor([f.source_mask for f in features], dtype=torch.long)
+    dataset = TensorDataset(all_source_ids,all_source_mask) 
+    return examples, dataset
 
 def set_seed(args):
     """set random seed."""
@@ -285,14 +319,16 @@ def main():
 
     if args.do_train:
         # Prepare training data loader
-        train_examples = read_examples(args.train_filename)
-        train_features = convert_examples_to_features(train_examples, tokenizer,args,stage='train')
-        all_source_ids = torch.tensor([f.source_ids for f in train_features], dtype=torch.long)
-        all_source_mask = torch.tensor([f.source_mask for f in train_features], dtype=torch.long)
-        all_target_ids = torch.tensor([f.target_ids for f in train_features], dtype=torch.long)
-        all_target_mask = torch.tensor([f.target_mask for f in train_features], dtype=torch.long)    
-        train_data = TensorDataset(all_source_ids,all_source_mask,all_target_ids,all_target_mask)
+        # train_examples = read_examples(args.train_filename)
+        # train_features = convert_examples_to_features(train_examples, tokenizer,args,stage='train')
+        # all_source_ids = torch.tensor([f.source_ids for f in train_features], dtype=torch.long)
+        # all_source_mask = torch.tensor([f.source_mask for f in train_features], dtype=torch.long)
+        # all_target_ids = torch.tensor([f.target_ids for f in train_features], dtype=torch.long)
+        # all_target_mask = torch.tensor([f.target_mask for f in train_features], dtype=torch.long)    
+        # train_data = TensorDataset(all_source_ids,all_source_mask,all_target_ids,all_target_mask)
         
+        train_examples, train_data = load_and_cache_examples(args, tokenizer, 'train')
+
         if args.local_rank == -1:
             train_sampler = RandomSampler(train_data)
         else:
@@ -359,14 +395,18 @@ def main():
                 if 'dev_loss' in dev_dataset:
                     eval_examples,eval_data=dev_dataset['dev_loss']
                 else:
-                    eval_examples = read_examples(args.dev_filename)
-                    eval_features = convert_examples_to_features(eval_examples, tokenizer, args,stage='dev')
-                    all_source_ids = torch.tensor([f.source_ids for f in eval_features], dtype=torch.long)
-                    all_source_mask = torch.tensor([f.source_mask for f in eval_features], dtype=torch.long)
-                    all_target_ids = torch.tensor([f.target_ids for f in eval_features], dtype=torch.long)
-                    all_target_mask = torch.tensor([f.target_mask for f in eval_features], dtype=torch.long)      
-                    eval_data = TensorDataset(all_source_ids,all_source_mask,all_target_ids,all_target_mask)   
+                    # eval_examples = read_examples(args.dev_filename)
+                    # eval_features = convert_examples_to_features(eval_examples, tokenizer, args,stage='dev')
+                    # all_source_ids = torch.tensor([f.source_ids for f in eval_features], dtype=torch.long)
+                    # all_source_mask = torch.tensor([f.source_mask for f in eval_features], dtype=torch.long)
+                    # all_target_ids = torch.tensor([f.target_ids for f in eval_features], dtype=torch.long)
+                    # all_target_mask = torch.tensor([f.target_mask for f in eval_features], dtype=torch.long)      
+                    # eval_data = TensorDataset(all_source_ids,all_source_mask,all_target_ids,all_target_mask)   
+
+                    eval_examples, eval_data = load_and_cache_examples(args, tokenizer, 'dev')
+
                     dev_dataset['dev_loss']=eval_examples,eval_data
+
                 eval_sampler = SequentialSampler(eval_data)
                 eval_dataloader = DataLoader(eval_data, sampler=eval_sampler, batch_size=args.eval_batch_size)
                 
@@ -420,16 +460,16 @@ def main():
                 if 'dev_bleu' in dev_dataset:
                     eval_examples,eval_data=dev_dataset['dev_bleu']
                 else:
-                    eval_examples = read_examples(args.dev_filename)
-                    eval_examples = random.sample(eval_examples,min(1000,len(eval_examples)))
-                    # eval_examples = random.sample(eval_examples,min(500,len(eval_examples)))
-                    eval_features = convert_examples_to_features(eval_examples, tokenizer, args,stage='test')
-                    all_source_ids = torch.tensor([f.source_ids for f in eval_features], dtype=torch.long)
-                    all_source_mask = torch.tensor([f.source_mask for f in eval_features], dtype=torch.long)    
-                    eval_data = TensorDataset(all_source_ids,all_source_mask)   
+                    # eval_examples = read_examples(args.dev_filename)
+                    # eval_examples = random.sample(eval_examples,min(1000,len(eval_examples)))
+                    # eval_features = convert_examples_to_features(eval_examples, tokenizer, args,stage='test')
+                    # all_source_ids = torch.tensor([f.source_ids for f in eval_features], dtype=torch.long)
+                    # all_source_mask = torch.tensor([f.source_mask for f in eval_features], dtype=torch.long)    
+                    # eval_data = TensorDataset(all_source_ids,all_source_mask)   
+
+                    eval_examples, eval_data = load_and_cache_examples(args, tokenizer, 'test')
+
                     dev_dataset['dev_bleu']=eval_examples,eval_data
-
-
                 
                 eval_sampler = SequentialSampler(eval_data)
                 eval_dataloader = DataLoader(eval_data, sampler=eval_sampler, batch_size=args.eval_batch_size)
@@ -480,12 +520,13 @@ def main():
             files.append(args.test_filename)
         for idx,file in enumerate(files):   
             logger.info("Test file: {}".format(file))
-            eval_examples = read_examples(file)
-            eval_features = convert_examples_to_features(eval_examples, tokenizer, args,stage='test')
-            all_source_ids = torch.tensor([f.source_ids for f in eval_features], dtype=torch.long)
-            all_source_mask = torch.tensor([f.source_mask for f in eval_features], dtype=torch.long)    
-            eval_data = TensorDataset(all_source_ids,all_source_mask)   
-
+            # eval_examples = read_examples(file)
+            # eval_features = convert_examples_to_features(eval_examples, tokenizer, args,stage='test')
+            # all_source_ids = torch.tensor([f.source_ids for f in eval_features], dtype=torch.long)
+            # all_source_mask = torch.tensor([f.source_mask for f in eval_features], dtype=torch.long)    
+            # eval_data = TensorDataset(all_source_ids,all_source_mask)
+            
+            eval_examples, eval_data = load_and_cache_examples(args, tokenizer, 'test')
             # Calculate bleu
             eval_sampler = SequentialSampler(eval_data)
             eval_dataloader = DataLoader(eval_data, sampler=eval_sampler, batch_size=args.eval_batch_size)
