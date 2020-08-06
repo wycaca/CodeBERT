@@ -319,12 +319,12 @@ def main():
                     t=t[:t.index(0)]
                 text = tokenizer.decode(t,clean_up_tokenization_spaces=False)
                 p.append(text)
-        predictions=[]
-        with open(os.path.join(args.output_dir,"test_{}.output".format(str(1))),'w+', encoding='utf-8') as f, open(os.path.join(args.output_dir,"test_{}.gold".format(str(1))),'w+', encoding='utf-8') as f1:
-            for ref,gold in zip(p,eval_examples):
-                predictions.append(ref)
-                f.write(ref+'\n')
-                f1.write(gold.target+'\n')     
+    predictions=[]
+    with open(os.path.join(args.output_dir,"test_{}.output".format(str(1))),'w', encoding='utf-8') as f, open(os.path.join(args.output_dir,"test_{}.gold".format(str(1))),'w', encoding='utf-8') as f1:
+        for ref,gold in zip(p,eval_examples):
+            predictions.append(ref)
+            f.write(ref+'\n')
+            f1.write(gold.target+'\n')     
 
 if __name__ == "__main__":
     main()
