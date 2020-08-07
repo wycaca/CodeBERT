@@ -1,0 +1,467 @@
+                                                                                                                                                      | 0/5 [00:02<?, ?it/s] 
+PS F:\AIForProgram\CodeBERT> .\finetuning.bat
+2020-08-01 03:29:50.934307: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_101.dll
+08/01/2020 03:29:54 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+08/01/2020 03:29:55 - INFO - transformers.configuration_utils -   loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/roberta-base-config.json from cache at C:\Users\Administrator\.cache\torch\transformers\e1a2a406b5a05063c31f4dfdee7608986ba7c6393f7f79db5e69dcd197208534.117c81977c5979de8c088352e74ec6e70f5c66096c28b61d3c50101609b39690
+08/01/2020 03:29:55 - INFO - transformers.configuration_utils -   Model config RobertaConfig {
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "codesearch",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 50265
+}
+
+08/01/2020 03:29:56 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/roberta-base-vocab.json from cache at C:\Users\Administrator\.cache\torch\transformers\d0c5776499adc1ded22493fae699da0971c1ee4c2587111707a4d177d20257a2.ef00af9e673c7160b4d41cfda1f48c5f4cba57d5142754525572a846a1ab1b9b
+08/01/2020 03:29:56 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/roberta-base-merges.txt from cache at C:\Users\Administrator\.cache\torch\transformers\b35e7cd126cd4229a746b5d5c29a749e8e84438b14bcdb575950584fe33207e8.70bec105b4158ed9a1747fea67a43f5dee97855c64d62b6ec3742f4cfdb5feda
+08/01/2020 03:29:56 - INFO - transformers.modeling_utils -   loading weights file ../pretrained_models/pytorch_model.bin
+08/01/2020 03:30:00 - INFO - transformers.modeling_utils -   Weights of RobertaForSequenceClassification not initialized from pretrained model: ['classifier.dense.weight', 'classifier.dense.bias', 'classifier.out_proj.weight', 'classifier.out_proj.bias']
+08/01/2020 03:30:00 - INFO - transformers.modeling_utils -   Weights from pretrained model not used in RobertaForSequenceClassification: ['classifier.weight', 'classifier.bias']
+08/01/2020 03:30:02 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, cache_dir='', config_name='roberta-base', data_dir='../data/train_valid/sql', dev_file='valid.txt', device=device(type='cuda'), do_eval=True, do_lower_case=False, do_predict=False, do_train=True, eval_all_checkpoints=True, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=1, learning_rate=5e-06, local_rank=-1, logging_steps=50, max_grad_norm=1.0, max_seq_length=400, max_steps=-1, model_name_or_path='../pretrained_models/pytorch_model.bin', model_type='roberta', n_gpu=1, no_cuda=False, num_train_epochs=5.0, output_dir='./models/sql', output_mode='classification', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=8, per_gpu_train_batch_size=8, pred_model_dir=None, save_steps=50, seed=42, server_ip='', server_port='', start_epoch=0, start_step=0, task_name='codesearch', test_file='shared_task_dev_top10_concat.tsv', test_result_dir='test_results.tsv', tokenizer_name='', train_file='train.txt', warmup_steps=0, weight_decay=0.0)
+08/01/2020 03:30:02 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_train_train_pytorch_model.bin_400_codesearch
+08/01/2020 03:30:03 - INFO - __main__ -   ***** Running training *****
+08/01/2020 03:30:03 - INFO - __main__ -     Num examples = 6779
+08/01/2020 03:30:03 - INFO - __main__ -     Num Epochs = 5
+08/01/2020 03:30:03 - INFO - __main__ -     Instantaneous batch size per GPU = 8
+08/01/2020 03:30:03 - INFO - __main__ -     Total train batch size (w. parallel, distributed & accumulation) = 8
+08/01/2020 03:30:03 - INFO - __main__ -     Gradient Accumulation steps = 1
+08/01/2020 03:30:03 - INFO - __main__ -     Total optimization steps = 4240
+Epoch:   0%|                                                                                                                                                                                                 | 0/5 [00:00<?, ?it/sD 
+:\tools\Python37\lib\site-packages\torch\optim\lr_scheduler.py:224: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+08/01/2020 03:40:12 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_dev_valid_pytorch_model.bin_400_codesearch
+08/01/2020 03:40:12 - INFO - __main__ -   Creating features from dataset file at ../data/train_valid/sql
+08/01/2020 03:40:12 - INFO - utils -   LOOKING AT ../data/train_valid/sql\valid.txt
+08/01/2020 03:40:12 - INFO - utils -   Writing example 0 of 205
+08/01/2020 03:40:12 - INFO - utils -   *** Example ***
+08/01/2020 03:40:12 - INFO - utils -   guid: dev-0
+08/01/2020 03:40:12 - INFO - utils -   tokens: <s> Can ?under gr ads ?take ?number 0 ?? </s> SELECT ?D IST IN CT ?COUR SE alias 0 . AD VIS ORY _ RE QUIRE MENT ?, ?COUR SE alias 0 . EN FOR C ED _ RE QUIRE MENT ?, ?COUR SE alias 0 . NAME ?FROM ?COUR SE ?AS ?COUR SE alias 0 ?WHERE ?COUR SE alias 0 . DE PART MENT ?= ?" dep artment 0 " ?AND ?COUR SE alias 0 . NUM BER ?= ?number 0 ?; </s>
+08/01/2020 03:40:12 - INFO - utils -   input_ids: 0 10836 223 6504 7842 185 346 288 17487 2 49179 211 11595 2444 7164 45247 3388 47910 288 4 2606 23111 26116 1215 4629 47091 12613 2156 45247 3388 47910 288 4 2796 27201 347 1691 
+1215 4629 47091 12613 2156 45247 3388 47910 288 4 48307 11974 45247 3388 6015 45247 3388 47910 288 29919 45247 3388 47910 288 4 10089 41623 12613 5457 22 17272 27699 288 113 4248 45247 3388 47910 288 4 46758 11126 5457 346 288 25606 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+08/01/2020 03:40:12 - INFO - utils -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+08/01/2020 03:40:12 - INFO - utils -   segment_ids: 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+08/01/2020 03:40:13 - INFO - utils -   label: 1 (id = 1)
+08/01/2020 03:40:13 - INFO - utils -   *** Example ***
+08/01/2020 03:40:13 - INFO - utils -   guid: dev-1
+08/01/2020 03:40:13 - INFO - utils -   tokens: <s> How ?big ?is ?number 0 ?? </s> SELECT ?D IST IN CT ?COUR SE alias 0 . DE PART MENT ?, ?COUR SE alias 0 . NAME ?, ?COUR SE alias 0 . NUM BER ?, ?PROGRAM _ C OUR SE alias 0 . WORK LOAD ?, ?PROGRAM _ C OUR SE alias 0 . WORK LOAD ?FROM ?COUR SE ?AS ?COUR SE alias 0 ?, ?PROGRAM _ C OUR SE ?AS ?PROGRAM _ C OUR SE alias 0 ?WHERE ?PROGRAM _ C OUR SE alias 0 . C ATE G ORY ?LIKE ?"% requ irement 0 %" ?AND ?PROGRAM _ C OUR SE alias 0 . C OUR SE _ ID ?= ?COUR SE alias 0 . C OUR SE _ ID ?AND ?PROGRAM _ C OUR SE alias 0 . WORK LOAD ?= ?( ?SELECT ?MIN ( ?PROGRAM _ C OUR SE alias 1 . WORK LOAD ?) ?FROM ?PROGRAM _ C OUR SE ?AS ?PROGRAM _ C OUR SE alias 1 ?WHERE ?PROGRAM _ C OUR SE alias 1 . C ATE G ORY ?LIKE ?"% requ irement 0 %" ?) ?; </s>
+08/01/2020 03:40:13 - INFO - utils -   input_ids: 0 6179 380 16 346 288 17487 2 49179 211 11595 2444 7164 45247 3388 47910 288 4 10089 41623 12613 2156 45247 3388 47910 288 4 48307 2156 45247 3388 47910 288 4 46758 11126 2156 44101 1215 347 14257 3388 47910 288 4 45213 27822 2156 44101 1215 347 14257 3388 47910 288 4 45213 27822 11974 45247 3388 6015 45247 3388 47910 288 2156 44101 1215 347 14257 3388 6015 44101 1215 347 14257 3388 47910 288 29919 44101 1215 347 14257 3388 47910 288 4 347 8625 534 26116 38227 49608 42172 34074 288 47460 4248 44101 1215 347 14257 3388 47910 288 4 347 14257 3388 1215 2688 5457 45247 3388 47910 288 4 347 14257 3388 1215 2688 4248 44101 1215 347 
+14257 3388 47910 288 4 45213 27822 5457 36 44664 18335 1640 44101 1215 347 14257 3388 47910 134 4 45213 27822 4839 11974 44101 1215 347 14257 3388 6015 44101 1215 347 14257 3388 47910 134 29919 44101 1215 347 14257 3388 47910 134 4 347 8625 534 26116 38227 49608 42172 34074 288 47460 4839 25606 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+08/01/2020 03:40:13 - INFO - utils -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+08/01/2020 03:40:13 - INFO - utils -   segment_ids: 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+08/01/2020 03:40:14 - INFO - utils -   label: 0 (id = 0)
+08/01/2020 03:40:14 - INFO - utils -   *** Example ***
+08/01/2020 03:40:14 - INFO - utils -   guid: dev-2
+08/01/2020 03:40:14 - INFO - utils -   tokens: <s> Which ?upper - level ?classes ?are ?credit 0 ?credits ?? </s> SELECT ?C OUNT ( ?* ?) ?> ?0 ?FROM ?COUR SE ?AS ?COUR SE alias 0 ?, ?COUR SE ?AS ?COUR SE alias 1 ?, ?COUR SE _ OFF ER ING ?AS ?COUR SE _ OFF ER ING alias 0 ?, ?COUR SE _ OFF ER ING ?AS ?COUR SE _ OFF ER ING alias 1 , ?COUR SE _ PR ERE QU IS ITE ?AS ?COUR SE _ PR ERE QU IS ITE alias 0 ?WHERE ?COUR SE _ OFF ER ING alias 1 . S EM ES TER ?= ?COUR SE _ OFF ER ING alias 0 . S EM ES TER ?AND ?COUR SE alias 0 . C OUR SE _ ID ?= ?COUR SE _ OFF ER ING alias 0 . C OUR SE _ ID ?AND ?COUR SE alias 0 . DE PART MENT ?= ?" dep artment 0 " ?AND ?COUR SE alias 0 . NUM BER ?= ?number 0 ?AND ?COUR SE alias 1 . C OUR SE _ ID ?= ?COUR SE _ OFF ER ING alias 1 . C OUR SE _ ID ?AND ?COUR SE alias 1 . DE PART MENT ?= ?" dep artment 0 " ?AND ?COUR SE alias 1 . NUM BER ?= ?number 1 ?AND ?( ?NOT ?( ?( ?COUR SE alias 1 . C OUR SE _ ID ?= ?COUR SE _ PR ERE QU IS ITE alias 0 . C OUR SE _ ID ?AND ?COUR SE alias 0 . C OUR SE _ ID ?= ?COUR SE _ PR ERE QU IS ITE alias 0 . PRE _ C OUR SE _ ID ?) ?OR ?( ?COUR SE alias 1 . C OUR SE _ ID ?= ?COUR SE 
+_ PR ERE QU IS ITE alias 0 . PRE _ C OUR SE _ ID ?AND ?COUR SE alias 0 . C OUR SE _ ID ?= ?COUR SE _ PR ERE QU IS ITE alias 0 . C OUR SE _ ID ?) ?) ?) ?; </s>
+08/01/2020 03:40:14 - INFO - utils -   input_ids: 0 32251 2853 12 4483 4050 32 1361 288 7751 17487 2 49179 230 34494 1640 1009 4839 8061 321 11974 45247 3388 6015 45247 3388 47910 288 2156 45247 3388 6015 45247 3388 47910 134 2156 45247 3388 1215 32794 2076 1862 6015 45247 3388 1215 32794 2076 1862 47910 288 2156 45247 3388 1215 32794 2076 1862 6015 45247 3388 1215 32794 2076 1862 47910 134 6 45247 3388 1215 4454 23142 15513 1729 12946 6015 45247 3388 
+1215 4454 23142 15513 1729 12946 47910 288 29919 45247 3388 1215 32794 2076 1862 47910 134 4 104 5330 1723 7831 5457 45247 3388 1215 32794 2076 1862 47910 288 4 104 5330 1723 7831 4248 45247 3388 47910 288 4 347 14257 3388 1215 
+2688 5457 45247 3388 1215 32794 2076 1862 47910 288 4 347 14257 3388 1215 2688 4248 45247 3388 47910 288 4 10089 41623 12613 5457 22 17272 27699 288 113 4248 45247 3388 47910 288 4 46758 11126 5457 346 288 4248 45247 3388 47910 
+134 4 347 14257 3388 1215 2688 5457 45247 3388 1215 32794 2076 1862 47910 134 4 347 14257 3388 1215 2688 4248 45247 3388 47910 134 4 10089 41623 12613 5457 22 17272 27699 288 113 4248 45247 3388 47910 134 4 46758 11126 5457 346 
+134 4248 36 8127 36 36 45247 3388 47910 134 4 347 14257 3388 1215 2688 5457 45247 3388 1215 4454 23142 15513 1729 12946 47910 288 4 347 14257 3388 1215 2688 4248 45247 3388 47910 288 4 347 14257 3388 1215 2688 5457 45247 3388 1215 4454 23142 15513 1729 12946 47910 288 4 43869 1215 347 14257 3388 1215 2688 4839 6532 36 45247 3388 47910 134 4 347 14257 3388 1215 2688 5457 45247 3388 1215 4454 23142 15513 1729 12946 47910 288 4 43869 1215 347 14257 3388 1215 2688 4248 45247 3388 47910 288 4 347 14257 3388 1215 2688 5457 45247 3388 1215 4454 23142 15513 1729 12946 47910 288 4 347 14257 3388 1215 2688 4839 4839 4839 25606 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+08/01/2020 03:40:14 - INFO - utils -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+08/01/2020 03:40:14 - INFO - utils -   segment_ids: 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+08/01/2020 03:40:14 - INFO - utils -   label: 0 (id = 0)
+08/01/2020 03:40:14 - INFO - utils -   *** Example ***
+08/01/2020 03:40:15 - INFO - utils -   guid: dev-3
+08/01/2020 03:40:15 - INFO - utils -   tokens: <s> When ?Prof . ?instructor 0 ?teaches ?number 0 ?are ?there ?classes ?on ?Friday ?? </s> SELECT ?D IST IN CT ?COUR SE alias 0 . DE PART MENT ?, ?COUR SE alias 0 . NAME ?, ?COUR SE alias 0 . NUM BER ?, ?PROGRAM _ C OUR SE alias 0 . WORK LOAD ?FROM ?COUR SE ?AS ?COUR SE alias 0 ?IN NER ?JO IN ?ARE A ?AS ?ARE A alias 0 ?ON ?COUR SE alias 0 . C OUR SE _ ID ?= ?ARE A alias 0 . C OUR SE _ ID ?IN NER ?JO IN ?PROGRAM _ C OUR SE ?AS ?PROGRAM _ C OUR SE alias 0 ?ON ?PROGRAM _ C OUR SE alias 0 . C OUR SE _ ID ?= ?COUR SE alias 0 . C OUR SE _ ID ?WHERE ?ARE A alias 0 . ARE A ?LIKE ?"% area 0 %" ?AND ?PROGRAM _ C OUR SE alias 0 . WORK LOAD 
+?< ?( ?SELECT ?MIN ( ?PROGRAM _ C OUR SE alias 1 . WORK LOAD ?) ?FROM ?COUR SE ?AS ?COUR SE alias 1 ?IN NER ?JO IN ?PROGRAM _ C OUR SE ?AS ?PROGRAM _ C OUR SE alias 1 ?ON ?PROGRAM _ C OUR SE alias 1 . C OUR SE _ ID ?= ?COUR SE alias 1 . C OUR SE _ ID ?WHERE ?COUR SE alias 1 . DE PART MENT ?= ?" dep artment 0 " ?AND ?COUR SE alias 1 . NUM BER ?= ?number 0 ?) ?ORDER ?BY ?PROGRAM _ C OUR SE alias 0 . WORK LOAD ?; </s>
+08/01/2020 03:40:15 - INFO - utils -   input_ids: 0 1779 6853 4 14772 288 13419 346 288 32 89 4050 15 273 17487 2 49179 211 11595 2444 7164 45247 3388 47910 288 4 10089 41623 12613 2156 45247 3388 47910 288 4 48307 2156 45247 3388 47910 288 4 46758 11126 2156 44101 1215 347 14257 3388 47910 288 4 45213 27822 11974 45247 3388 6015 45247 3388 47910 288 2808 20196 30314 2444 10616 250 6015 10616 250 47910 288 5121 45247 3388 47910 288 4 347 14257 3388 1215 2688 5457 10616 250 47910 288 4 347 14257 3388 1215 2688 2808 20196 30314 2444 44101 1215 347 14257 3388 6015 44101 1215 347 14257 3388 47910 288 5121 44101 1215 347 14257 3388 47910 288 4 347 14257 3388 1215 2688 5457 45247 3388 47910 288 4 347 14257 3388 1215 2688 29919 10616 250 47910 288 4 7982 250 38227 49608 7907 288 47460 4248 44101 1215 347 14257 3388 47910 288 4 45213 27822 28696 36 44664 18335 1640 44101 1215 347 14257 3388 47910 134 4 45213 27822 4839 11974 45247 3388 6015 45247 3388 47910 134 2808 20196 30314 2444 44101 1215 347 14257 3388 6015 44101 1215 347 14257 3388 47910 134 5121 44101 1215 347 14257 3388 47910 134 4 347 14257 3388 1215 2688 5457 45247 3388 47910 134 4 347 14257 3388 1215 2688 29919 45247 3388 47910 134 4 10089 41623 12613 5457 22 17272 27699 288 113 4248 45247 3388 47910 134 4 46758 11126 5457 346 288 4839 43772 10786 44101 1215 347 14257 3388 47910 288 4 45213 27822 25606 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+08/01/2020 03:40:15 - INFO - utils -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+08/01/2020 03:40:15 - INFO - utils -   segment_ids: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+08/01/2020 03:40:15 - INFO - utils -   label: 0 (id = 0)
+08/01/2020 03:40:15 - INFO - utils -   *** Example ***
+08/01/2020 03:40:15 - INFO - utils -   guid: dev-4
+08/01/2020 03:40:15 - INFO - utils -   tokens: <s> Who ?usually ?teaches ?department 0 ?number 0 ?? </s> SELECT ?D IST IN CT ?COUR SE alias 0 . DE PART MENT ?, ?COUR SE alias 0 . NAME ?, ?COUR SE alias 0 . NUM BER ?, ?SEM ES TER alias 0 . S EM ES TER ?FROM ?( ?SELECT ?STUD ENT _ REC ORD alias 0 . C OUR SE _ ID ?FROM ?STUD ENT _ REC ORD ?AS ?STUD ENT _ REC ORD alias 0 ?WHERE ?STUD ENT _ REC ORD alias 0 . EAR N _ CR EDIT ?= ?" Y " ?AND ?STUD ENT _ REC ORD alias 0 . ST UD ENT _ ID ?= ?1 ?) ?AS ?D ER IV ED _ TABLE alias 0 ?, ?COUR SE ?AS ?COUR SE alias 0 ?, ?COUR SE _ OFF ER ING ?AS ?COUR SE _ OFF ER ING alias 0 ?, ?PROGRAM _ C OUR SE ?AS ?PROGRAM _ C OUR SE alias 0 ?, ?SEM ES TER ?AS ?SEM ES TER alias 0 ?WHERE ?COUR SE alias 0 . C OUR SE _ ID ?= ?COUR SE _ OFF ER ING alias 0 . C OUR SE _ ID ?AND ?COUR SE alias 0 . C OUR SE _ ID ?NOT ?IN ?( ?D ER IV ED _ TABLE alias 0 . C OUR SE _ ID ?) ?AND ?COUR SE alias 0 . C OUR SE _ ID ?NOT ?IN ?( ?SELECT ?D IST IN CT ?COUR SE _ PR ERE QU IS ITE alias 0 . C OUR SE _ ID ?FROM ?COUR SE _ PR ERE QU IS ITE ?AS ?COUR SE _ PR ERE QU IS ITE alias 0 ?WHERE ?COUR SE _ PR ERE QU IS ITE alias 0 . PRE _ C OUR SE _ ID ?NOT ?IN ?( ?D ER IV ED _ TABLE alias 0 . C OUR SE _ ID ?) ?) ?AND ?COUR SE alias 0 . DE PART MENT ?= ?" dep artment 0 " ?AND ?PROGRAM _ C OUR SE alias 0 . C ATE G ORY ?LIKE ?"% requ irement 0 %" ?AND ?PROGRAM 
+_ C OUR SE alias 0 . C OUR SE _ ID ?= ?COUR SE _ OFF ER ING alias 0 . C OUR SE _ ID ?AND ?SEM ES TER alias 0 . S EM ES TER ?IN ?( ?" SP " ?, </s>
+08/01/2020 03:40:15 - INFO - utils -   input_ids: 0 12375 2333 13419 1494 288 346 288 17487 2 49179 211 11595 2444 7164 45247 3388 47910 288 4 10089 41623 12613 2156 45247 3388 47910 288 4 48307 2156 45247 3388 47910 288 4 46758 11126 2156 39703 1723 7831 47910 288 4 104 5330 1723 7831 11974 36 44664 39833 5382 1215 40698 11200 47910 288 4 347 14257 3388 1215 2688 11974 39833 5382 1215 40698 11200 6015 39833 5382 1215 40698 11200 47910 288 29919 39833 
+5382 1215 40698 11200 47910 288 4 27757 487 1215 9822 24788 5457 22 975 113 4248 39833 5382 1215 40698 11200 47910 288 4 4014 13083 5382 1215 2688 5457 112 4839 6015 211 2076 6372 1691 1215 46859 47910 288 2156 45247 3388 6015 45247 3388 47910 288 2156 45247 3388 1215 32794 2076 1862 6015 45247 3388 1215 32794 2076 1862 47910 288 2156 44101 1215 347 14257 3388 6015 44101 1215 347 14257 3388 47910 288 2156 39703 1723 7831 6015 39703 1723 7831 47910 288 
+29919 45247 3388 47910 288 4 347 14257 3388 1215 2688 5457 45247 3388 1215 32794 2076 1862 47910 288 4 347 14257 3388 1215 2688 4248 45247 3388 47910 288 4 347 14257 3388 1215 2688 8127 2808 36 211 2076 6372 1691 1215 46859 47910 288 4 347 14257 3388 1215 2688 4839 4248 45247 3388 47910 288 4 347 14257 3388 1215 2688 8127 2808 36 44664 211 11595 2444 7164 45247 3388 1215 4454 23142 15513 1729 12946 47910 288 4 347 14257 3388 1215 2688 11974 45247 3388 
+1215 4454 23142 15513 1729 12946 6015 45247 3388 1215 4454 23142 15513 1729 12946 47910 288 29919 45247 3388 1215 4454 23142 15513 1729 12946 47910 288 4 43869 1215 347 14257 3388 1215 2688 8127 2808 36 211 2076 6372 1691 1215 46859 47910 288 4 347 14257 3388 1215 2688 4839 4839 4248 45247 3388 47910 288 4 10089 41623 12613 5457 22 17272 27699 288 113 4248 44101 1215 347 14257 3388 47910 288 4 347 8625 534 26116 38227 49608 42172 34074 288 47460 4248 44101 1215 347 14257 3388 47910 288 4 347 14257 3388 1215 2688 5457 45247 3388 1215 32794 2076 1862 47910 288 4 347 14257 3388 1215 2688 4248 39703 1723 7831 47910 288 4 104 5330 1723 7831 2808 36 22 4186 113 2156 2
+08/01/2020 03:40:16 - INFO - utils -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+08/01/2020 03:40:16 - INFO - utils -   segment_ids: 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+08/01/2020 03:40:16 - INFO - utils -   label: 0 (id = 0)
+08/01/2020 03:40:16 - INFO - __main__ -   Saving features into cached file ../data/train_valid/sql\cached_dev_valid_pytorch_model.bin_400_codesearch
+08/01/2020 03:40:16 - INFO - __main__ -   ***** Running evaluation  *****
+08/01/2020 03:40:16 - INFO - __main__ -     Num examples = 205
+08/01/2020 03:40:16 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 26/26 [00:05<00:00,  4.96it/s]
+08/01/2020 03:40:21 - INFO - __main__ -   ***** Eval results  *****████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 26/26 [00:05<00:00,  5.08it/s] 
+08/01/2020 03:40:21 - INFO - __main__ -     acc = 0.7024390243902439
+08/01/2020 03:40:21 - INFO - __main__ -     acc_and_f1 = 0.7156639566395664
+08/01/2020 03:40:21 - INFO - __main__ -     f1 = 0.7288888888888888
+08/01/2020 03:40:21 - INFO - transformers.configuration_utils -   Configuration saved in ./models/sql\checkpoint-last\config.json
+08/01/2020 03:40:23 - INFO - transformers.modeling_utils -   Model weights saved in ./models/sql\checkpoint-last\pytorch_model.bin
+08/01/2020 03:40:23 - INFO - __main__ -   Saving model checkpoint to ./models/sql\checkpoint-last
+08/01/2020 03:40:25 - INFO - __main__ -   Saving optimizer and scheduler states to ./models/sql\checkpoint-last
+08/01/2020 03:40:25 - INFO - transformers.configuration_utils -   Configuration saved in ./models/sql\checkpoint-best\config.json
+08/01/2020 03:40:26 - INFO - transformers.modeling_utils -   Model weights saved in ./models/sql\checkpoint-best\pytorch_model.bin
+08/01/2020 03:40:26 - INFO - __main__ -   Saving model checkpoint to ./models/sql\checkpoint-best
+08/01/2020 03:40:28 - INFO - __main__ -   Saving optimizer and scheduler states to ./models/sql\checkpoint-best
+Epoch:  20%|████████████████████████████████████▊                                                                                                                                                   | 1/5 [10:25<41:41, 625.39s/it0 
+8/01/2020 03:50:34 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_dev_valid_pytorch_model.bin_400_codesearch
+08/01/2020 03:50:34 - INFO - __main__ -   ***** Running evaluation  *****
+08/01/2020 03:50:34 - INFO - __main__ -     Num examples = 205
+08/01/2020 03:50:34 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 26/26 [00:05<00:00,  4.75it/s]
+08/01/2020 03:50:39 - INFO - __main__ -   ***** Eval results  *****████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 26/26 [00:05<00:00,  5.13it/s] 
+08/01/2020 03:50:39 - INFO - __main__ -     acc = 0.7317073170731707
+08/01/2020 03:50:39 - INFO - __main__ -     acc_and_f1 = 0.7218746009449623
+08/01/2020 03:50:39 - INFO - __main__ -     f1 = 0.7120418848167538
+08/01/2020 03:50:39 - INFO - transformers.configuration_utils -   Configuration saved in ./models/sql\checkpoint-last\config.json
+08/01/2020 03:50:40 - INFO - transformers.modeling_utils -   Model weights saved in ./models/sql\checkpoint-last\pytorch_model.bin
+08/01/2020 03:50:40 - INFO - __main__ -   Saving model checkpoint to ./models/sql\checkpoint-last
+08/01/2020 03:50:42 - INFO - __main__ -   Saving optimizer and scheduler states to ./models/sql\checkpoint-last
+08/01/2020 03:50:42 - INFO - transformers.configuration_utils -   Configuration saved in ./models/sql\checkpoint-best\config.json
+08/01/2020 03:50:43 - INFO - transformers.modeling_utils -   Model weights saved in ./models/sql\checkpoint-best\pytorch_model.bin
+08/01/2020 03:50:43 - INFO - __main__ -   Saving model checkpoint to ./models/sql\checkpoint-best
+08/01/2020 03:50:46 - INFO - __main__ -   Saving optimizer and scheduler states to ./models/sql\checkpoint-best
+Epoch:  40%|█████████████████████████████████████████████████████████████████████████▌                                                                                                              | 2/5 [20:43<31:09, 623.20s/it0 
+8/01/2020 04:00:47 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_dev_valid_pytorch_model.bin_400_codesearch
+08/01/2020 04:00:47 - INFO - __main__ -   ***** Running evaluation  *****
+08/01/2020 04:00:47 - INFO - __main__ -     Num examples = 205
+08/01/2020 04:00:47 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 26/26 [00:06<00:00,  4.19it/s]
+08/01/2020 04:00:53 - INFO - __main__ -   ***** Eval results  *****████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 26/26 [00:06<00:00,  4.68it/s] 
+08/01/2020 04:00:53 - INFO - __main__ -     acc = 0.7317073170731707
+08/01/2020 04:00:53 - INFO - __main__ -     acc_and_f1 = 0.7050349450862929
+08/01/2020 04:00:53 - INFO - __main__ -     f1 = 0.6783625730994152
+08/01/2020 04:00:53 - INFO - transformers.configuration_utils -   Configuration saved in ./models/sql\checkpoint-last\config.json
+08/01/2020 04:00:54 - INFO - transformers.modeling_utils -   Model weights saved in ./models/sql\checkpoint-last\pytorch_model.bin
+08/01/2020 04:00:54 - INFO - __main__ -   Saving model checkpoint to ./models/sql\checkpoint-last
+08/01/2020 04:00:57 - INFO - __main__ -   Saving optimizer and scheduler states to ./models/sql\checkpoint-last
+Epoch:  60%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                         | 3/5 [30:54<20:38, 619.40s/it0 
+8/01/2020 04:11:11 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_dev_valid_pytorch_model.bin_400_codesearch
+08/01/2020 04:11:11 - INFO - __main__ -   ***** Running evaluation  *****
+08/01/2020 04:11:11 - INFO - __main__ -     Num examples = 205
+08/01/2020 04:11:11 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 26/26 [00:05<00:00,  4.34it/s]
+08/01/2020 04:11:17 - INFO - __main__ -   ***** Eval results  *****████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 26/26 [00:05<00:00,  4.59it/s] 
+08/01/2020 04:11:17 - INFO - __main__ -     acc = 0.7317073170731707
+08/01/2020 04:11:17 - INFO - __main__ -     acc_and_f1 = 0.7011829998539506
+08/01/2020 04:11:17 - INFO - __main__ -     f1 = 0.6706586826347305
+08/01/2020 04:11:17 - INFO - transformers.configuration_utils -   Configuration saved in ./models/sql\checkpoint-last\config.json
+08/01/2020 04:11:18 - INFO - transformers.modeling_utils -   Model weights saved in ./models/sql\checkpoint-last\pytorch_model.bin
+08/01/2020 04:11:18 - INFO - __main__ -   Saving model checkpoint to ./models/sql\checkpoint-last
+08/01/2020 04:11:20 - INFO - __main__ -   Saving optimizer and scheduler states to ./models/sql\checkpoint-last
+Epoch:  80%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                    | 4/5 [41:17<10:20, 620.65s/it0 
+8/01/2020 04:21:24 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_dev_valid_pytorch_model.bin_400_codesearch
+08/01/2020 04:21:24 - INFO - __main__ -   ***** Running evaluation  *****
+08/01/2020 04:21:24 - INFO - __main__ -     Num examples = 205
+08/01/2020 04:21:24 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 26/26 [00:05<00:00,  4.66it/s]
+08/01/2020 04:21:30 - INFO - __main__ -   ***** Eval results  *****████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 26/26 [00:05<00:00,  4.86it/s] 
+08/01/2020 04:21:30 - INFO - __main__ -     acc = 0.7414634146341463
+08/01/2020 04:21:30 - INFO - __main__ -     acc_and_f1 = 0.7193031358885018
+08/01/2020 04:21:30 - INFO - __main__ -     f1 = 0.6971428571428572
+08/01/2020 04:21:30 - INFO - transformers.configuration_utils -   Configuration saved in ./models/sql\checkpoint-last\config.json
+08/01/2020 04:21:31 - INFO - transformers.modeling_utils -   Model weights saved in ./models/sql\checkpoint-last\pytorch_model.bin
+08/01/2020 04:21:31 - INFO - __main__ -   Saving model checkpoint to ./models/sql\checkpoint-last
+08/01/2020 04:21:34 - INFO - __main__ -   Saving optimizer and scheduler states to ./models/sql\checkpoint-last
+08/01/2020 04:21:34 - INFO - transformers.configuration_utils -   Configuration saved in ./models/sql\checkpoint-best\config.json
+08/01/2020 04:21:37 - INFO - transformers.modeling_utils -   Model weights saved in ./models/sql\checkpoint-best\pytorch_model.bin
+08/01/2020 04:21:37 - INFO - __main__ -   Saving model checkpoint to ./models/sql\checkpoint-best
+08/01/2020 04:21:42 - INFO - __main__ -   Saving optimizer and scheduler states to ./models/sql\checkpoint-best
+Epoch: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 5/5 [51:39<00:00, 619.82s/it] 
+08/01/2020 04:21:42 - INFO - __main__ -    global_step = 4240, average loss = 0.004447503206935132
+08/01/2020 04:21:42 - INFO - __main__ -   Saving model checkpoint to ./models/sql
+08/01/2020 04:21:42 - INFO - transformers.configuration_utils -   Configuration saved in ./models/sql\config.json
+08/01/2020 04:21:43 - INFO - transformers.modeling_utils -   Model weights saved in ./models/sql\pytorch_model.bin
+08/01/2020 04:21:43 - INFO - transformers.configuration_utils -   loading configuration file ./models/sql\config.json
+08/01/2020 04:21:43 - INFO - transformers.configuration_utils -   Model config RobertaConfig {
+  "architectures": [
+    "RobertaForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "codesearch",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 50265
+}
+
+08/01/2020 04:21:43 - INFO - transformers.modeling_utils -   loading weights file ./models/sql\pytorch_model.bin
+08/01/2020 04:21:47 - INFO - transformers.tokenization_utils -   Model name './models/sql' not found in model shortcut name list (roberta-base, roberta-large, roberta-large-mnli, distilroberta-base, roberta-base-openai-detector, roberta-large-openai-detector). Assuming './models/sql' is a path, a model identifier, or url to a directory containing tokenizer files.
+08/01/2020 04:21:47 - INFO - transformers.tokenization_utils -   Didn't find file ./models/sql\added_tokens.json. We won't load it.
+08/01/2020 04:21:47 - INFO - transformers.tokenization_utils -   loading file ./models/sql\vocab.json
+08/01/2020 04:21:47 - INFO - transformers.tokenization_utils -   loading file ./models/sql\merges.txt
+08/01/2020 04:21:47 - INFO - transformers.tokenization_utils -   loading file None
+08/01/2020 04:21:47 - INFO - transformers.tokenization_utils -   loading file ./models/sql\special_tokens_map.json
+08/01/2020 04:21:47 - INFO - transformers.tokenization_utils -   loading file ./models/sql\tokenizer_config.json
+08/01/2020 04:21:48 - INFO - __main__ -   Evaluate the following checkpoints: ['./models/sql\\checkpoint-best', './models/sql\\checkpoint-last', './models/sql']
+./models/sql\checkpoint-best
+08/01/2020 04:21:48 - INFO - transformers.configuration_utils -   loading configuration file ./models/sql\checkpoint-best\config.json
+08/01/2020 04:21:48 - INFO - transformers.configuration_utils -   Model config RobertaConfig {
+  "architectures": [
+    "RobertaForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "codesearch",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 50265
+}
+
+08/01/2020 04:21:48 - INFO - transformers.modeling_utils -   loading weights file ./models/sql\checkpoint-best\pytorch_model.bin
+08/01/2020 04:21:52 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_dev_valid_pytorch_model.bin_400_codesearch
+08/01/2020 04:21:52 - INFO - __main__ -   ***** Running evaluation best *****
+08/01/2020 04:21:52 - INFO - __main__ -     Num examples = 205
+08/01/2020 04:21:52 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 26/26 [00:05<00:00,  5.18it/s] 
+08/01/2020 04:21:57 - INFO - __main__ -   ***** Eval results best *****
+08/01/2020 04:21:57 - INFO - __main__ -     acc = 0.7414634146341463
+08/01/2020 04:21:57 - INFO - __main__ -     acc_and_f1 = 0.7193031358885018
+08/01/2020 04:21:57 - INFO - __main__ -     f1 = 0.6971428571428572
+./models/sql\checkpoint-last
+08/01/2020 04:21:57 - INFO - transformers.configuration_utils -   loading configuration file ./models/sql\checkpoint-last\config.json
+08/01/2020 04:21:57 - INFO - transformers.configuration_utils -   Model config RobertaConfig {
+  "architectures": [
+    "RobertaForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "codesearch",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 50265
+}
+
+08/01/2020 04:21:57 - INFO - transformers.modeling_utils -   loading weights file ./models/sql\checkpoint-last\pytorch_model.bin
+08/01/2020 04:22:01 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_dev_valid_pytorch_model.bin_400_codesearch
+08/01/2020 04:22:01 - INFO - __main__ -   ***** Running evaluation last *****
+08/01/2020 04:22:01 - INFO - __main__ -     Num examples = 205
+08/01/2020 04:22:01 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 26/26 [00:04<00:00,  5.27it/s] 
+08/01/2020 04:22:06 - INFO - __main__ -   ***** Eval results last *****
+08/01/2020 04:22:06 - INFO - __main__ -     acc = 0.7414634146341463
+08/01/2020 04:22:06 - INFO - __main__ -     acc_and_f1 = 0.7193031358885018
+08/01/2020 04:22:06 - INFO - __main__ -     f1 = 0.6971428571428572
+./models/sql
+08/01/2020 04:22:06 - INFO - transformers.configuration_utils -   loading configuration file ./models/sql\config.json
+08/01/2020 04:22:06 - INFO - transformers.configuration_utils -   Model config RobertaConfig {
+  "architectures": [
+    "RobertaForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "codesearch",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 50265
+}
+
+08/01/2020 04:22:06 - INFO - transformers.modeling_utils -   loading weights file ./models/sql\pytorch_model.bin
+08/01/2020 04:22:11 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_dev_valid_pytorch_model.bin_400_codesearch
+08/01/2020 04:22:11 - INFO - __main__ -   ***** Running evaluation ./models/sql *****
+08/01/2020 04:22:11 - INFO - __main__ -     Num examples = 205
+08/01/2020 04:22:11 - INFO - __main__ -     Batch size = 8
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 26/26 [00:05<00:00,  5.17it/s] 
+08/01/2020 04:22:16 - INFO - __main__ -   ***** Eval results ./models/sql *****
+08/01/2020 04:22:16 - INFO - __main__ -     acc = 0.7414634146341463
+08/01/2020 04:22:16 - INFO - __main__ -     acc_and_f1 = 0.7193031358885018
+08/01/2020 04:22:16 - INFO - __main__ -     f1 = 0.6971428571428572

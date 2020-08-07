@@ -119,9 +119,10 @@ __pycache__
 
 # ML4PL w/ Zach
 /pretrained_models
-/data
+/data/*.txt
+/data/*.json
 */models
 */model
 */runs/*
 code2nl/CodeSearchNet/python
-*/cached*
+cached_*

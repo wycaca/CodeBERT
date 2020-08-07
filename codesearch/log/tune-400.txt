@@ -1,0 +1,461 @@
+2020-07-31 07:12:15.473052: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_101.dll
+07/31/2020 07:12:18 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+07/31/2020 07:12:18 - INFO - __main__ -   reload model from ./models/sql\checkpoint-last, resume from 8 epoch
+07/31/2020 07:12:18 - INFO - transformers.configuration_utils -   loading configuration file ./models/sql\checkpoint-last\config.json
+07/31/2020 07:12:18 - INFO - transformers.configuration_utils -   Model config RobertaConfig {
+  "architectures": [
+    "RobertaForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "codesearch",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 50265
+}
+
+07/31/2020 07:12:19 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/roberta-base-vocab.json from cache at C:\Users\Administrator\.cache\torch\transformers\d0c5776499adc1ded22493fae699da0971c1ee4c2587111707a4d177d20257a2.ef00af9e673c7160b4d41cfda1f48c5f4cba57d5142754525572a846a1ab1b9b
+07/31/2020 07:12:19 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/roberta-base-merges.txt from cache at C:\Users\Administrator\.cache\torch\transformers\b35e7cd126cd4229a746b5d5c29a749e8e84438b14bcdb575950584fe33207e8.70bec105b4158ed9a1747fea67a43f5dee97855c64d62b6ec3742f4cfdb5feda
+07/31/2020 07:12:19 - INFO - transformers.modeling_utils -   loading weights file ./models/sql\checkpoint-last\pytorch_model.bin
+07/31/2020 07:12:25 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, cache_dir='', config_name='./models/sql\\checkpoint-last\\config.json', data_dir='../data/train_valid/sql', dev_file='valid.txt', device=device(type='cuda'), do_eval=True, do_lower_case=False, do_predict=False, do_train=True, eval_all_checkpoints=True, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=1, learning_rate=1e-05, local_rank=-1, logging_steps=50, max_grad_norm=1.0, max_seq_length=400, max_steps=-1, model_name_or_path='./models/sql\\checkpoint-last\\pytorch_model.bin', model_type='roberta', n_gpu=1, no_cuda=False, num_train_epochs=8.0, output_dir='./models/sql', output_mode='classification', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=20, per_gpu_train_batch_size=20, pred_model_dir=None, save_steps=50, seed=42, server_ip='', server_port='', start_epoch=8, start_step=3399, task_name='codesearch', test_file='shared_task_dev_top10_concat.tsv', test_result_dir='test_results.tsv', tokenizer_name='', train_file='train.txt', warmup_steps=0, weight_decay=0.0)
+07/31/2020 07:12:25 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_train_train_sql\checkpoint-last\pytorch_model.bin_400_codesearch
+07/31/2020 07:12:25 - INFO - __main__ -   Creating features from dataset file at ../data/train_valid/sql
+07/31/2020 07:12:25 - INFO - utils -   LOOKING AT ../data/train_valid/sql\train.txt
+07/31/2020 07:12:25 - INFO - utils -   Writing example 0 of 6779
+07/31/2020 07:12:25 - INFO - utils -   *** Example ***
+07/31/2020 07:12:25 - INFO - utils -   guid: train-0
+07/31/2020 07:12:25 - INFO - utils -   tokens: <s> list ?all ?the ?flights ?that ?arrive ?at ?airport _ code 0 ?from ?various ?cities </s> SELECT ?D IST IN CT ?FL IGHT alias 0 . FL IGHT _ ID ?FROM ?AIR PORT ?AS ?AIR PORT alias 0 ?, ?AIR PORT _ SER VICE ?AS ?AIR PORT _ SER VICE alias 0 ?, ?CITY ?AS ?CITY alias 0 ?, ?FL IGHT ?AS ?FL IGHT alias 0 ?WHERE ?AIR PORT alias 0 . AIR PORT _ C ODE ?= ?" air port _ code 0 " ?AND ?CITY alias 0 . C ITY _ C ODE ?= ?AIR PORT _ SER VICE alias 0 . C ITY _ C ODE ?AND ?FL IGHT alias 0 . FR OM _ AIR PORT ?= ?AIR PORT _ SER VICE alias 
+0 . AIR PORT _ C ODE ?AND ?FL IGHT alias 0 . TO _ AIR PORT ?= ?AIR PORT alias 0 . AIR PORT _ C ODE ?; </s>
+07/31/2020 07:12:25 - INFO - utils -   input_ids: 0 8458 70 5 4871 14 5240 23 3062 1215 20414 288 31 1337 1947 2 49179 211 11595 2444 7164 8854 8167 47910 288 4 7613 8167 1215 2688 11974 23464 20275 6015 23464 20275 47910 288 2156 23464 20275 1215 41877 46257 6015 23464 20275 1215 41877 46257 47910 288 2156 8100 6015 8100 47910 288 2156 8854 8167 6015 8854 8167 47910 288 29919 
+23464 20275 47910 288 4 35518 20275 1215 347 38023 5457 22 2456 3427 1215 20414 288 113 4248 8100 47910 288 4 347 8662 1215 347 38023 5457 23464 20275 1215 41877 46257 47910 288 4 347 8662 1215 347 38023 4248 8854 8167 47910 288 4 5499 3765 1215 35518 20275 5457 23464 20275 1215 41877 46257 47910 288 4 35518 20275 1215 347 38023 4248 8854 8167 47910 288 4 6390 1215 35518 20275 
+5457 23464 20275 47910 288 4 35518 20275 1215 347 38023 25606 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:25 - INFO - utils -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:25 - INFO - utils -   segment_ids: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:25 - INFO - utils -   label: 1 (id = 1)
+07/31/2020 07:12:25 - INFO - utils -   *** Example ***
+07/31/2020 07:12:25 - INFO - utils -   guid: train-1
+07/31/2020 07:12:25 - INFO - utils -   tokens: <s> give ?me ?the ?flights ?leaving ?city _ name 1 ?month _ number 0 ?day _ number 0 ?coming ?back ?to ?city _ name 0 </s> SELECT ?D IST IN CT 
+?FL IGHT alias 0 . FL IGHT _ ID ?FROM ?AIR PORT _ SER VICE ?AS ?AIR PORT _ SER VICE alias 0 ?, ?AIR PORT _ SER VICE ?AS ?AIR PORT _ SER VICE alias 1 ?, ?CITY ?AS ?CITY alias 0 ?, ?CITY ?AS ?CITY alias 1 ?, ?D ATE _ DAY ?AS ?D ATE _ DAY alias 0 ?, ?DAY S ?AS ?DAY Sal ias 0 ?, ?FL IGHT ?AS ?FL IGHT alias 0 ?WHERE ?( ?( ?( ?FL IGHT alias 0 . ARR IV AL _ TIME ?< ?FL IGHT alias 0 . 
+DE PART URE _ TIME ?) ?AND ?D ATE _ DAY alias 0 . DAY _ NUM BER ?= ?day _ number 0 ?AND ?D ATE _ DAY alias 0 . MON TH _ NUM BER ?= ?month _ number 0 ?AND ?D ATE _ DAY alias 0 . Y EAR ?= ?year 0 ?AND ?DAY Sal ias 0 . DAY _ NAME ?= ?D ATE _ DAY alias 0 . DAY _ NAME ?AND ?FL IGHT alias 0 . FL IGHT _ DAY S ?= ?DAY Sal ias 0 . DAY S _ C ODE ?) ?AND ?CITY alias 1 . C ITY _ C ODE ?= ?AIR PORT _ SER VICE alias 1 . C ITY _ C ODE ?AND ?CITY alias 1 . C ITY _ NAME ?= ?" city _ name 0 " ?AND ?FL IGHT alias 0 . TO _ AIR PORT ?= ?AIR PORT _ SER VICE alias 1 . AIR PORT _ C ODE ?) ?AND ?CITY alias 0 . C ITY _ C ODE ?= ?AIR PORT _ SER VICE alias 0 . C ITY _ C ODE ?AND ?CITY alias 0 . C ITY _ NAME ?= ?" city _ name 1 " ?AND ?FL IGHT alias 0 . FR OM _ AIR PORT ?= ?AIR 
+PORT _ SER VICE alias 0 . AIR PORT _ C ODE ?; </s>
+07/31/2020 07:12:26 - INFO - utils -   input_ids: 0 26650 162 5 4871 1618 343 1215 13650 134 353 1215 30695 288 183 1215 30695 288 567 124 7 343 1215 13650 288 2 49179 211 11595 2444 7164 8854 8167 47910 288 4 7613 8167 1215 2688 11974 23464 20275 1215 41877 46257 6015 23464 20275 1215 41877 46257 47910 288 2156 23464 20275 1215 41877 46257 6015 23464 20275 1215 41877 46257 47910 134 2156 8100 6015 8100 47910 288 2156 8100 6015 8100 47910 134 2156 211 8625 1215 2774 6015 211 8625 1215 2774 47910 288 2156 16995 104 6015 16995 18111 5003 288 2156 8854 8167 6015 8854 8167 47910 288 29919 36 36 36 8854 8167 47910 288 4 26952 6372 2118 1215 39007 28696 8854 8167 47910 288 4 10089 41623 12435 1215 39007 4839 4248 211 8625 1215 2774 47910 288 4 2774 1215 46758 11126 5457 183 1215 30695 288 4248 211 8625 1215 2774 47910 288 4 20911 3732 1215 46758 11126 5457 353 1215 30695 288 4248 211 8625 1215 2774 47910 288 4 975 27757 5457 76 288 4248 16995 18111 5003 288 4 2774 1215 48307 5457 211 8625 1215 2774 47910 288 4 2774 1215 48307 4248 8854 8167 47910 288 4 7613 8167 1215 2774 104 5457 16995 18111 5003 288 4 2774 104 1215 347 38023 4839 4248 8100 47910 134 4 347 8662 1215 347 38023 5457 23464 20275 1215 41877 46257 47910 134 4 347 8662 1215 347 38023 4248 8100 47910 134 4 347 8662 1215 48307 5457 22 14853 1215 13650 288 113 4248 8854 8167 47910 288 4 6390 1215 35518 20275 5457 23464 20275 1215 41877 46257 47910 134 4 35518 20275 1215 347 38023 4839 4248 8100 47910 288 4 347 8662 1215 347 38023 5457 23464 20275 1215 41877 46257 47910 288 4 347 8662 1215 347 38023 4248 8100 47910 288 4 347 8662 1215 48307 5457 22 14853 1215 13650 134 113 4248 8854 8167 47910 288 4 5499 3765 1215 35518 20275 5457 23464 20275 1215 41877 46257 47910 288 4 35518 20275 1215 347 38023 25606 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:26 - INFO - utils -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:26 - INFO - utils -   segment_ids: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:26 - INFO - utils -   label: 0 (id = 0)
+07/31/2020 07:12:26 - INFO - utils -   *** Example ***
+07/31/2020 07:12:26 - INFO - utils -   guid: train-2
+07/31/2020 07:12:26 - INFO - utils -   tokens: <s> what ?is ?the ?most ?expensive ?one ?way ?fare ?from ?city _ name 0 ?to ?city _ name 1 ?on ?airline _ code 0 </s> SELECT ?D IST IN CT ?F ARE alias 0 . F ARE _ ID ?FROM ?AIR PORT _ SER VICE ?AS ?AIR PORT _ SER VICE alias 0 ?, ?AIR PORT _ SER VICE ?AS ?AIR PORT _ SER VICE alias 1 ?, ?CITY ?AS ?CITY alias 0 ?, ?CITY ?AS ?CITY alias 1 ?, ?F ARE ?AS ?F ARE alias 0 ?, ?FL IGHT ?AS ?FL IGHT alias 0 ?, ?FL IGHT _ F ARE ?AS ?FL IGHT _ F ARE alias 0 ?WHERE ?( ?CITY alias 0 . C ITY _ C ODE ?= ?AIR PORT _ SER VICE alias 0 . C ITY _ C ODE ?AND ?CITY alias 0 . C ITY _ NAME ?= ?" city _ name 0 " ?AND ?CITY alias 1 . C ITY _ C ODE ?= ?AIR PORT _ SER VICE alias 1 . C ITY _ C ODE ?AND ?CITY alias 1 . C ITY _ NAME ?= ?" city _ name 1 " ?AND ?FL IGHT alias 0 . FR OM _ AIR PORT ?= ?AIR PORT _ SER VICE alias 0 . AIR PORT _ C ODE ?AND ?FL IGHT alias 0 . TO _ AIR PORT ?= ?AIR PORT _ SER VICE alias 1 . AIR PORT _ C ODE ?) ?AND ?F ARE alias 0 . ONE _ DI RECT ION _ CO ST ?= ?( ?SELECT ?MAX ( ?F ARE alias 1 . ONE _ DI RECT ION _ CO ST ?) ?FROM ?AIR PORT _ SER VICE ?AS ?AIR PORT _ SER VICE alias 2 ?, 
+?AIR PORT _ SER VICE ?AS ?AIR PORT _ SER VICE alias 3 ?, ?CITY ?AS ?CITY alias 2 ?, ?CITY ?AS ?CITY alias 3 ?, ?F ARE ?AS ?F ARE alias 1 ?, ?FL IGHT ?AS ?FL IGHT alias 1 ?, ?FL IGHT _ F ARE 
+?AS ?FL IGHT _ F ARE alias 1 ?WHERE ?( ?CITY alias 2 . C ITY _ C ODE ?= ?AIR PORT _ SER VICE alias 2 . C ITY _ C ODE ?AND ?CITY alias 2 . C ITY _ NAME ?= ?" city _ name 0 " ?AND ?CITY alias 
+3 . C ITY _ C ODE ?= ?AIR PORT _ SER </s>
+07/31/2020 07:12:27 - INFO - utils -   input_ids: 0 12196 16 5 144 3214 65 169 11031 31 343 1215 13650 288 7 343 1215 13650 134 15 5195 1215 20414 288 2 49179 211 11595 2444 7164 274 7982 47910 288 4 597 7982 1215 2688 11974 23464 20275 1215 41877 46257 6015 23464 20275 1215 41877 46257 47910 288 2156 23464 20275 1215 41877 46257 6015 23464 20275 1215 41877 46257 47910 134 2156 8100 6015 8100 47910 288 2156 8100 6015 8100 47910 134 2156 274 7982 6015 274 7982 47910 288 2156 8854 8167 6015 8854 8167 47910 288 2156 8854 8167 1215 597 7982 6015 8854 8167 1215 597 7982 47910 288 29919 36 8100 47910 288 4 347 8662 1215 347 38023 5457 23464 20275 1215 41877 46257 47910 288 4 347 8662 1215 347 38023 4248 8100 47910 288 4 347 8662 1215 48307 5457 22 14853 1215 13650 288 113 4248 8100 47910 134 4 347 8662 1215 347 38023 5457 23464 20275 1215 41877 46257 47910 134 4 347 8662 1215 347 38023 4248 8100 47910 134 4 347 8662 1215 48307 5457 22 14853 1215 13650 134 113 4248 8854 8167 47910 288 4 5499 3765 1215 35518 20275 5457 23464 20275 1215 41877 46257 47910 288 4 35518 20275 1215 347 38023 4248 8854 8167 47910 288 4 6390 1215 35518 20275 5457 23464 20275 1215 41877 46257 47910 134 4 35518 20275 1215 347 38023 4839 4248 274 7982 47910 288 4 16646 1215 10063 42260 7744 1215 6335 4014 5457 36 44664 28066 1640 274 7982 47910 134 4 16646 1215 10063 42260 7744 1215 6335 4014 4839 11974 23464 20275 1215 41877 46257 6015 23464 20275 1215 41877 46257 47910 176 2156 23464 20275 1215 41877 46257 6015 23464 20275 1215 
+41877 46257 47910 246 2156 8100 6015 8100 47910 176 2156 8100 6015 8100 47910 246 2156 274 7982 6015 274 7982 47910 134 2156 8854 8167 6015 8854 8167 47910 134 2156 8854 8167 1215 597 7982 6015 8854 8167 1215 597 7982 47910 134 29919 36 8100 47910 176 4 347 8662 1215 347 38023 5457 23464 20275 1215 41877 46257 47910 176 4 347 8662 1215 347 38023 4248 8100 47910 176 4 347 8662 1215 48307 5457 22 14853 1215 13650 288 113 4248 8100 47910 246 4 347 8662 1215 347 38023 5457 23464 20275 1215 41877 2
+07/31/2020 07:12:27 - INFO - utils -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+07/31/2020 07:12:27 - INFO - utils -   segment_ids: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+07/31/2020 07:12:27 - INFO - utils -   label: 1 (id = 1)
+07/31/2020 07:12:27 - INFO - utils -   *** Example ***
+07/31/2020 07:12:27 - INFO - utils -   guid: train-3
+07/31/2020 07:12:27 - INFO - utils -   tokens: <s> how ?many ?of ?airline _ code 0 ?' s ?night ?flights ?are ?class _ type 0 ?class </s> SELECT ?D IST IN CT ?FL IGHT alias 0 . FL IGHT _ ID ?FROM ?AIR PORT _ SER VICE ?AS ?AIR PORT _ SER VICE alias 0 ?, ?AIR PORT _ SER VICE ?AS ?AIR PORT _ SER VICE alias 1 ?, ?CITY ?AS ?CITY alias 0 ?, ?CITY ?AS ?CITY alias 1 ?, ?DAY S ?AS ?DAY Sal ias 0 ?, ?FL IGHT ?AS ?FL IGHT alias 0 ?WHERE ?( ?CITY alias 1 . C ITY _ C ODE ?= ?AIR PORT _ SER VICE alias 1 . C ITY _ C ODE ?AND ?CITY alias 1 . C ITY _ NAME ?= ?" city _ name 0 " ?AND ?DAY Sal ias 0 . DAY _ NAME ?= ?" day _ name 0 " ?AND ?FL IGHT alias 0 . FL IGHT _ DAY S ?= ?DAY Sal ias 0 . DAY S _ C ODE ?AND ?FL IGHT alias 0 . TO _ AIR PORT ?= ?AIR PORT _ SER VICE alias 1 . AIR PORT _ C ODE ?) ?AND ?CITY alias 0 . C ITY _ C ODE ?= ?AIR PORT _ SER VICE alias 0 . C ITY _ C ODE ?AND ?CITY alias 0 . C ITY _ NAME ?= ?" city _ name 1 " ?AND ?FL IGHT alias 0 . FR OM _ AIR PORT ?= ?AIR PORT _ SER VICE alias 0 . AIR PORT _ C ODE ?; </s>
+07/31/2020 07:12:27 - INFO - utils -   input_ids: 0 9178 171 9 5195 1215 20414 288 128 29 363 4871 32 1380 1215 12528 288 1380 2 49179 211 11595 2444 7164 8854 8167 47910 288 4 7613 8167 1215 2688 11974 23464 20275 1215 41877 46257 6015 23464 20275 1215 41877 46257 47910 288 2156 23464 20275 1215 41877 46257 6015 23464 20275 1215 41877 46257 47910 134 2156 8100 6015 8100 47910 
+288 2156 8100 6015 8100 47910 134 2156 16995 104 6015 16995 18111 5003 288 2156 8854 8167 6015 8854 8167 47910 288 29919 36 8100 47910 134 4 347 8662 1215 347 38023 5457 23464 20275 1215 41877 46257 47910 134 4 347 8662 1215 347 38023 4248 8100 47910 134 4 347 8662 1215 48307 5457 22 14853 1215 13650 288 113 4248 16995 18111 5003 288 4 2774 1215 48307 5457 22 1208 1215 13650 288 113 4248 8854 8167 47910 288 4 7613 8167 1215 2774 104 5457 16995 18111 5003 288 4 2774 104 1215 347 38023 4248 8854 8167 47910 288 4 6390 1215 35518 20275 5457 23464 20275 1215 41877 46257 47910 134 4 35518 20275 1215 347 38023 4839 4248 8100 47910 288 4 347 8662 1215 347 38023 5457 23464 20275 1215 41877 46257 47910 288 4 347 8662 1215 347 38023 4248 8100 47910 288 4 347 8662 1215 48307 5457 22 14853 1215 13650 134 113 4248 8854 8167 47910 288 4 5499 3765 1215 35518 20275 5457 23464 20275 1215 41877 46257 47910 288 4 35518 20275 1215 347 38023 25606 2 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:27 - INFO - utils -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:27 - INFO - utils -   segment_ids: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:27 - INFO - utils -   label: 0 (id = 0)
+07/31/2020 07:12:27 - INFO - utils -   *** Example ***
+07/31/2020 07:12:27 - INFO - utils -   guid: train-4
+07/31/2020 07:12:27 - INFO - utils -   tokens: <s> could ?you ?please ?give ?me ?information ?concerning ?airline _ code 0 ?a ?flight ?from ?city _ name 1 ?to ?city _ name 0 ?the ?earliest ?one ?in ?the ?morning ?as ?possible </s> SELECT ?D IST IN CT ?FL IGHT alias 0 . FL IGHT _ ID ?FROM ?AIR PORT _ SER VICE ?AS ?AIR PORT _ SER VICE alias 0 ?, ?AIR PORT _ SER VICE ?AS ?AIR PORT _ SER VICE alias 1 ?, ?CITY ?AS ?CITY alias 0 ?, ?CITY ?AS ?CITY alias 1 ?, ?FL IGHT ?AS ?FL IGHT alias 0 ?WHERE ?CITY alias 0 . C ITY _ C ODE ?= ?AIR PORT _ SER VICE alias 0 . C ITY _ C ODE ?AND ?CITY alias 0 . C ITY _ NAME ?= ?" city _ name 0 " ?AND ?CITY alias 1 . C ITY _ C ODE ?= ?AIR PORT _ SER VICE alias 1 . C ITY _ C ODE ?AND ?CITY alias 1 . C ITY _ NAME ?= ?" city _ name 1 " ?AND ?FL IGHT alias 0 . FR OM _ AIR PORT ?= ?AIR PORT _ SER VICE alias 0 . AIR PORT _ C ODE ?AND ?FL IGHT alias 0 . TO _ AIR PORT ?= ?AIR PORT _ SER VICE alias 1 . AIR PORT _ C ODE ?; </s>
+07/31/2020 07:12:27 - INFO - utils -   input_ids: 0 17304 47 2540 492 162 335 8082 5195 1215 20414 288 10 2524 31 343 1215 13650 134 7 343 1215 13650 288 5 13342 65 11 5 662 25 678 2 49179 211 11595 2444 7164 8854 8167 47910 288 4 7613 8167 1215 2688 11974 23464 20275 1215 41877 46257 6015 23464 20275 1215 41877 46257 47910 288 2156 23464 20275 1215 41877 46257 6015 23464 20275 1215 41877 46257 47910 134 2156 8100 6015 8100 47910 288 2156 8100 6015 8100 47910 134 2156 8854 8167 6015 8854 8167 47910 288 29919 8100 47910 288 4 347 8662 1215 347 38023 5457 23464 20275 1215 41877 46257 47910 288 4 347 8662 1215 347 38023 4248 8100 47910 288 4 347 8662 1215 48307 5457 22 14853 1215 13650 288 113 4248 8100 47910 134 4 347 8662 1215 347 38023 5457 23464 20275 1215 41877 46257 47910 134 4 347 8662 1215 347 38023 4248 8100 47910 134 4 347 8662 1215 48307 5457 22 14853 1215 13650 134 113 4248 8854 8167 47910 288 4 5499 3765 1215 35518 20275 5457 
+23464 20275 1215 41877 46257 47910 288 4 35518 20275 1215 347 38023 4248 8854 8167 47910 288 4 6390 1215 35518 20275 5457 23464 20275 1215 41877 46257 47910 134 4 35518 20275 1215 347 38023 
+25606 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:28 - INFO - utils -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:28 - INFO - utils -   segment_ids: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:28 - INFO - utils -   label: 0 (id = 0)
+07/31/2020 07:12:32 - INFO - __main__ -   Saving features into cached file ../data/train_valid/sql\cached_train_train_sql\checkpoint-last\pytorch_model.bin_400_codesearch
+07/31/2020 07:12:35 - INFO - __main__ -   ***** Running training *****
+07/31/2020 07:12:35 - INFO - __main__ -     Num examples = 6779
+07/31/2020 07:12:35 - INFO - __main__ -     Num Epochs = 8
+07/31/2020 07:12:35 - INFO - __main__ -     Instantaneous batch size per GPU = 20
+07/31/2020 07:12:35 - INFO - __main__ -     Total train batch size (w. parallel, distributed & accumulation) = 20
+07/31/2020 07:12:35 - INFO - __main__ -     Gradient Accumulation steps = 1
+07/31/2020 07:12:35 - INFO - __main__ -     Total optimization steps = 2712
+Epoch: 0it [00:00, ?it/s]
+07/31/2020 07:12:36 - INFO - __main__ -    global_step = 3399, average loss = 0.0
+07/31/2020 07:12:36 - INFO - __main__ -   Saving model checkpoint to ./models/sql
+07/31/2020 07:12:36 - INFO - transformers.configuration_utils -   Configuration saved in ./models/sql\config.json
+07/31/2020 07:12:37 - INFO - transformers.modeling_utils -   Model weights saved in ./models/sql\pytorch_model.bin
+07/31/2020 07:12:37 - INFO - transformers.configuration_utils -   loading configuration file ./models/sql\config.json
+07/31/2020 07:12:37 - INFO - transformers.configuration_utils -   Model config RobertaConfig {
+  "architectures": [
+    "RobertaForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "codesearch",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 50265
+}
+
+07/31/2020 07:12:37 - INFO - transformers.modeling_utils -   loading weights file ./models/sql\pytorch_model.bin
+07/31/2020 07:12:41 - INFO - transformers.tokenization_utils -   Model name './models/sql' not found in model shortcut name list (roberta-base, roberta-large, roberta-large-mnli, distilroberta-base, roberta-base-openai-detector, roberta-large-openai-detector). Assuming './models/sql' is a path, a model identifier, or url to a directory containing tokenizer files.
+07/31/2020 07:12:41 - INFO - transformers.tokenization_utils -   Didn't find file ./models/sql\added_tokens.json. We won't load it.
+07/31/2020 07:12:41 - INFO - transformers.tokenization_utils -   loading file ./models/sql\vocab.json
+07/31/2020 07:12:41 - INFO - transformers.tokenization_utils -   loading file ./models/sql\merges.txt
+07/31/2020 07:12:41 - INFO - transformers.tokenization_utils -   loading file None
+07/31/2020 07:12:41 - INFO - transformers.tokenization_utils -   loading file ./models/sql\special_tokens_map.json
+07/31/2020 07:12:41 - INFO - transformers.tokenization_utils -   loading file ./models/sql\tokenizer_config.json
+07/31/2020 07:12:41 - INFO - __main__ -   Evaluate the following checkpoints: ['./models/sql\\checkpoint-best', './models/sql\\checkpoint-last', './models/sql']
+./models/sql\checkpoint-best
+07/31/2020 07:12:41 - INFO - transformers.configuration_utils -   loading configuration file ./models/sql\checkpoint-best\config.json
+07/31/2020 07:12:41 - INFO - transformers.configuration_utils -   Model config RobertaConfig {
+  "architectures": [
+    "RobertaForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "codesearch",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 50265
+}
+
+07/31/2020 07:12:42 - INFO - transformers.modeling_utils -   loading weights file ./models/sql\checkpoint-best\pytorch_model.bin
+07/31/2020 07:12:45 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_dev_valid_sql\checkpoint-last\pytorch_model.bin_400_codesearch
+07/31/2020 07:12:45 - INFO - __main__ -   Creating features from dataset file at ../data/train_valid/sql
+07/31/2020 07:12:45 - INFO - utils -   LOOKING AT ../data/train_valid/sql\valid.txt
+07/31/2020 07:12:45 - INFO - utils -   Writing example 0 of 205
+07/31/2020 07:12:45 - INFO - utils -   *** Example ***
+07/31/2020 07:12:45 - INFO - utils -   guid: dev-0
+07/31/2020 07:12:45 - INFO - utils -   tokens: <s> Can ?under gr ads ?take ?number 0 ?? </s> SELECT ?D IST IN CT ?COUR SE alias 0 . AD VIS ORY _ RE QUIRE MENT ?, ?COUR SE alias 0 . EN FOR C 
+ED _ RE QUIRE MENT ?, ?COUR SE alias 0 . NAME ?FROM ?COUR SE ?AS ?COUR SE alias 0 ?WHERE ?COUR SE alias 0 . DE PART MENT ?= ?" dep artment 0 " ?AND ?COUR SE alias 0 . NUM BER ?= ?number 0 ?; </s>
+07/31/2020 07:12:45 - INFO - utils -   input_ids: 0 10836 223 6504 7842 185 346 288 17487 2 49179 211 11595 2444 7164 45247 3388 47910 288 4 2606 23111 26116 1215 4629 47091 12613 2156 45247 3388 47910 288 4 2796 27201 347 1691 1215 4629 47091 12613 2156 45247 3388 47910 288 4 48307 11974 45247 3388 6015 45247 3388 47910 288 29919 45247 3388 47910 288 4 10089 41623 12613 5457 22 17272 27699 288 113 4248 45247 3388 47910 288 4 46758 11126 5457 346 288 25606 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:46 - INFO - utils -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:46 - INFO - utils -   segment_ids: 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:46 - INFO - utils -   label: 1 (id = 1)
+07/31/2020 07:12:46 - INFO - utils -   *** Example ***
+07/31/2020 07:12:46 - INFO - utils -   guid: dev-1
+07/31/2020 07:12:46 - INFO - utils -   tokens: <s> How ?big ?is ?number 0 ?? </s> SELECT ?D IST IN CT ?COUR SE alias 0 . DE PART MENT ?, ?COUR SE alias 0 . NAME ?, ?COUR SE alias 0 . NUM BER ?, ?PROGRAM _ C OUR SE alias 0 . WORK LOAD ?, ?PROGRAM _ C OUR SE alias 0 . WORK LOAD ?FROM ?COUR SE ?AS ?COUR SE alias 0 ?, ?PROGRAM _ C OUR SE ?AS ?PROGRAM _ C OUR SE alias 0 ?WHERE ?PROGRAM _ C OUR SE alias 0 . C ATE G ORY ?LIKE ?"% requ irement 0 %" ?AND ?PROGRAM _ C OUR SE alias 0 . C OUR SE _ ID ?= ?COUR SE alias 0 . C OUR SE _ ID ?AND ?PROGRAM _ C OUR SE alias 0 . WORK 
+LOAD ?= ?( ?SELECT ?MIN ( ?PROGRAM _ C OUR SE alias 1 . WORK LOAD ?) ?FROM ?PROGRAM _ C OUR SE ?AS ?PROGRAM _ C OUR SE alias 1 ?WHERE ?PROGRAM _ C OUR SE alias 1 . C ATE G ORY ?LIKE ?"% requ irement 0 %" ?) ?; </s>
+07/31/2020 07:12:46 - INFO - utils -   input_ids: 0 6179 380 16 346 288 17487 2 49179 211 11595 2444 7164 45247 3388 47910 288 4 10089 41623 12613 2156 45247 3388 47910 288 4 48307 2156 45247 3388 47910 288 4 46758 11126 2156 44101 1215 347 14257 3388 47910 288 4 45213 27822 2156 44101 1215 347 14257 3388 47910 288 4 45213 27822 11974 45247 3388 6015 45247 3388 47910 288 2156 44101 1215 347 14257 3388 6015 44101 1215 347 14257 3388 47910 288 29919 44101 1215 347 14257 3388 47910 288 4 347 8625 534 26116 38227 49608 42172 34074 288 47460 4248 44101 1215 347 14257 3388 47910 288 4 347 14257 3388 1215 2688 5457 45247 3388 47910 288 4 347 14257 3388 1215 2688 4248 44101 1215 347 14257 3388 47910 288 4 45213 27822 5457 36 44664 18335 1640 44101 1215 347 14257 3388 47910 134 4 45213 27822 4839 11974 44101 1215 347 14257 3388 6015 44101 1215 347 14257 3388 47910 134 29919 44101 1215 347 14257 3388 47910 134 4 347 8625 534 26116 38227 49608 42172 34074 288 47460 4839 25606 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:47 - INFO - utils -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:47 - INFO - utils -   segment_ids: 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:47 - INFO - utils -   label: 0 (id = 0)
+07/31/2020 07:12:47 - INFO - utils -   *** Example ***
+07/31/2020 07:12:47 - INFO - utils -   guid: dev-2
+07/31/2020 07:12:47 - INFO - utils -   tokens: <s> Which ?upper - level ?classes ?are ?credit 0 ?credits ?? </s> SELECT ?C OUNT ( ?* ?) ?> ?0 ?FROM ?COUR SE ?AS ?COUR SE alias 0 ?, ?COUR SE 
+?AS ?COUR SE alias 1 ?, ?COUR SE _ OFF ER ING ?AS ?COUR SE _ OFF ER ING alias 0 ?, ?COUR SE _ OFF ER ING ?AS ?COUR SE _ OFF ER ING alias 1 , ?COUR SE _ PR ERE QU IS ITE ?AS ?COUR SE _ PR ERE QU IS ITE alias 0 ?WHERE ?COUR SE _ OFF ER ING alias 1 . S EM ES TER ?= ?COUR SE _ OFF ER ING alias 0 . S EM ES TER ?AND ?COUR SE alias 0 . C OUR SE _ ID ?= ?COUR SE _ OFF ER ING alias 0 . 
+C OUR SE _ ID ?AND ?COUR SE alias 0 . DE PART MENT ?= ?" dep artment 0 " ?AND ?COUR SE alias 0 . NUM BER ?= ?number 0 ?AND ?COUR SE alias 1 . C OUR SE _ ID ?= ?COUR SE _ OFF ER ING alias 1 . C OUR SE _ ID ?AND ?COUR SE alias 1 . DE PART MENT ?= ?" dep artment 0 " ?AND ?COUR SE alias 1 . NUM BER ?= ?number 1 ?AND ?( ?NOT ?( ?( ?COUR SE alias 1 . C OUR SE _ ID ?= ?COUR SE _ PR ERE QU IS ITE alias 0 . C OUR SE _ ID ?AND ?COUR SE alias 0 . C OUR SE _ ID ?= ?COUR SE _ PR ERE QU IS ITE alias 0 . PRE _ C OUR SE _ ID ?) ?OR ?( ?COUR SE alias 1 . C OUR SE _ ID ?= ?COUR SE 
+_ PR ERE QU IS ITE alias 0 . PRE _ C OUR SE _ ID ?AND ?COUR SE alias 0 . C OUR SE _ ID ?= ?COUR SE _ PR ERE QU IS ITE alias 0 . C OUR SE _ ID ?) ?) ?) ?; </s>
+07/31/2020 07:12:47 - INFO - utils -   input_ids: 0 32251 2853 12 4483 4050 32 1361 288 7751 17487 2 49179 230 34494 1640 1009 4839 8061 321 11974 45247 3388 6015 45247 3388 47910 288 2156 45247 3388 6015 45247 3388 47910 134 2156 45247 3388 1215 32794 2076 1862 6015 45247 3388 1215 32794 2076 1862 47910 288 2156 45247 3388 1215 32794 2076 1862 6015 45247 3388 1215 32794 2076 1862 47910 134 6 45247 3388 1215 4454 23142 15513 1729 12946 6015 45247 3388 1215 4454 23142 15513 1729 12946 47910 288 29919 45247 3388 1215 32794 2076 1862 47910 134 4 104 5330 1723 7831 5457 45247 3388 1215 32794 2076 1862 47910 288 4 104 5330 1723 7831 4248 45247 3388 47910 288 4 347 14257 3388 1215 2688 5457 45247 3388 1215 32794 2076 1862 47910 288 4 347 14257 3388 1215 2688 4248 45247 3388 47910 288 4 10089 41623 12613 5457 22 17272 27699 288 113 4248 45247 3388 47910 288 4 46758 11126 5457 346 288 4248 45247 3388 47910 134 4 347 14257 3388 1215 2688 5457 45247 3388 1215 32794 2076 1862 47910 134 4 347 14257 3388 1215 2688 4248 45247 3388 47910 134 4 10089 41623 12613 5457 22 17272 27699 288 113 4248 45247 3388 47910 134 4 46758 11126 5457 346 
+134 4248 36 8127 36 36 45247 3388 47910 134 4 347 14257 3388 1215 2688 5457 45247 3388 1215 4454 23142 15513 1729 12946 47910 288 4 347 14257 3388 1215 2688 4248 45247 3388 47910 288 4 347 14257 3388 1215 2688 5457 45247 3388 1215 4454 23142 15513 1729 12946 47910 288 4 43869 1215 347 14257 3388 1215 2688 4839 6532 36 45247 3388 47910 134 4 347 14257 3388 1215 2688 5457 45247 3388 1215 4454 23142 15513 1729 12946 47910 288 4 43869 1215 347 14257 3388 1215 2688 4248 45247 3388 47910 288 4 347 14257 3388 1215 2688 5457 45247 3388 1215 4454 23142 15513 1729 12946 47910 288 4 347 14257 3388 1215 2688 4839 4839 4839 25606 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:47 - INFO - utils -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:47 - INFO - utils -   segment_ids: 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:47 - INFO - utils -   label: 0 (id = 0)
+07/31/2020 07:12:47 - INFO - utils -   *** Example ***
+07/31/2020 07:12:47 - INFO - utils -   guid: dev-3
+07/31/2020 07:12:47 - INFO - utils -   tokens: <s> When ?Prof . ?instructor 0 ?teaches ?number 0 ?are ?there ?classes ?on ?Friday ?? </s> SELECT ?D IST IN CT ?COUR SE alias 0 . DE PART MENT 
+?, ?COUR SE alias 0 . NAME ?, ?COUR SE alias 0 . NUM BER ?, ?PROGRAM _ C OUR SE alias 0 . WORK LOAD ?FROM ?COUR SE ?AS ?COUR SE alias 0 ?IN NER ?JO IN ?ARE A ?AS ?ARE A alias 0 ?ON ?COUR SE 
+alias 0 . C OUR SE _ ID ?= ?ARE A alias 0 . C OUR SE _ ID ?IN NER ?JO IN ?PROGRAM _ C OUR SE ?AS ?PROGRAM _ C OUR SE alias 0 ?ON ?PROGRAM _ C OUR SE alias 0 . C OUR SE _ ID ?= ?COUR SE alias 0 . C OUR SE _ ID ?WHERE ?ARE A alias 0 . ARE A ?LIKE ?"% area 0 %" ?AND ?PROGRAM _ C OUR SE alias 0 . WORK LOAD ?< ?( ?SELECT ?MIN ( ?PROGRAM _ C OUR SE alias 1 . WORK LOAD ?) ?FROM ?COUR 
+SE ?AS ?COUR SE alias 1 ?IN NER ?JO IN ?PROGRAM _ C OUR SE ?AS ?PROGRAM _ C OUR SE alias 1 ?ON ?PROGRAM _ C OUR SE alias 1 . C OUR SE _ ID ?= ?COUR SE alias 1 . C OUR SE _ ID ?WHERE ?COUR SE alias 1 . DE PART MENT ?= ?" dep artment 0 " ?AND ?COUR SE alias 1 . NUM BER ?= ?number 0 ?) ?ORDER ?BY ?PROGRAM _ C OUR SE alias 0 . WORK LOAD ?; </s>
+07/31/2020 07:12:47 - INFO - utils -   input_ids: 0 1779 6853 4 14772 288 13419 346 288 32 89 4050 15 273 17487 2 49179 211 11595 2444 7164 45247 3388 47910 288 4 10089 41623 12613 2156 45247 3388 47910 288 4 48307 2156 45247 3388 47910 288 4 46758 11126 2156 44101 1215 347 14257 3388 47910 288 4 45213 27822 11974 45247 3388 6015 45247 3388 47910 288 2808 20196 30314 2444 10616 250 6015 10616 250 47910 288 5121 45247 3388 47910 288 4 347 14257 3388 1215 2688 5457 10616 250 47910 288 4 347 14257 3388 1215 2688 2808 20196 30314 2444 44101 1215 347 14257 3388 6015 44101 1215 347 14257 3388 47910 288 5121 44101 1215 347 14257 3388 47910 288 4 347 14257 3388 1215 2688 5457 45247 3388 47910 288 4 347 14257 3388 1215 2688 29919 10616 250 47910 288 4 7982 250 38227 49608 7907 288 47460 4248 44101 1215 347 14257 3388 47910 288 4 45213 27822 28696 36 44664 18335 1640 44101 1215 347 14257 3388 47910 134 4 45213 27822 4839 11974 45247 3388 6015 45247 3388 47910 134 2808 20196 30314 2444 44101 1215 347 14257 3388 6015 44101 1215 347 14257 3388 47910 134 5121 44101 1215 347 14257 3388 47910 134 4 347 14257 3388 1215 2688 5457 45247 3388 47910 134 4 347 14257 3388 1215 2688 29919 45247 3388 47910 134 4 10089 41623 12613 5457 22 17272 27699 288 113 4248 45247 3388 47910 134 4 46758 11126 5457 346 288 4839 43772 10786 44101 1215 347 14257 3388 47910 288 4 45213 27822 25606 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:48 - INFO - utils -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:48 - INFO - utils -   segment_ids: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+07/31/2020 07:12:48 - INFO - utils -   label: 0 (id = 0)
+07/31/2020 07:12:48 - INFO - utils -   *** Example ***
+07/31/2020 07:12:48 - INFO - utils -   guid: dev-4
+07/31/2020 07:12:48 - INFO - utils -   tokens: <s> Who ?usually ?teaches ?department 0 ?number 0 ?? </s> SELECT ?D IST IN CT ?COUR SE alias 0 . DE PART MENT ?, ?COUR SE alias 0 . NAME ?, ?COUR SE alias 0 . NUM BER ?, ?SEM ES TER alias 0 . S EM ES TER ?FROM ?( ?SELECT ?STUD ENT _ REC ORD alias 0 . C OUR SE _ ID ?FROM ?STUD ENT _ REC ORD ?AS ?STUD ENT _ REC ORD alias 0 ?WHERE ?STUD ENT _ REC ORD alias 0 . EAR N _ CR EDIT ?= ?" Y " ?AND ?STUD ENT _ REC ORD alias 0 . ST UD ENT _ ID ?= ?1 ?) ?AS ?D ER IV ED _ TABLE alias 0 ?, ?COUR SE ?AS ?COUR SE alias 0 ?, ?COUR SE _ OFF ER ING ?AS ?COUR SE _ OFF ER ING alias 0 ?, ?PROGRAM _ C OUR SE ?AS ?PROGRAM _ C OUR SE alias 0 ?, ?SEM ES TER ?AS ?SEM ES TER alias 0 ?WHERE ?COUR SE alias 0 . C OUR SE _ ID ?= ?COUR SE _ OFF ER ING alias 0 . C OUR SE _ ID ?AND ?COUR SE alias 0 . C OUR SE _ ID ?NOT ?IN ?( ?D ER IV ED _ TABLE alias 0 . C OUR SE _ ID ?) ?AND ?COUR SE alias 0 . C OUR SE _ ID ?NOT ?IN ?( ?SELECT ?D IST IN CT ?COUR SE _ PR ERE QU IS ITE alias 0 . C OUR SE _ ID ?FROM ?COUR SE _ PR ERE QU IS ITE ?AS ?COUR SE _ PR ERE QU IS ITE alias 0 ?WHERE ?COUR SE _ PR ERE QU IS ITE alias 0 . PRE _ C OUR SE _ ID ?NOT ?IN ?( ?D ER IV ED _ TABLE alias 0 . C OUR SE _ ID ?) ?) ?AND ?COUR SE alias 0 . DE PART MENT ?= ?" dep artment 0 " ?AND ?PROGRAM _ C OUR SE alias 0 . C ATE G ORY ?LIKE ?"% requ irement 0 %" ?AND ?PROGRAM _ C OUR SE alias 0 . C OUR SE _ ID ?= ?COUR SE _ OFF ER ING alias 0 . C OUR SE _ ID ?AND ?SEM ES TER alias 0 . S EM ES TER ?IN ?( ?" SP " ?, </s>       
+07/31/2020 07:12:48 - INFO - utils -   input_ids: 0 12375 2333 13419 1494 288 346 288 17487 2 49179 211 11595 2444 7164 45247 3388 47910 288 4 10089 41623 12613 2156 45247 3388 47910 288 4 48307 2156 45247 3388 47910 288 4 46758 11126 2156 39703 1723 7831 47910 288 4 104 5330 1723 7831 11974 36 44664 39833 5382 1215 40698 11200 47910 288 4 347 14257 3388 1215 2688 11974 39833 5382 1215 40698 11200 6015 39833 5382 1215 40698 11200 47910 288 29919 39833 5382 1215 40698 11200 47910 288 4 27757 487 1215 9822 24788 5457 22 975 113 4248 39833 5382 1215 40698 11200 47910 288 4 4014 13083 5382 1215 2688 5457 112 4839 6015 211 2076 6372 1691 1215 46859 47910 288 2156 45247 3388 6015 45247 3388 47910 288 2156 45247 3388 1215 32794 2076 1862 6015 45247 3388 1215 32794 2076 1862 47910 288 2156 44101 1215 347 14257 3388 6015 44101 1215 347 14257 3388 47910 288 2156 39703 1723 7831 6015 39703 1723 7831 47910 288 29919 45247 3388 47910 288 4 347 14257 3388 1215 2688 5457 45247 3388 1215 32794 2076 1862 47910 288 4 347 14257 3388 1215 2688 4248 45247 3388 47910 288 4 347 14257 3388 1215 2688 8127 2808 36 211 2076 6372 1691 1215 46859 47910 288 4 347 14257 3388 1215 2688 4839 4248 45247 3388 47910 288 4 347 14257 3388 1215 2688 8127 2808 36 44664 211 11595 2444 7164 45247 3388 1215 4454 23142 15513 1729 12946 47910 288 4 347 
+14257 3388 1215 2688 11974 45247 3388 1215 4454 23142 15513 1729 12946 6015 45247 3388 1215 4454 23142 15513 1729 12946 47910 288 29919 45247 3388 1215 4454 23142 15513 1729 12946 47910 288 
+4 43869 1215 347 14257 3388 1215 2688 8127 2808 36 211 2076 6372 1691 1215 46859 47910 288 4 347 14257 3388 1215 2688 4839 4839 4248 45247 3388 47910 288 4 10089 41623 12613 5457 22 17272 27699 288 113 4248 44101 1215 347 14257 3388 47910 288 4 347 8625 534 26116 38227 49608 42172 34074 288 47460 4248 44101 1215 347 14257 3388 47910 288 4 347 14257 3388 1215 2688 5457 45247 3388 1215 32794 2076 1862 47910 288 4 347 14257 3388 1215 2688 4248 39703 1723 7831 47910 288 4 104 5330 1723 7831 2808 36 22 4186 113 2156 2
+07/31/2020 07:12:48 - INFO - utils -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+07/31/2020 07:12:48 - INFO - utils -   segment_ids: 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+07/31/2020 07:12:48 - INFO - utils -   label: 0 (id = 0)
+07/31/2020 07:12:49 - INFO - __main__ -   Saving features into cached file ../data/train_valid/sql\cached_dev_valid_sql\checkpoint-last\pytorch_model.bin_400_codesearch
+07/31/2020 07:12:49 - INFO - __main__ -   ***** Running evaluation best *****
+07/31/2020 07:12:49 - INFO - __main__ -     Num examples = 205
+07/31/2020 07:12:49 - INFO - __main__ -     Batch size = 20
+Evaluating: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 11/11 [00:04<00:00,  2.29it/s] 
+07/31/2020 07:12:53 - INFO - __main__ -   ***** Eval results best *****
+07/31/2020 07:12:54 - INFO - __main__ -     acc = 0.7073170731707317
+07/31/2020 07:12:54 - INFO - __main__ -     acc_and_f1 = 0.7094277673545966
+07/31/2020 07:12:54 - INFO - __main__ -     f1 = 0.7115384615384616
+./models/sql\checkpoint-last
+07/31/2020 07:12:54 - INFO - transformers.configuration_utils -   loading configuration file ./models/sql\checkpoint-last\config.json
+07/31/2020 07:12:54 - INFO - transformers.configuration_utils -   Model config RobertaConfig {
+  "architectures": [
+    "RobertaForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "codesearch",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 50265
+}
+
+07/31/2020 07:12:54 - INFO - transformers.modeling_utils -   loading weights file ./models/sql\checkpoint-last\pytorch_model.bin
+07/31/2020 07:12:58 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_dev_valid_sql\checkpoint-last\pytorch_model.bin_400_codesearch
+07/31/2020 07:12:58 - INFO - __main__ -   ***** Running evaluation last *****
+07/31/2020 07:12:58 - INFO - __main__ -     Num examples = 205
+07/31/2020 07:12:58 - INFO - __main__ -     Batch size = 20
+Evaluating: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 11/11 [00:04<00:00,  2.40it/s] 
+07/31/2020 07:13:02 - INFO - __main__ -   ***** Eval results last *****
+07/31/2020 07:13:02 - INFO - __main__ -     acc = 0.7073170731707317
+07/31/2020 07:13:02 - INFO - __main__ -     acc_and_f1 = 0.7094277673545966
+07/31/2020 07:13:02 - INFO - __main__ -     f1 = 0.7115384615384616
+./models/sql
+07/31/2020 07:13:02 - INFO - transformers.configuration_utils -   loading configuration file ./models/sql\config.json
+07/31/2020 07:13:02 - INFO - transformers.configuration_utils -   Model config RobertaConfig {
+  "architectures": [
+    "RobertaForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "do_sample": false,
+  "eos_token_id": 2,
+  "eos_token_ids": 0,
+  "finetuning_task": "codesearch",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 1,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 1,
+  "use_bfloat16": false,
+  "vocab_size": 50265
+}
+
+07/31/2020 07:13:03 - INFO - transformers.modeling_utils -   loading weights file ./models/sql\pytorch_model.bin
+07/31/2020 07:13:06 - INFO - __main__ -   Loading features from cached file ../data/train_valid/sql\cached_dev_valid_sql\checkpoint-last\pytorch_model.bin_400_codesearch
+07/31/2020 07:13:06 - INFO - __main__ -   ***** Running evaluation ./models/sql *****
+07/31/2020 07:13:06 - INFO - __main__ -     Num examples = 205
+07/31/2020 07:13:06 - INFO - __main__ -     Batch size = 20
+Evaluating: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 11/11 [00:04<00:00,  2.39it/s] 
+07/31/2020 07:13:11 - INFO - __main__ -   ***** Eval results ./models/sql *****
+07/31/2020 07:13:11 - INFO - __main__ -     acc = 0.7073170731707317
+07/31/2020 07:13:11 - INFO - __main__ -     acc_and_f1 = 0.7094277673545966
+07/31/2020 07:13:11 - INFO - __main__ -     f1 = 0.7115384615384616
