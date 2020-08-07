@@ -1,14 +1,38 @@
-2020-08-05 15:25:08.784112: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
-08/05/2020 15:25:10 - INFO - __main__ -   Namespace(adam_epsilon=1e-08, beam_size=10, config_name='', dev_filename='/content/CodeBERT/code2nl/CodeSearchNet/wiki_sql/valid.jsonl', do_eval=True, do_lower_case=False, do_test=False, do_train=True, eval_batch_size=16, eval_steps=1000, gradient_accumulation_steps=1, learning_rate=2e-05, load_model_path=None, local_rank=-1, max_grad_norm=1.0, max_source_length=256, max_steps=-1, max_target_length=128, model_name_or_path='microsoft/codebert-base', model_type='roberta', no_cuda=False, num_train_epochs=3.0, output_dir='model/wiki_sql', seed=42, test_filename=None, tokenizer_name='', train_batch_size=16, train_filename='/content/CodeBERT/code2nl/CodeSearchNet/wiki_sql/train.jsonl', train_steps=50000, warmup_steps=0, weight_decay=0.0)
-08/05/2020 15:25:10 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False
-08/05/2020 15:25:10 - INFO - filelock -   Lock 140580684996392 acquired on /root/.cache/torch/transformers/1b62771d5f5169b34713b0af1ab85d80e11f7b1812fbf3ee7d03a866c5f58e72.06eb31f0a63f4e8a136733ccac422f0abf9ffa87c3e61104b57e7075a704d008.lock
-08/05/2020 15:25:10 - INFO - transformers.file_utils -   https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/config.json not found in cache or force_download set to True, downloading to /root/.cache/torch/transformers/tmpa37r835q
-Downloading: 100% 498/498 [00:00<00:00, 447kB/s]
-08/05/2020 15:25:11 - INFO - transformers.file_utils -   storing https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/config.json in cache at /root/.cache/torch/transformers/1b62771d5f5169b34713b0af1ab85d80e11f7b1812fbf3ee7d03a866c5f58e72.06eb31f0a63f4e8a136733ccac422f0abf9ffa87c3e61104b57e7075a704d008
-08/05/2020 15:25:11 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/torch/transformers/1b62771d5f5169b34713b0af1ab85d80e11f7b1812fbf3ee7d03a866c5f58e72.06eb31f0a63f4e8a136733ccac422f0abf9ffa87c3e61104b57e7075a704d008
-08/05/2020 15:25:11 - INFO - filelock -   Lock 140580684996392 released on /root/.cache/torch/transformers/1b62771d5f5169b34713b0af1ab85d80e11f7b1812fbf3ee7d03a866c5f58e72.06eb31f0a63f4e8a136733ccac422f0abf9ffa87c3e61104b57e7075a704d008.lock
-08/05/2020 15:25:11 - INFO - transformers.configuration_utils -   loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/config.json from cache at /root/.cache/torch/transformers/1b62771d5f5169b34713b0af1ab85d80e11f7b1812fbf3ee7d03a866c5f58e72.06eb31f0a63f4e8a136733ccac422f0abf9ffa87c3e61104b57e7075a704d008
-08/05/2020 15:25:11 - INFO - transformers.configuration_utils -   Model config RobertaConfig {
+
+F:\AIForProgram\CodeBERT>cd code2nl 
+
+F:\AIForProgram\CodeBERT\code2nl>set lang=wiki_sql 
+
+F:\AIForProgram\CodeBERT\code2nl>set lr=5e-5
+
+F:\AIForProgram\CodeBERT\code2nl>set batch_size=6
+
+F:\AIForProgram\CodeBERT\code2nl>set beam_size=10 
+
+F:\AIForProgram\CodeBERT\code2nl>set source_length=256
+
+F:\AIForProgram\CodeBERT\code2nl>set target_length=128
+
+F:\AIForProgram\CodeBERT\code2nl>set data_dir=../code2nl/CodeSearchNet
+
+F:\AIForProgram\CodeBERT\code2nl>set output_dir=model/wiki_sql
+
+F:\AIForProgram\CodeBERT\code2nl>set train_file=../code2nl/CodeSearchNet/wiki_sql/train.jsonl
+
+F:\AIForProgram\CodeBERT\code2nl>set dev_file=../code2nl/CodeSearchNet/wiki_sql/valid.jsonl
+
+F:\AIForProgram\CodeBERT\code2nl>set eval_steps=1000
+
+F:\AIForProgram\CodeBERT\code2nl>set train_steps=50000
+
+F:\AIForProgram\CodeBERT\code2nl>set pretrained_model=microsoft/codebert-base
+
+F:\AIForProgram\CodeBERT\code2nl>python run.py --do_train --do_eval --model_type roberta --model_name_or_path microsoft/codebert-base --train_filename ../code2nl/CodeSearchNet/wiki_sql/train.jsonl --dev_filename ../code2nl/CodeSearchNet/wiki_sql/valid.jsonl --output_dir model/wiki_sql --max_source_length 256 --max_target_length 128 --beam_size 10 --train_batch_size 6 --eval_batch_size 6 --learning_rate 5e-5 --train_steps 50000 --eval_steps 1000
+2020-08-06 15:11:45.485574: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_101.dll
+08/06/2020 15:11:48 - INFO - __main__ -   Namespace(adam_epsilon=1e-08, beam_size=10, config_name='', dev_filename='../code2nl/CodeSearchNet/wiki_sql/valid.jsonl', do_eval=True, do_lower_case=False, do_test=False, do_train=True, eval_batch_size=6, eval_steps=1000, gradient_accumulation_steps=1, learning_rate=5e-05, load_model_path=None, local_rank=-1, max_grad_norm=1.0, max_source_length=256, max_steps=-1, max_target_length=128, model_name_or_path='microsoft/codebert-base', model_type='roberta', no_cuda=False, num_train_epochs=3.0, output_dir='model/wiki_sql', seed=42, test_filename=None, tokenizer_name='', train_batch_size=6, train_filename='../code2nl/CodeSearchNet/wiki_sql/train.jsonl', train_steps=50000, warmup_steps=0, weight_decay=0.0)
+08/06/2020 15:11:48 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False
+08/06/2020 15:11:49 - INFO - transformers.configuration_utils -   loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/config.json from cache at C:\Users\Administrator\.cache\torch\transformers\1b62771d5f5169b34713b0af1ab85d80e11f7b1812fbf3ee7d03a866c5f58e72.06eb31f0a63f4e8a136733ccac422f0abf9ffa87c3e61104b57e7075a704d008       
+08/06/2020 15:11:49 - INFO - transformers.configuration_utils -   Model config RobertaConfig {
   "architectures": [
     "RobertaModel"
   ],
@@ -57,349 +81,744 @@ Downloading: 100% 498/498 [00:00<00:00, 447kB/s]
   "vocab_size": 50265
 }
 
-08/05/2020 15:25:11 - INFO - transformers.tokenization_utils -   Model name 'microsoft/codebert-base' not found in model shortcut name list (roberta-base, roberta-large, roberta-large-mnli, distilroberta-base, roberta-base-openai-detector, roberta-large-openai-detector). Assuming 'microsoft/codebert-base' is a path, a model identifier, or url to a directory containing tokenizer files.
-08/05/2020 15:25:11 - INFO - filelock -   Lock 140580684963064 acquired on /root/.cache/torch/transformers/aca4dbdf4f074d4e071c2664901fec33c8aa69c35aa0101bc669ed4b44d1f6c3.6a4061e8fc00057d21d80413635a86fdcf55b6e7594ad9e25257d2f99a02f4be.lock
-08/05/2020 15:25:11 - INFO - transformers.file_utils -   https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/vocab.json not found in cache or force_download set to True, downloading to /root/.cache/torch/transformers/tmpygmig8c1
-Downloading: 100% 899k/899k [00:00<00:00, 2.08MB/s]
-08/05/2020 15:25:12 - INFO - transformers.file_utils -   storing https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/vocab.json in cache at /root/.cache/torch/transformers/aca4dbdf4f074d4e071c2664901fec33c8aa69c35aa0101bc669ed4b44d1f6c3.6a4061e8fc00057d21d80413635a86fdcf55b6e7594ad9e25257d2f99a02f4be
-08/05/2020 15:25:12 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/torch/transformers/aca4dbdf4f074d4e071c2664901fec33c8aa69c35aa0101bc669ed4b44d1f6c3.6a4061e8fc00057d21d80413635a86fdcf55b6e7594ad9e25257d2f99a02f4be
-08/05/2020 15:25:12 - INFO - filelock -   Lock 140580684963064 released on /root/.cache/torch/transformers/aca4dbdf4f074d4e071c2664901fec33c8aa69c35aa0101bc669ed4b44d1f6c3.6a4061e8fc00057d21d80413635a86fdcf55b6e7594ad9e25257d2f99a02f4be.lock
-08/05/2020 15:25:12 - INFO - filelock -   Lock 140580684961664 acquired on /root/.cache/torch/transformers/779a2f0c38ba2ff65d9a3ee23e58db9568f44a20865c412365e3dc540f01743f.70bec105b4158ed9a1747fea67a43f5dee97855c64d62b6ec3742f4cfdb5feda.lock
-08/05/2020 15:25:12 - INFO - transformers.file_utils -   https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/merges.txt not found in cache or force_download set to True, downloading to /root/.cache/torch/transformers/tmp8nn52r9p
-Downloading: 100% 456k/456k [00:00<00:00, 1.33MB/s]
-08/05/2020 15:25:13 - INFO - transformers.file_utils -   storing https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/merges.txt in cache at /root/.cache/torch/transformers/779a2f0c38ba2ff65d9a3ee23e58db9568f44a20865c412365e3dc540f01743f.70bec105b4158ed9a1747fea67a43f5dee97855c64d62b6ec3742f4cfdb5feda
-08/05/2020 15:25:13 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/torch/transformers/779a2f0c38ba2ff65d9a3ee23e58db9568f44a20865c412365e3dc540f01743f.70bec105b4158ed9a1747fea67a43f5dee97855c64d62b6ec3742f4cfdb5feda
-08/05/2020 15:25:13 - INFO - filelock -   Lock 140580684961664 released on /root/.cache/torch/transformers/779a2f0c38ba2ff65d9a3ee23e58db9568f44a20865c412365e3dc540f01743f.70bec105b4158ed9a1747fea67a43f5dee97855c64d62b6ec3742f4cfdb5feda.lock
-08/05/2020 15:25:14 - INFO - filelock -   Lock 140580684963288 acquired on /root/.cache/torch/transformers/5a191080da4f00859b5d3d29529f57894583e00ab07b7c940d65c33db4b25d4d.16f949018cf247a2ea7465a74ca9a292212875e5fd72f969e0807011e7f192e4.lock
-08/05/2020 15:25:14 - INFO - transformers.file_utils -   https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/special_tokens_map.json not found in cache or force_download set to True, downloading to /root/.cache/torch/transformers/tmp7co177fz
-Downloading: 100% 150/150 [00:00<00:00, 107kB/s]
-08/05/2020 15:25:14 - INFO - transformers.file_utils -   storing https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/special_tokens_map.json in cache at /root/.cache/torch/transformers/5a191080da4f00859b5d3d29529f57894583e00ab07b7c940d65c33db4b25d4d.16f949018cf247a2ea7465a74ca9a292212875e5fd72f969e0807011e7f192e4
-08/05/2020 15:25:14 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/torch/transformers/5a191080da4f00859b5d3d29529f57894583e00ab07b7c940d65c33db4b25d4d.16f949018cf247a2ea7465a74ca9a292212875e5fd72f969e0807011e7f192e4
-08/05/2020 15:25:14 - INFO - filelock -   Lock 140580684963288 released on /root/.cache/torch/transformers/5a191080da4f00859b5d3d29529f57894583e00ab07b7c940d65c33db4b25d4d.16f949018cf247a2ea7465a74ca9a292212875e5fd72f969e0807011e7f192e4.lock
-08/05/2020 15:25:15 - INFO - filelock -   Lock 140580684963064 acquired on /root/.cache/torch/transformers/1b4723c5fb2d933e11c399450ea233aaf33f093b5cbef3ec864624735380e490.70b5dbd5d3b9b4c9bfb3d1f6464291ff52f6a8d96358899aa3834e173b45092d.lock
-08/05/2020 15:25:15 - INFO - transformers.file_utils -   https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/tokenizer_config.json not found in cache or force_download set to True, downloading to /root/.cache/torch/transformers/tmptodn6w3r
-Downloading: 100% 25.0/25.0 [00:00<00:00, 20.0kB/s]
-08/05/2020 15:25:15 - INFO - transformers.file_utils -   storing https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/tokenizer_config.json in cache at /root/.cache/torch/transformers/1b4723c5fb2d933e11c399450ea233aaf33f093b5cbef3ec864624735380e490.70b5dbd5d3b9b4c9bfb3d1f6464291ff52f6a8d96358899aa3834e173b45092d
-08/05/2020 15:25:15 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/torch/transformers/1b4723c5fb2d933e11c399450ea233aaf33f093b5cbef3ec864624735380e490.70b5dbd5d3b9b4c9bfb3d1f6464291ff52f6a8d96358899aa3834e173b45092d
-08/05/2020 15:25:15 - INFO - filelock -   Lock 140580684963064 released on /root/.cache/torch/transformers/1b4723c5fb2d933e11c399450ea233aaf33f093b5cbef3ec864624735380e490.70b5dbd5d3b9b4c9bfb3d1f6464291ff52f6a8d96358899aa3834e173b45092d.lock
-08/05/2020 15:25:15 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/vocab.json from cache at /root/.cache/torch/transformers/aca4dbdf4f074d4e071c2664901fec33c8aa69c35aa0101bc669ed4b44d1f6c3.6a4061e8fc00057d21d80413635a86fdcf55b6e7594ad9e25257d2f99a02f4be
-08/05/2020 15:25:15 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/merges.txt from cache at /root/.cache/torch/transformers/779a2f0c38ba2ff65d9a3ee23e58db9568f44a20865c412365e3dc540f01743f.70bec105b4158ed9a1747fea67a43f5dee97855c64d62b6ec3742f4cfdb5feda
-08/05/2020 15:25:15 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/added_tokens.json from cache at None
-08/05/2020 15:25:15 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/special_tokens_map.json from cache at /root/.cache/torch/transformers/5a191080da4f00859b5d3d29529f57894583e00ab07b7c940d65c33db4b25d4d.16f949018cf247a2ea7465a74ca9a292212875e5fd72f969e0807011e7f192e4
-08/05/2020 15:25:15 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/tokenizer_config.json from cache at /root/.cache/torch/transformers/1b4723c5fb2d933e11c399450ea233aaf33f093b5cbef3ec864624735380e490.70b5dbd5d3b9b4c9bfb3d1f6464291ff52f6a8d96358899aa3834e173b45092d
-08/05/2020 15:25:16 - INFO - filelock -   Lock 140580684993480 acquired on /root/.cache/torch/transformers/3416309b564f60f87c1bc2ce8d8a82bb7c1e825b241c816482f750b48a5cdc26.96251fe4478bac0cff9de8ae3201e5847cee59aebbcafdfe6b2c361f9398b349.lock
-08/05/2020 15:25:16 - INFO - transformers.file_utils -   https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/pytorch_model.bin not found in cache or force_download set to True, downloading to /root/.cache/torch/transformers/tmpjl9o9kp9
-Downloading: 100% 499M/499M [01:03<00:00, 7.84MB/s]
-08/05/2020 15:26:20 - INFO - transformers.file_utils -   storing https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/pytorch_model.bin in cache at /root/.cache/torch/transformers/3416309b564f60f87c1bc2ce8d8a82bb7c1e825b241c816482f750b48a5cdc26.96251fe4478bac0cff9de8ae3201e5847cee59aebbcafdfe6b2c361f9398b349
-08/05/2020 15:26:20 - INFO - transformers.file_utils -   creating metadata file for /root/.cache/torch/transformers/3416309b564f60f87c1bc2ce8d8a82bb7c1e825b241c816482f750b48a5cdc26.96251fe4478bac0cff9de8ae3201e5847cee59aebbcafdfe6b2c361f9398b349
-08/05/2020 15:26:20 - INFO - filelock -   Lock 140580684993480 released on /root/.cache/torch/transformers/3416309b564f60f87c1bc2ce8d8a82bb7c1e825b241c816482f750b48a5cdc26.96251fe4478bac0cff9de8ae3201e5847cee59aebbcafdfe6b2c361f9398b349.lock
-08/05/2020 15:26:20 - INFO - transformers.modeling_utils -   loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/pytorch_model.bin from cache at /root/.cache/torch/transformers/3416309b564f60f87c1bc2ce8d8a82bb7c1e825b241c816482f750b48a5cdc26.96251fe4478bac0cff9de8ae3201e5847cee59aebbcafdfe6b2c361f9398b349
-08/05/2020 15:26:38 - INFO - __main__ -   *** Example ***
-08/05/2020 15:26:38 - INFO - __main__ -   idx: 0
-08/05/2020 15:26:38 - INFO - __main__ -   source_tokens: ['<s>', 'What', '_is', '_every', '_number', '_when', '_the', '_player', '_is', '_A', 'ig', 'ars', '_Vit', 'ols', '?', '</s>']
-08/05/2020 15:26:38 - INFO - __main__ -   source_ids: 0 2264 16 358 346 77 5 869 16 83 1023 2726 24589 11925 116 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-08/05/2020 15:26:38 - INFO - __main__ -   source_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-08/05/2020 15:26:38 - INFO - __main__ -   target_tokens: ['<s>', 'SELECT', '_No', '_FROM', '_table', '_', '1', '_', '23', '67', '00', '57', '_', '7', '_WHERE', '_Player', '_=', '_A', 'ig', 'ars', '_Vit', 'ols', '</s>']
-08/05/2020 15:26:38 - INFO - __main__ -   target_ids: 0 49179 440 11974 2103 1215 134 1215 1922 4111 612 4390 1215 406 29919 8251 5457 83 1023 2726 24589 11925 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-08/05/2020 15:26:38 - INFO - __main__ -   target_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-08/05/2020 15:26:38 - INFO - __main__ -   *** Example ***
-08/05/2020 15:26:38 - INFO - __main__ -   idx: 1
-08/05/2020 15:26:38 - INFO - __main__ -   source_tokens: ['<s>', 'What', '_is', '_the', '_River', '_Mile', '_with', '_a', '_R', 'DB', '_lock', '_side', '_and', '_a', '_pool', '_length', '_of', '_55', '_.', '_4', '?', '</s>']
-08/05/2020 15:26:38 - INFO - __main__ -   source_ids: 0 2264 16 5 1995 14640 19 10 248 10842 7014 526 8 10 3716 5933 9 3490 479 204 116 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-08/05/2020 15:26:38 - INFO - __main__ -   source_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-08/05/2020 15:26:38 - INFO - __main__ -   target_tokens: ['<s>', 'SELECT', '_River', '_Mile', '_FROM', '_table', '_', '2', '_', '18', '62', '12', '04', '_', '2', '_WHERE', '_Lock', '_Side', '_=', '_r', 'db', '_AND', '_Pool', '_Length', '_(', '_miles', '_)', '_=', '_55', '_.', '_4', '</s>']
-08/05/2020 15:26:38 - INFO - __main__ -   target_ids: 0 49179 1995 14640 11974 2103 1215 176 1215 1366 5379 1092 3387 1215 176 29919 11647 9120 5457 910 33845 4248 13906 41852 36 1788 4839 5457 3490 479 204 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-08/05/2020 15:26:38 - INFO - __main__ -   target_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-08/05/2020 15:26:38 - INFO - __main__ -   *** Example ***
-08/05/2020 15:26:38 - INFO - __main__ -   idx: 2
-08/05/2020 15:26:38 - INFO - __main__ -   source_tokens: ['<s>', 'What', '_s', '_the', '_Loss', '_for', '_the', '_game', '_that', '_had', '_a', '_22', '_-', '_24', '_record', '?', '</s>']
-08/05/2020 15:26:38 - INFO - __main__ -   source_ids: 0 2264 579 5 19700 13 5 177 14 56 10 820 111 706 638 116 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-08/05/2020 15:26:38 - INFO - __main__ -   source_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-08/05/2020 15:26:38 - INFO - __main__ -   target_tokens: ['<s>', 'SELECT', '_Loss', '_FROM', '_table', '_', '2', '_', '14', '26', '95', '40', '_', '5', '_WHERE', '_Record', '_=', '_22', '_-', '_24', '</s>']
-08/05/2020 15:26:38 - INFO - __main__ -   target_ids: 0 49179 19700 11974 2103 1215 176 1215 1570 2481 4015 1749 1215 245 29919 10788 5457 820 111 706 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-08/05/2020 15:26:38 - INFO - __main__ -   target_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-08/05/2020 15:26:38 - INFO - __main__ -   *** Example ***
-08/05/2020 15:26:38 - INFO - __main__ -   idx: 3
-08/05/2020 15:26:38 - INFO - __main__ -   source_tokens: ['<s>', 'What', '_is', '_D', '3', '車', '?', '_D', '3', '車', '?', '_[', '_', '谷', '?', '那', '﹞', '_]', '_when', '_', '辰', '?', '_', '辰', '?', '_[', '_', '那', '?', '_/', '_', '谷', '㏒', '_]', '_is', '_', '辰', '?', '_', '辰', '?', '_[', '_t', '赤', '?', '那', '?', '那', '?', '_]', '_?', '</s>']
-08/05/2020 15:26:38 - INFO - __main__ -   source_ids: 0 2264 16 18697 15264 49013 27 18697 15264 49013 27 646 1437 35423 5543 38155 18400 27779 77 1437 48561 15722 1437 48561 15722 646 1437 38155 10172 1589 1437 35423 2469 27779 16 1437 48561 9470 1437 48561 9470 646 326 48254 5543 38155 9264 38155 4394 27779 17487 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-08/05/2020 15:26:38 - INFO - __main__ -   source_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-08/05/2020 15:26:38 - INFO - __main__ -   target_tokens: ['<s>', 'SELECT', '_D', '?', '車', '?', '_D', '3', '車', '?', '_[', '_', '谷', '?', '那', '﹞', '_]', '_FROM', '_table', '_', '1', '_', '20', '23', '65', '_', '2', '_WHERE', '_', '辰', '?', '_', '辰', '?', '_[', '_', '那', '?', '_/', '_', '谷', '㏒', '_]', '_=', '_', '辰', '?', '_', '辰', '?', '_[', '_t', '赤', '?', '那', '?', '那', '?', '_]', '</s>']
-08/05/2020 15:26:38 - INFO - __main__ -   target_ids: 0 49179 18697 9085 49013 27 18697 15264 49013 27 646 1437 35423 5543 38155 18400 27779 11974 2103 1215 134 1215 844 1922 3506 1215 176 29919 1437 48561 10674 1437 48561 15722 646 1437 38155 10172 1589 1437 35423 2469 27779 5457 1437 48561 4726 1437 48561 9470 646 326 48254 5543 38155 9264 38155 4394 27779 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-08/05/2020 15:26:38 - INFO - __main__ -   target_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-08/05/2020 15:26:38 - INFO - __main__ -   *** Example ***
-08/05/2020 15:26:38 - INFO - __main__ -   idx: 4
-08/05/2020 15:26:38 - INFO - __main__ -   source_tokens: ['<s>', 'When', '_22', '_is', '_the', '_number', '_what', '_is', '_the', '_episode', '_title', '?', '</s>']
-08/05/2020 15:26:38 - INFO - __main__ -   source_ids: 0 1779 820 16 5 346 99 16 5 3238 1270 116 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-08/05/2020 15:26:38 - INFO - __main__ -   source_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-08/05/2020 15:26:38 - INFO - __main__ -   target_tokens: ['<s>', 'SELECT', '_Episode', '_title', '_FROM', '_table', '_', '1', '_', '294', '75', '589', '_', '3', '_WHERE', '_No', '_.', '_=', '_22', '</s>']
-08/05/2020 15:26:38 - INFO - __main__ -   target_ids: 0 49179 16012 1270 11974 2103 1215 134 1215 32004 2545 40017 1215 246 29919 440 479 5457 820 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-08/05/2020 15:26:38 - INFO - __main__ -   target_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-08/05/2020 15:26:53 - INFO - __main__ -   ***** Running training *****
-08/05/2020 15:26:53 - INFO - __main__ -     Num examples = 54208
-08/05/2020 15:26:53 - INFO - __main__ -     Batch size = 16
-08/05/2020 15:26:53 - INFO - __main__ -     Num epoch = 14
-loss 12.7294:   0% 0/50000 [00:00<?, ?it/s]/usr/local/lib/python3.6/dist-packages/transformers/optimization.py:155: UserWarning: This overload of add_ is deprecated:
-	add_(Number alpha, Tensor other)
-Consider using one of the following signatures instead:
-	add_(Tensor other, *, Number alpha) (Triggered internally at  /pytorch/torch/csrc/utils/python_arg_parser.cpp:766.)
-  exp_avg.mul_(beta1).add_(1.0 - beta1, grad)
-loss 3.4033:   2% 998/50000 [18:38<15:31:18,  1.14s/it]08/05/2020 15:45:34 - INFO - __main__ -   
+08/06/2020 15:11:50 - INFO - transformers.tokenization_utils -   Model name 'microsoft/codebert-base' not found in model shortcut name list (roberta-base, roberta-large, roberta-large-mnli, 
+distilroberta-base, roberta-base-openai-detector, roberta-large-openai-detector). Assuming 'microsoft/codebert-base' is a path, a model identifier, or url to a directory containing tokenizer files.
+08/06/2020 15:11:53 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/vocab.json from cache at C:\Users\Administrator\.cache\torch\transformers\aca4dbdf4f074d4e071c2664901fec33c8aa69c35aa0101bc669ed4b44d1f6c3.6a4061e8fc00057d21d80413635a86fdcf55b6e7594ad9e25257d2f99a02f4be
+08/06/2020 15:11:53 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/merges.txt from cache at C:\Users\Administrator\.cache\torch\transformers\779a2f0c38ba2ff65d9a3ee23e58db9568f44a20865c412365e3dc540f01743f.70bec105b4158ed9a1747fea67a43f5dee97855c64d62b6ec3742f4cfdb5feda
+08/06/2020 15:11:53 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/added_tokens.json from cache at None
+08/06/2020 15:11:53 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/special_tokens_map.json from cache at C:\Users\Administrator\.cache\torch\transformers\5a191080da4f00859b5d3d29529f57894583e00ab07b7c940d65c33db4b25d4d.16f949018cf247a2ea7465a74ca9a292212875e5fd72f969e0807011e7f192e4
+08/06/2020 15:11:53 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/tokenizer_config.json from cache at 
+C:\Users\Administrator\.cache\torch\transformers\1b4723c5fb2d933e11c399450ea233aaf33f093b5cbef3ec864624735380e490.70b5dbd5d3b9b4c9bfb3d1f6464291ff52f6a8d96358899aa3834e173b45092d
+08/06/2020 15:11:53 - INFO - transformers.modeling_utils -   loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/microsoft/codebert-base/pytorch_model.bin from cache at 
+C:\Users\Administrator\.cache\torch\transformers\3416309b564f60f87c1bc2ce8d8a82bb7c1e825b241c816482f750b48a5cdc26.96251fe4478bac0cff9de8ae3201e5847cee59aebbcafdfe6b2c361f9398b349
+08/06/2020 15:12:01 - INFO - __main__ -   *** Example ***
+08/06/2020 15:12:01 - INFO - __main__ -   idx: 0
+08/06/2020 15:12:01 - INFO - __main__ -   source_tokens: ['<s>', 'What', '_is', '_every', '_number', '_when', '_the', '_player', '_is', '_A', 'ig', 'ars', '_Vit', 'ols', '?', '</s>']        
+08/06/2020 15:12:01 - INFO - __main__ -   source_ids: 0 2264 16 358 346 77 5 869 16 83 1023 2726 24589 11925 116 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+08/06/2020 15:12:01 - INFO - __main__ -   source_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0    
+08/06/2020 15:12:01 - INFO - __main__ -   target_tokens: ['<s>', 'SELECT', '_No', '_FROM', '_table', '_', '1', '_', '23', '67', '00', '57', '_', '7', '_WHERE', '_Player', '_=', '_A', 'ig', 'ars', '_Vit', 'ols', '</s>']
+08/06/2020 15:12:01 - INFO - __main__ -   target_ids: 0 49179 440 11974 2103 1215 134 1215 1922 4111 612 4390 1215 406 29919 8251 5457 83 1023 2726 24589 11925 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+08/06/2020 15:12:01 - INFO - __main__ -   target_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+08/06/2020 15:12:02 - INFO - __main__ -   *** Example ***
+08/06/2020 15:12:02 - INFO - __main__ -   idx: 1
+08/06/2020 15:12:02 - INFO - __main__ -   source_tokens: ['<s>', 'What', '_is', '_the', '_River', '_Mile', '_with', '_a', '_R', 'DB', '_lock', '_side', '_and', '_a', '_pool', '_length', '_of', '_55', '_.', '_4', '?', '</s>']
+08/06/2020 15:12:02 - INFO - __main__ -   source_ids: 0 2264 16 5 1995 14640 19 10 248 10842 7014 526 8 10 3716 5933 9 3490 479 204 116 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+08/06/2020 15:12:02 - INFO - __main__ -   source_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0    
+08/06/2020 15:12:02 - INFO - __main__ -   target_tokens: ['<s>', 'SELECT', '_River', '_Mile', '_FROM', '_table', '_', '2', '_', '18', '62', '12', '04', '_', '2', '_WHERE', '_Lock', '_Side', 
+'_=', '_r', 'db', '_AND', '_Pool', '_Length', '_(', '_miles', '_)', '_=', '_55', '_.', '_4', '</s>']
+08/06/2020 15:12:02 - INFO - __main__ -   target_ids: 0 49179 1995 14640 11974 2103 1215 176 1215 1366 5379 1092 3387 1215 176 29919 11647 9120 5457 910 33845 4248 13906 41852 36 1788 4839 5457 3490 479 204 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+08/06/2020 15:12:02 - INFO - __main__ -   target_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+08/06/2020 15:12:02 - INFO - __main__ -   *** Example ***
+08/06/2020 15:12:02 - INFO - __main__ -   idx: 2
+08/06/2020 15:12:02 - INFO - __main__ -   source_tokens: ['<s>', 'What', '_s', '_the', '_Loss', '_for', '_the', '_game', '_that', '_had', '_a', '_22', '_-', '_24', '_record', '?', '</s>']   
+08/06/2020 15:12:02 - INFO - __main__ -   source_ids: 0 2264 579 5 19700 13 5 177 14 56 10 820 111 706 638 116 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+08/06/2020 15:12:02 - INFO - __main__ -   source_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0    
+08/06/2020 15:12:03 - INFO - __main__ -   target_tokens: ['<s>', 'SELECT', '_Loss', '_FROM', '_table', '_', '2', '_', '14', '26', '95', '40', '_', '5', '_WHERE', '_Record', '_=', '_22', '_-', '_24', '</s>']
+08/06/2020 15:12:03 - INFO - __main__ -   target_ids: 0 49179 19700 11974 2103 1215 176 1215 1570 2481 4015 1749 1215 245 29919 10788 5457 820 111 706 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+08/06/2020 15:12:03 - INFO - __main__ -   target_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+08/06/2020 15:12:03 - INFO - __main__ -   *** Example ***
+08/06/2020 15:12:03 - INFO - __main__ -   idx: 3
+08/06/2020 15:12:03 - INFO - __main__ -   source_tokens: ['<s>', 'What', '_is', '_D', '3', 'ó', '?', '_D', '3', 'ó', '?', '_[', '_', 'é', '?', 'ê', '·', '_]', '_when', '_', 'ò', '?', '_', 'ò', '?', '_[', '_', 'ê', '?', '_/', '_', 'é', '￡', '_]', '_is', '_', 'ò', '?', '_', 'ò', '?', '_[', '_t', 'í', '?', 'ê', '?', 'ê', '?', '_]', '_?', '</s>']
+08/06/2020 15:12:03 - INFO - __main__ -   source_ids: 0 2264 16 18697 15264 49013 27 18697 15264 49013 27 646 1437 35423 5543 38155 18400 27779 77 1437 48561 15722 1437 48561 15722 646 1437 
+38155 10172 1589 1437 35423 2469 27779 16 1437 48561 9470 1437 48561 9470 646 326 48254 5543 38155 9264 38155 4394 27779 17487 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+08/06/2020 15:12:03 - INFO - __main__ -   source_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0    
+08/06/2020 15:12:03 - INFO - __main__ -   target_tokens: ['<s>', 'SELECT', '_D', '?', 'ó', '?', '_D', '3', 'ó', '?', '_[', '_', 'é', '?', 'ê', '·', '_]', '_FROM', '_table', '_', '1', '_', '20', '23', '65', '_', '2', '_WHERE', '_', 'ò', '?', '_', 'ò', '?', '_[', '_', 'ê', '?', '_/', '_', 'é', '￡', '_]', '_=', '_', 'ò', '?', '_', 'ò', '?', '_[', '_t', 'í', '?', 'ê', '?', 'ê', '?', '_]', '</s>']
+08/06/2020 15:12:04 - INFO - __main__ -   target_ids: 0 49179 18697 9085 49013 27 18697 15264 49013 27 646 1437 35423 5543 38155 18400 27779 11974 2103 1215 134 1215 844 1922 3506 1215 176 29919 1437 48561 10674 1437 48561 15722 646 1437 38155 10172 1589 1437 35423 2469 27779 5457 1437 48561 4726 1437 48561 9470 646 326 48254 5543 38155 9264 38155 4394 27779 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+08/06/2020 15:12:04 - INFO - __main__ -   target_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+08/06/2020 15:12:04 - INFO - __main__ -   *** Example ***
+08/06/2020 15:12:04 - INFO - __main__ -   idx: 4
+08/06/2020 15:12:04 - INFO - __main__ -   source_tokens: ['<s>', 'When', '_22', '_is', '_the', '_number', '_what', '_is', '_the', '_episode', '_title', '?', '</s>']
+08/06/2020 15:12:04 - INFO - __main__ -   source_ids: 0 1779 820 16 5 346 99 16 5 3238 1270 116 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1
+08/06/2020 15:12:04 - INFO - __main__ -   source_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0    
+08/06/2020 15:12:04 - INFO - __main__ -   target_tokens: ['<s>', 'SELECT', '_Episode', '_title', '_FROM', '_table', '_', '1', '_', '294', '75', '589', '_', '3', '_WHERE', '_No', '_.', '_=', 
+'_22', '</s>']
+08/06/2020 15:12:04 - INFO - __main__ -   target_ids: 0 49179 16012 1270 11974 2103 1215 134 1215 32004 2545 40017 1215 246 29919 440 479 5457 820 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+08/06/2020 15:12:04 - INFO - __main__ -   target_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+08/06/2020 15:12:20 - INFO - __main__ -   ***** Running training *****
+08/06/2020 15:12:20 - INFO - __main__ -     Num examples = 54208
+08/06/2020 15:12:20 - INFO - __main__ -     Batch size = 6
+08/06/2020 15:12:20 - INFO - __main__ -     Num epoch = 5
+loss 3.3105:   2%|██▋                                                                                                                                  | 998/50000 [08:53<7:21:56,  1.85it/s]08/06/2020 15:21:16 - INFO - __main__ -
 ***** Running evaluation *****
-08/05/2020 15:45:34 - INFO - __main__ -     Num examples = 5946
-08/05/2020 15:45:34 - INFO - __main__ -     Batch size = 16
-08/05/2020 15:47:59 - INFO - __main__ -     eval_ppl = 12.6044
-08/05/2020 15:47:59 - INFO - __main__ -     global_step = 1000
-08/05/2020 15:47:59 - INFO - __main__ -     train_loss = 3.4033
-08/05/2020 15:47:59 - INFO - __main__ -     ********************
-08/05/2020 15:48:01 - INFO - __main__ -     Best ppl:12.6044
-08/05/2020 15:48:01 - INFO - __main__ -     ********************
+08/06/2020 15:21:16 - INFO - __main__ -     Num examples = 5946
+08/06/2020 15:21:16 - INFO - __main__ -     Batch size = 6
+08/06/2020 15:23:37 - INFO - __main__ -     eval_ppl = 12.41749
+08/06/2020 15:23:37 - INFO - __main__ -     global_step = 1000
+08/06/2020 15:23:37 - INFO - __main__ -     train_loss = 3.3105
+08/06/2020 15:23:37 - INFO - __main__ -     ********************
+08/06/2020 15:23:39 - INFO - __main__ -     Best ppl:12.41749
+08/06/2020 15:23:39 - INFO - __main__ -     ********************
 Total: 1000
-08/05/2020 15:59:13 - INFO - __main__ -     bleu-4 = 38.07 
-08/05/2020 15:59:13 - INFO - __main__ -     ********************
-08/05/2020 15:59:13 - INFO - __main__ -     Best bleu:38.07
-08/05/2020 15:59:13 - INFO - __main__ -     ********************
-loss 2.3022:   4% 1998/50000 [51:23<15:12:01,  1.14s/it]08/05/2020 16:18:17 - INFO - __main__ -   
+08/06/2020 15:41:45 - INFO - __main__ -     bleu-4 = 36.0 
+08/06/2020 15:41:45 - INFO - __main__ -     ********************
+08/06/2020 15:41:45 - INFO - __main__ -     Best bleu:36.0
+08/06/2020 15:41:45 - INFO - __main__ -     ********************
+loss 2.2369:   4%|█████▎                                                                                                                              | 1998/50000 [38:19<7:06:10,  1.88it/s]08/06/2020 15:50:41 - INFO - __main__ -
 ***** Running evaluation *****
-08/05/2020 16:18:17 - INFO - __main__ -     Num examples = 5946
-08/05/2020 16:18:17 - INFO - __main__ -     Batch size = 16
-08/05/2020 16:20:42 - INFO - __main__ -     eval_ppl = 6.85915
-08/05/2020 16:20:42 - INFO - __main__ -     global_step = 2000
-08/05/2020 16:20:42 - INFO - __main__ -     train_loss = 2.3022
-08/05/2020 16:20:42 - INFO - __main__ -     ********************
-08/05/2020 16:20:44 - INFO - __main__ -     Best ppl:6.85915
-08/05/2020 16:20:44 - INFO - __main__ -     ********************
+08/06/2020 15:50:41 - INFO - __main__ -     Num examples = 5946
+08/06/2020 15:50:41 - INFO - __main__ -     Batch size = 6
+08/06/2020 15:53:02 - INFO - __main__ -     eval_ppl = 6.63011
+08/06/2020 15:53:02 - INFO - __main__ -     global_step = 2000
+08/06/2020 15:53:02 - INFO - __main__ -     train_loss = 2.2369
+08/06/2020 15:53:02 - INFO - __main__ -     ********************
+08/06/2020 15:53:04 - INFO - __main__ -     Best ppl:6.63011
+08/06/2020 15:53:04 - INFO - __main__ -     ********************
 Total: 1000
-08/05/2020 16:32:43 - INFO - __main__ -     bleu-4 = 42.1 
-08/05/2020 16:32:43 - INFO - __main__ -     ********************
-08/05/2020 16:32:43 - INFO - __main__ -     Best bleu:42.1
-08/05/2020 16:32:43 - INFO - __main__ -     ********************
-loss 1.8722:   6% 2998/50000 [1:24:52<14:55:48,  1.14s/it]08/05/2020 16:51:46 - INFO - __main__ -   
+08/06/2020 16:12:12 - INFO - __main__ -     bleu-4 = 40.44 
+08/06/2020 16:12:12 - INFO - __main__ -     ********************
+08/06/2020 16:12:12 - INFO - __main__ -     Best bleu:40.44
+08/06/2020 16:12:12 - INFO - __main__ -     ********************
+loss 1.7832:   6%|███████▊                                                                                                                          | 2998/50000 [1:08:47<6:54:00,  1.89it/s]08/06/2020 16:21:09 - INFO - __main__ -
 ***** Running evaluation *****
-08/05/2020 16:51:46 - INFO - __main__ -     Num examples = 5946
-08/05/2020 16:51:46 - INFO - __main__ -     Batch size = 16
-08/05/2020 16:54:11 - INFO - __main__ -     eval_ppl = 4.97076
-08/05/2020 16:54:11 - INFO - __main__ -     global_step = 3000
-08/05/2020 16:54:11 - INFO - __main__ -     train_loss = 1.8722
-08/05/2020 16:54:11 - INFO - __main__ -     ********************
-08/05/2020 16:54:14 - INFO - __main__ -     Best ppl:4.97076
-08/05/2020 16:54:14 - INFO - __main__ -     ********************
+08/06/2020 16:21:09 - INFO - __main__ -     Num examples = 5946
+08/06/2020 16:21:09 - INFO - __main__ -     Batch size = 6
+08/06/2020 16:23:31 - INFO - __main__ -     eval_ppl = 4.93335
+08/06/2020 16:23:31 - INFO - __main__ -     global_step = 3000
+08/06/2020 16:23:31 - INFO - __main__ -     train_loss = 1.7832
+08/06/2020 16:23:31 - INFO - __main__ -     ********************
+08/06/2020 16:23:32 - INFO - __main__ -     Best ppl:4.93335
+08/06/2020 16:23:32 - INFO - __main__ -     ********************
 Total: 1000
-08/05/2020 17:05:27 - INFO - __main__ -     bleu-4 = 46.53 
-08/05/2020 17:05:27 - INFO - __main__ -     ********************
-08/05/2020 17:05:27 - INFO - __main__ -     Best bleu:46.53
-08/05/2020 17:05:27 - INFO - __main__ -     ********************
-loss 1.5945:   8% 3998/50000 [1:57:36<14:36:58,  1.14s/it]08/05/2020 17:24:30 - INFO - __main__ -   
+08/06/2020 16:42:54 - INFO - __main__ -     bleu-4 = 49.03 
+08/06/2020 16:42:54 - INFO - __main__ -     ********************
+08/06/2020 16:42:54 - INFO - __main__ -     Best bleu:49.03
+08/06/2020 16:42:54 - INFO - __main__ -     ********************
+loss 1.5846:   8%|██████████▍                                                                                                                       | 3998/50000 [1:39:30<6:51:15,  1.86it/s]08/06/2020 16:51:52 - INFO - __main__ -
 ***** Running evaluation *****
-08/05/2020 17:24:30 - INFO - __main__ -     Num examples = 5946
-08/05/2020 17:24:30 - INFO - __main__ -     Batch size = 16
-08/05/2020 17:26:55 - INFO - __main__ -     eval_ppl = 4.12914
-08/05/2020 17:26:55 - INFO - __main__ -     global_step = 4000
-08/05/2020 17:26:55 - INFO - __main__ -     train_loss = 1.5945
-08/05/2020 17:26:55 - INFO - __main__ -     ********************
-08/05/2020 17:26:58 - INFO - __main__ -     Best ppl:4.12914
-08/05/2020 17:26:58 - INFO - __main__ -     ********************
+08/06/2020 16:51:52 - INFO - __main__ -     Num examples = 5946
+08/06/2020 16:51:52 - INFO - __main__ -     Batch size = 6
+08/06/2020 16:54:13 - INFO - __main__ -     eval_ppl = 4.21422
+08/06/2020 16:54:13 - INFO - __main__ -     global_step = 4000
+08/06/2020 16:54:13 - INFO - __main__ -     train_loss = 1.5846
+08/06/2020 16:54:13 - INFO - __main__ -     ********************
+08/06/2020 16:54:15 - INFO - __main__ -     Best ppl:4.21422
+08/06/2020 16:54:15 - INFO - __main__ -     ********************
 Total: 1000
-08/05/2020 17:38:15 - INFO - __main__ -     bleu-4 = 49.79 
-08/05/2020 17:38:15 - INFO - __main__ -     ********************
-08/05/2020 17:38:15 - INFO - __main__ -     Best bleu:49.79
-08/05/2020 17:38:15 - INFO - __main__ -     ********************
-loss 1.4194:  10% 4998/50000 [2:30:25<14:17:10,  1.14s/it]08/05/2020 17:57:19 - INFO - __main__ -   
+08/06/2020 17:12:40 - INFO - __main__ -     bleu-4 = 50.24 
+08/06/2020 17:12:40 - INFO - __main__ -     ********************
+08/06/2020 17:12:40 - INFO - __main__ -     Best bleu:50.24
+08/06/2020 17:12:40 - INFO - __main__ -     ********************
+loss 1.446:  10%|█████████████                                                                                                                      | 4998/50000 [2:09:15<6:36:01,  1.89it/s]08/06/2020 17:21:36 - INFO - __main__ -
 ***** Running evaluation *****
-08/05/2020 17:57:19 - INFO - __main__ -     Num examples = 5946
-08/05/2020 17:57:19 - INFO - __main__ -     Batch size = 16
-08/05/2020 17:59:44 - INFO - __main__ -     eval_ppl = 3.78559
-08/05/2020 17:59:44 - INFO - __main__ -     global_step = 5000
-08/05/2020 17:59:44 - INFO - __main__ -     train_loss = 1.4194
-08/05/2020 17:59:44 - INFO - __main__ -     ********************
-08/05/2020 17:59:47 - INFO - __main__ -     Best ppl:3.78559
-08/05/2020 17:59:47 - INFO - __main__ -     ********************
+08/06/2020 17:21:36 - INFO - __main__ -     Num examples = 5946
+08/06/2020 17:21:36 - INFO - __main__ -     Batch size = 6
+08/06/2020 17:23:57 - INFO - __main__ -     eval_ppl = 3.94647
+08/06/2020 17:23:57 - INFO - __main__ -     global_step = 5000
+08/06/2020 17:23:57 - INFO - __main__ -     train_loss = 1.446
+08/06/2020 17:23:57 - INFO - __main__ -     ********************
+08/06/2020 17:23:59 - INFO - __main__ -     Best ppl:3.94647
+08/06/2020 17:23:59 - INFO - __main__ -     ********************
 Total: 1000
-08/05/2020 18:11:12 - INFO - __main__ -     bleu-4 = 54.36 
-08/05/2020 18:11:12 - INFO - __main__ -     ********************
-08/05/2020 18:11:12 - INFO - __main__ -     Best bleu:54.36
-08/05/2020 18:11:12 - INFO - __main__ -     ********************
-loss 1.3133:  12% 5998/50000 [3:03:23<13:56:31,  1.14s/it]08/05/2020 18:30:17 - INFO - __main__ -   
+08/06/2020 17:41:39 - INFO - __main__ -     bleu-4 = 53.14 
+08/06/2020 17:41:39 - INFO - __main__ -     ********************
+08/06/2020 17:41:39 - INFO - __main__ -     Best bleu:53.14
+08/06/2020 17:41:39 - INFO - __main__ -     ********************
+loss 1.3814:  12%|███████████████▌                                                                                                                  | 5998/50000 [2:38:08<6:31:03,  1.88it/s]08/06/2020 17:50:29 - INFO - __main__ -
 ***** Running evaluation *****
-08/05/2020 18:30:17 - INFO - __main__ -     Num examples = 5946
-08/05/2020 18:30:17 - INFO - __main__ -     Batch size = 16
-08/05/2020 18:32:41 - INFO - __main__ -     eval_ppl = 3.55019
-08/05/2020 18:32:41 - INFO - __main__ -     global_step = 6000
-08/05/2020 18:32:41 - INFO - __main__ -     train_loss = 1.3133
-08/05/2020 18:32:41 - INFO - __main__ -     ********************
-08/05/2020 18:32:44 - INFO - __main__ -     Best ppl:3.55019
-08/05/2020 18:32:44 - INFO - __main__ -     ********************
+08/06/2020 17:50:29 - INFO - __main__ -     Num examples = 5946
+08/06/2020 17:50:30 - INFO - __main__ -     Batch size = 6
+08/06/2020 17:52:50 - INFO - __main__ -     eval_ppl = 3.73394
+08/06/2020 17:52:50 - INFO - __main__ -     global_step = 6000
+08/06/2020 17:52:50 - INFO - __main__ -     train_loss = 1.3814
+08/06/2020 17:52:50 - INFO - __main__ -     ********************
+08/06/2020 17:52:51 - INFO - __main__ -     Best ppl:3.73394
+08/06/2020 17:52:51 - INFO - __main__ -     ********************
 Total: 1000
-08/05/2020 18:44:24 - INFO - __main__ -     bleu-4 = 54.66 
-08/05/2020 18:44:24 - INFO - __main__ -     ********************
-08/05/2020 18:44:24 - INFO - __main__ -     Best bleu:54.66
-08/05/2020 18:44:24 - INFO - __main__ -     ********************
-loss 1.2445:  14% 6998/50000 [3:36:34<13:42:14,  1.15s/it]08/05/2020 19:03:28 - INFO - __main__ -   
+08/06/2020 18:10:30 - INFO - __main__ -     bleu-4 = 51.02 
+08/06/2020 18:10:30 - INFO - __main__ -     ********************
+loss 1.3267:  14%|██████████████████▏                                                                                                               | 6998/50000 [3:06:59<6:21:56,  1.88it/s]08/06/2020 18:19:21 - INFO - __main__ -
 ***** Running evaluation *****
-08/05/2020 19:03:28 - INFO - __main__ -     Num examples = 5946
-08/05/2020 19:03:28 - INFO - __main__ -     Batch size = 16
-08/05/2020 19:05:53 - INFO - __main__ -     eval_ppl = 3.40535
-08/05/2020 19:05:53 - INFO - __main__ -     global_step = 7000
-08/05/2020 19:05:53 - INFO - __main__ -     train_loss = 1.2445
-08/05/2020 19:05:53 - INFO - __main__ -     ********************
-08/05/2020 19:05:55 - INFO - __main__ -     Best ppl:3.40535
-08/05/2020 19:05:55 - INFO - __main__ -     ********************
+08/06/2020 18:19:21 - INFO - __main__ -     Num examples = 5946
+08/06/2020 18:19:21 - INFO - __main__ -     Batch size = 6
+08/06/2020 18:21:41 - INFO - __main__ -     eval_ppl = 3.56874
+08/06/2020 18:21:41 - INFO - __main__ -     global_step = 7000
+08/06/2020 18:21:41 - INFO - __main__ -     train_loss = 1.3267
+08/06/2020 18:21:41 - INFO - __main__ -     ********************
+08/06/2020 18:21:42 - INFO - __main__ -     Best ppl:3.56874
+08/06/2020 18:21:42 - INFO - __main__ -     ********************
 Total: 1000
-08/05/2020 19:17:22 - INFO - __main__ -     bleu-4 = 55.96 
-08/05/2020 19:17:22 - INFO - __main__ -     ********************
-08/05/2020 19:17:22 - INFO - __main__ -     Best bleu:55.96
-08/05/2020 19:17:22 - INFO - __main__ -     ********************
-loss 1.178:  16% 7998/50000 [4:09:30<13:18:44,  1.14s/it] 08/05/2020 19:36:23 - INFO - __main__ -   
+08/06/2020 18:39:36 - INFO - __main__ -     bleu-4 = 49.47 
+08/06/2020 18:39:36 - INFO - __main__ -     ********************
+loss 1.2812:  16%|████████████████████▊                                                                                                             | 7998/50000 [3:36:03<6:11:45,  1.88it/s]08/06/2020 18:48:25 - INFO - __main__ -
 ***** Running evaluation *****
-08/05/2020 19:36:23 - INFO - __main__ -     Num examples = 5946
-08/05/2020 19:36:23 - INFO - __main__ -     Batch size = 16
-08/05/2020 19:38:48 - INFO - __main__ -     eval_ppl = 3.28173
-08/05/2020 19:38:48 - INFO - __main__ -     global_step = 8000
-08/05/2020 19:38:48 - INFO - __main__ -     train_loss = 1.178
-08/05/2020 19:38:48 - INFO - __main__ -     ********************
-08/05/2020 19:38:50 - INFO - __main__ -     Best ppl:3.28173
-08/05/2020 19:38:50 - INFO - __main__ -     ********************
+08/06/2020 18:48:25 - INFO - __main__ -     Num examples = 5946
+08/06/2020 18:48:25 - INFO - __main__ -     Batch size = 6
+08/06/2020 18:50:45 - INFO - __main__ -     eval_ppl = 3.3922
+08/06/2020 18:50:45 - INFO - __main__ -     global_step = 8000
+08/06/2020 18:50:45 - INFO - __main__ -     train_loss = 1.2812
+08/06/2020 18:50:45 - INFO - __main__ -     ********************
+08/06/2020 18:50:46 - INFO - __main__ -     Best ppl:3.3922
+08/06/2020 18:50:46 - INFO - __main__ -     ********************
 Total: 1000
-08/05/2020 19:50:08 - INFO - __main__ -     bleu-4 = 58.43 
-08/05/2020 19:50:08 - INFO - __main__ -     ********************
-08/05/2020 19:50:08 - INFO - __main__ -     Best bleu:58.43
-08/05/2020 19:50:08 - INFO - __main__ -     ********************
-loss 1.1155:  18% 8998/50000 [4:42:16<12:58:37,  1.14s/it]08/05/2020 20:09:10 - INFO - __main__ -   
+08/06/2020 19:08:10 - INFO - __main__ -     bleu-4 = 45.86 
+08/06/2020 19:08:10 - INFO - __main__ -     ********************
+loss 1.2278:  18%|███████████████████████▍                                                                                                          | 8998/50000 [4:04:37<6:06:31,  1.86it/s]08/06/2020 19:16:59 - INFO - __main__ -
 ***** Running evaluation *****
-08/05/2020 20:09:10 - INFO - __main__ -     Num examples = 5946
-08/05/2020 20:09:10 - INFO - __main__ -     Batch size = 16
-08/05/2020 20:11:35 - INFO - __main__ -     eval_ppl = 3.19484
-08/05/2020 20:11:35 - INFO - __main__ -     global_step = 9000
-08/05/2020 20:11:35 - INFO - __main__ -     train_loss = 1.1155
-08/05/2020 20:11:35 - INFO - __main__ -     ********************
-08/05/2020 20:11:37 - INFO - __main__ -     Best ppl:3.19484
-08/05/2020 20:11:37 - INFO - __main__ -     ********************
+08/06/2020 19:16:59 - INFO - __main__ -     Num examples = 5946
+08/06/2020 19:16:59 - INFO - __main__ -     Batch size = 6
+08/06/2020 19:19:19 - INFO - __main__ -     eval_ppl = 3.29784
+08/06/2020 19:19:19 - INFO - __main__ -     global_step = 9000
+08/06/2020 19:19:19 - INFO - __main__ -     train_loss = 1.2278
+08/06/2020 19:19:19 - INFO - __main__ -     ********************
+08/06/2020 19:19:21 - INFO - __main__ -     Best ppl:3.29784
+08/06/2020 19:19:21 - INFO - __main__ -     ********************
 Total: 1000
-08/05/2020 20:22:45 - INFO - __main__ -     bleu-4 = 57.52 
-08/05/2020 20:22:45 - INFO - __main__ -     ********************
-loss 1.0846:  20% 9998/50000 [5:14:49<12:39:25,  1.14s/it]08/05/2020 20:41:43 - INFO - __main__ -   
+08/06/2020 19:36:44 - INFO - __main__ -     bleu-4 = 58.05 
+08/06/2020 19:36:44 - INFO - __main__ -     ********************
+08/06/2020 19:36:44 - INFO - __main__ -     Best bleu:58.05
+08/06/2020 19:36:44 - INFO - __main__ -     ********************
+loss 1.1628:  20%|█████████████████████████▉                                                                                                        | 9998/50000 [4:33:14<5:51:10,  1.90it/s]08/06/2020 19:45:35 - INFO - __main__ -
 ***** Running evaluation *****
-08/05/2020 20:41:43 - INFO - __main__ -     Num examples = 5946
-08/05/2020 20:41:43 - INFO - __main__ -     Batch size = 16
-08/05/2020 20:44:08 - INFO - __main__ -     eval_ppl = 3.12523
-08/05/2020 20:44:08 - INFO - __main__ -     global_step = 10000
-08/05/2020 20:44:08 - INFO - __main__ -     train_loss = 1.0846
-08/05/2020 20:44:08 - INFO - __main__ -     ********************
-08/05/2020 20:44:10 - INFO - __main__ -     Best ppl:3.12523
-08/05/2020 20:44:10 - INFO - __main__ -     ********************
+08/06/2020 19:45:35 - INFO - __main__ -     Num examples = 5946
+08/06/2020 19:45:35 - INFO - __main__ -     Batch size = 6
+08/06/2020 19:47:56 - INFO - __main__ -     eval_ppl = 3.24231
+08/06/2020 19:47:56 - INFO - __main__ -     global_step = 10000
+08/06/2020 19:47:56 - INFO - __main__ -     train_loss = 1.1628
+08/06/2020 19:47:56 - INFO - __main__ -     ********************
+08/06/2020 19:47:59 - INFO - __main__ -     Best ppl:3.24231
+08/06/2020 19:47:59 - INFO - __main__ -     ********************
 Total: 1000
-08/05/2020 20:55:13 - INFO - __main__ -     bleu-4 = 59.41 
-08/05/2020 20:55:13 - INFO - __main__ -     ********************
-08/05/2020 20:55:13 - INFO - __main__ -     Best bleu:59.41
-08/05/2020 20:55:13 - INFO - __main__ -     ********************
-loss 1.0481:  22% 10998/50000 [5:47:19<12:21:46,  1.14s/it]08/05/2020 21:14:13 - INFO - __main__ -   
+08/06/2020 20:04:31 - INFO - __main__ -     bleu-4 = 48.22 
+08/06/2020 20:04:31 - INFO - __main__ -     ********************
+loss 1.1127:  22%|████████████████████████████▎                                                                                                    | 10998/50000 [5:00:58<5:50:19,  1.86it/s]08/06/2020 20:13:20 - INFO - __main__ -
 ***** Running evaluation *****
-08/05/2020 21:14:13 - INFO - __main__ -     Num examples = 5946
-08/05/2020 21:14:13 - INFO - __main__ -     Batch size = 16
-08/05/2020 21:16:38 - INFO - __main__ -     eval_ppl = 3.0596
-08/05/2020 21:16:38 - INFO - __main__ -     global_step = 11000
-08/05/2020 21:16:38 - INFO - __main__ -     train_loss = 1.0481
-08/05/2020 21:16:38 - INFO - __main__ -     ********************
-08/05/2020 21:16:40 - INFO - __main__ -     Best ppl:3.0596
-08/05/2020 21:16:40 - INFO - __main__ -     ********************
+08/06/2020 20:13:20 - INFO - __main__ -     Num examples = 5946
+08/06/2020 20:13:20 - INFO - __main__ -     Batch size = 6
+08/06/2020 20:15:40 - INFO - __main__ -     eval_ppl = 3.17785
+08/06/2020 20:15:40 - INFO - __main__ -     global_step = 11000
+08/06/2020 20:15:40 - INFO - __main__ -     train_loss = 1.1127
+08/06/2020 20:15:40 - INFO - __main__ -     ********************
+08/06/2020 20:15:41 - INFO - __main__ -     Best ppl:3.17785
+08/06/2020 20:15:41 - INFO - __main__ -     ********************
 Total: 1000
-08/05/2020 21:27:55 - INFO - __main__ -     bleu-4 = 59.07 
-08/05/2020 21:27:55 - INFO - __main__ -     ********************
-loss 0.9972:  24% 11998/50000 [6:19:58<12:03:50,  1.14s/it]08/05/2020 21:46:52 - INFO - __main__ -   
+08/06/2020 20:32:35 - INFO - __main__ -     bleu-4 = 52.78 
+08/06/2020 20:32:35 - INFO - __main__ -     ********************
+loss 1.0563:  24%|██████████████████████████████▉                                                                                                  | 11998/50000 [5:29:02<5:32:29,  1.90it/s]08/06/2020 20:41:23 - INFO - __main__ -
 ***** Running evaluation *****
-08/05/2020 21:46:52 - INFO - __main__ -     Num examples = 5946
-08/05/2020 21:46:52 - INFO - __main__ -     Batch size = 16
-08/05/2020 21:49:17 - INFO - __main__ -     eval_ppl = 3.01382
-08/05/2020 21:49:17 - INFO - __main__ -     global_step = 12000
-08/05/2020 21:49:17 - INFO - __main__ -     train_loss = 0.9972
-08/05/2020 21:49:17 - INFO - __main__ -     ********************
-08/05/2020 21:49:19 - INFO - __main__ -     Best ppl:3.01382
-08/05/2020 21:49:19 - INFO - __main__ -     ********************
+08/06/2020 20:41:23 - INFO - __main__ -     Num examples = 5946
+08/06/2020 20:41:23 - INFO - __main__ -     Batch size = 6
+08/06/2020 20:43:43 - INFO - __main__ -     eval_ppl = 3.10857
+08/06/2020 20:43:43 - INFO - __main__ -     global_step = 12000
+08/06/2020 20:43:43 - INFO - __main__ -     train_loss = 1.0563
+08/06/2020 20:43:43 - INFO - __main__ -     ********************
+08/06/2020 20:43:45 - INFO - __main__ -     Best ppl:3.10857
+08/06/2020 20:43:45 - INFO - __main__ -     ********************
 Total: 1000
-08/05/2020 22:00:29 - INFO - __main__ -     bleu-4 = 60.15 
-08/05/2020 22:00:29 - INFO - __main__ -     ********************
-08/05/2020 22:00:29 - INFO - __main__ -     Best bleu:60.15
-08/05/2020 22:00:29 - INFO - __main__ -     ********************
-loss 0.976:  26% 12998/50000 [6:52:37<11:42:19,  1.14s/it]08/05/2020 22:19:30 - INFO - __main__ -   
+08/06/2020 21:01:36 - INFO - __main__ -     bleu-4 = 59.5 
+08/06/2020 21:01:36 - INFO - __main__ -     ********************
+08/06/2020 21:01:36 - INFO - __main__ -     Best bleu:59.5
+08/06/2020 21:01:36 - INFO - __main__ -     ********************
+loss 1.0276:  26%|█████████████████████████████████▌                                                                                               | 12998/50000 [5:58:26<5:34:16,  1.84it/s]08/06/2020 21:10:48 - INFO - __main__ -
 ***** Running evaluation *****
-08/05/2020 22:19:30 - INFO - __main__ -     Num examples = 5946
-08/05/2020 22:19:30 - INFO - __main__ -     Batch size = 16
-08/05/2020 22:21:55 - INFO - __main__ -     eval_ppl = 2.98053
-08/05/2020 22:21:55 - INFO - __main__ -     global_step = 13000
-08/05/2020 22:21:55 - INFO - __main__ -     train_loss = 0.976
-08/05/2020 22:21:55 - INFO - __main__ -     ********************
-08/05/2020 22:21:57 - INFO - __main__ -     Best ppl:2.98053
-08/05/2020 22:21:57 - INFO - __main__ -     ********************
+08/06/2020 21:10:48 - INFO - __main__ -     Num examples = 5946
+08/06/2020 21:10:48 - INFO - __main__ -     Batch size = 6
+08/06/2020 21:13:12 - INFO - __main__ -     eval_ppl = 3.05466
+08/06/2020 21:13:12 - INFO - __main__ -     global_step = 13000
+08/06/2020 21:13:12 - INFO - __main__ -     train_loss = 1.0276
+08/06/2020 21:13:12 - INFO - __main__ -     ********************
 Total: 1000
-08/05/2020 22:33:01 - INFO - __main__ -     bleu-4 = 60.61 
-08/05/2020 22:33:01 - INFO - __main__ -     ********************
-08/05/2020 22:33:01 - INFO - __main__ -     Best bleu:60.61
-08/05/2020 22:33:01 - INFO - __main__ -     ********************
-loss 0.9535:  28% 13998/50000 [7:25:09<11:24:02,  1.14s/it]08/05/2020 22:52:03 - INFO - __main__ -   
+08/06/2020 21:33:04 - INFO - __main__ -     bleu-4 = 59.38
+08/06/2020 21:33:04 - INFO - __main__ -     ********************
+loss 0.9934:  28%|████████████████████████████████████
+                                                          | 13998/50000 [6:30:48<5:26:01,  1.84it/s]08/06/2020 21:43:09 - INFO - __main__ -                                                                                                 | 13998/50000 [6:30:48<5:26:01,  1.84it/s]0
 ***** Running evaluation *****
-08/05/2020 22:52:03 - INFO - __main__ -     Num examples = 5946
-08/05/2020 22:52:03 - INFO - __main__ -     Batch size = 16
-08/05/2020 22:54:28 - INFO - __main__ -     eval_ppl = 2.93506
-08/05/2020 22:54:28 - INFO - __main__ -     global_step = 14000
-08/05/2020 22:54:28 - INFO - __main__ -     train_loss = 0.9535
-08/05/2020 22:54:28 - INFO - __main__ -     ********************
-08/05/2020 22:54:30 - INFO - __main__ -     Best ppl:2.93506
-08/05/2020 22:54:30 - INFO - __main__ -     ********************
+08/06/2020 21:43:09 - INFO - __main__ -     Num examples = 5946
+08/06/2020 21:43:09 - INFO - __main__ -     Batch size = 6
+08/06/2020 21:45:33 - INFO - __main__ -     eval_ppl = 3.03116
+08/06/2020 21:45:33 - INFO - __main__ -     global_step = 14000
+08/06/2020 21:45:33 - INFO - __main__ -     train_loss = 0.9934
+08/06/2020 21:45:33 - INFO - __main__ -     ********************
+08/06/2020 21:45:34 - INFO - __main__ -     Best ppl:3.03116
+08/06/2020 21:45:34 - INFO - __main__ -     ********************
 Total: 1000
-08/05/2020 23:05:34 - INFO - __main__ -     bleu-4 = 59.46 
-08/05/2020 23:05:34 - INFO - __main__ -     ********************
-loss 0.9156:  30% 14998/50000 [7:57:40<11:05:26,  1.14s/it]08/05/2020 23:24:34 - INFO - __main__ -   
+08/06/2020 22:04:18 - INFO - __main__ -     bleu-4 = 54.37
+08/06/2020 22:04:18 - INFO - __main__ -     ********************
+loss 0.9736:  28%|████████████████████████████████████▌
+                                                          | 14186/50000 [6:53:47<5:44:09,                                                          | 14186/50000 [6:53:47<5:44:09,  1.73it/s] loss 0.9736:  28%|████████████████████████████████████▌                                                                                            | 14187/50000 [6:53:48<5:49:18,loss 0.9721:  28%|████████████████████████████████████▌                                                                                            | 14187/50000 [6:53:48<5:49:18,loss 0.9721:  28%|████████████████████████████████████▌                                                                                            | 14188/50000 [6:53:49<5:51:56,loss 0.9722:  28%|████████████████████████████████████▌                                                                                            | 14188/50000 [6:53:49<5:51:56,loss 0.9722:  28%|████████████████████████████████████▌                                                                                            | 14189/50000 [6:53:49<5:44:34,loss 0.9734:  28%|████████████████████████████████████▌     
+                                                                                       | 14189/50000 [6:53:49<5:44:34,loss 0.9734:  28%|████████████████████████████████████▌
+                                                                           | 14190/50000 [6:53:50<5:40:13,loss 0.9724:  28%|████████████████████████████████████▌
+                                                               | 14190/50000 [6:53:50<5:40:13,loss 0.9724:  28%|████████████████████████████████████▌
+                                                   | 14191/50000 [6:53:50<5:43:12,loss 0.9722:  28%|████████████████████████████████████▌
+loss 0.9768:  30%|██████████████████████████████████████▋                                                                                          | 14998/50000 [7:01:34<5:37:03,  1.73it/s]08/06/2020 22:13:55 - INFO - __main__ -
 ***** Running evaluation *****
-08/05/2020 23:24:34 - INFO - __main__ -     Num examples = 5946
-08/05/2020 23:24:34 - INFO - __main__ -     Batch size = 16
-08/05/2020 23:26:59 - INFO - __main__ -     eval_ppl = 2.91408
-08/05/2020 23:26:59 - INFO - __main__ -     global_step = 15000
-08/05/2020 23:26:59 - INFO - __main__ -     train_loss = 0.9156
-08/05/2020 23:26:59 - INFO - __main__ -     ********************
-08/05/2020 23:27:02 - INFO - __main__ -     Best ppl:2.91408
-08/05/2020 23:27:02 - INFO - __main__ -     ********************
+08/06/2020 22:13:55 - INFO - __main__ -     Num examples = 5946
+08/06/2020 22:13:55 - INFO - __main__ -     Batch size = 6     
+08/06/2020 22:16:28 - INFO - __main__ -     eval_ppl = 2.98214
+08/06/2020 22:16:28 - INFO - __main__ -     global_step = 15000 
+08/06/2020 22:16:28 - INFO - __main__ -     train_loss = 0.9768 
+08/06/2020 22:16:28 - INFO - __main__ -     ********************
+08/06/2020 22:16:29 - INFO - __main__ -     Best ppl:2.98214
+08/06/2020 22:16:29 - INFO - __main__ -     ********************
 Total: 1000
-08/05/2020 23:38:15 - INFO - __main__ -     bleu-4 = 61.7 
-08/05/2020 23:38:15 - INFO - __main__ -     ********************
-08/05/2020 23:38:15 - INFO - __main__ -     Best bleu:61.7
-08/05/2020 23:38:15 - INFO - __main__ -     ********************
-loss 0.8892:  32% 15998/50000 [8:30:25<10:48:01,  1.14s/it]08/05/2020 23:57:18 - INFO - __main__ -   
+08/06/2020 22:35:53 - INFO - __main__ -     bleu-4 = 59.32
+08/06/2020 22:35:53 - INFO - __main__ -     ********************
+loss 0.9688:  32%|█████████████████████████████████████████▎                                                                                       | 15998/50000 [7:33:09<5:15:36,  1.80it/s]08/06/2020 22:45:30 - INFO - __main__ -
 ***** Running evaluation *****
-08/05/2020 23:57:18 - INFO - __main__ -     Num examples = 5946
-08/05/2020 23:57:18 - INFO - __main__ -     Batch size = 16
-08/05/2020 23:59:44 - INFO - __main__ -     eval_ppl = 2.94266
-08/05/2020 23:59:44 - INFO - __main__ -     global_step = 16000
-08/05/2020 23:59:44 - INFO - __main__ -     train_loss = 0.8892
-08/05/2020 23:59:44 - INFO - __main__ -     ********************
+08/06/2020 22:45:30 - INFO - __main__ -     Num examples = 5946
+08/06/2020 22:45:30 - INFO - __main__ -     Batch size = 6
+08/06/2020 22:48:00 - INFO - __main__ -     eval_ppl = 2.97269
+08/06/2020 22:48:00 - INFO - __main__ -     global_step = 16000
+08/06/2020 22:48:00 - INFO - __main__ -     train_loss = 0.9688
+08/06/2020 22:48:00 - INFO - __main__ -     ********************
+08/06/2020 22:48:01 - INFO - __main__ -     Best ppl:2.97269
+08/06/2020 22:48:01 - INFO - __main__ -     ********************
 Total: 1000
-08/06/2020 00:10:56 - INFO - __main__ -     bleu-4 = 60.84 
-08/06/2020 00:10:56 - INFO - __main__ -     ********************
-loss 0.8767:  34% 16998/50000 [9:03:01<10:25:32,  1.14s/it]08/06/2020 00:29:55 - INFO - __main__ -   
+08/06/2020 23:08:47 - INFO - __main__ -     bleu-4 = 59.1
+08/06/2020 23:08:47 - INFO - __main__ -     ********************
+loss 0.9429:  34%|███████████████████████████████████████████▊                                                                                     | 16998/50000 [8:06:02<5:13:47,  1.75it/s]08/06/2020 23:18:23 - INFO - __main__ -
 ***** Running evaluation *****
-08/06/2020 00:29:55 - INFO - __main__ -     Num examples = 5946
-08/06/2020 00:29:55 - INFO - __main__ -     Batch size = 16
-08/06/2020 00:32:19 - INFO - __main__ -     eval_ppl = 2.86345
-08/06/2020 00:32:19 - INFO - __main__ -     global_step = 17000
-08/06/2020 00:32:19 - INFO - __main__ -     train_loss = 0.8767
-08/06/2020 00:32:19 - INFO - __main__ -     ********************
-08/06/2020 00:32:21 - INFO - __main__ -     Best ppl:2.86345
-08/06/2020 00:32:21 - INFO - __main__ -     ********************
+08/06/2020 23:18:23 - INFO - __main__ -     Num examples = 5946
+08/06/2020 23:18:23 - INFO - __main__ -     Batch size = 6
+08/06/2020 23:20:55 - INFO - __main__ -     eval_ppl = 2.91762
+08/06/2020 23:20:55 - INFO - __main__ -     global_step = 17000
+08/06/2020 23:20:55 - INFO - __main__ -     train_loss = 0.9429
+08/06/2020 23:20:55 - INFO - __main__ -     ********************
+08/06/2020 23:20:57 - INFO - __main__ -     Best ppl:2.91762
+08/06/2020 23:20:57 - INFO - __main__ -     ********************
 Total: 1000
-08/06/2020 00:43:44 - INFO - __main__ -     bleu-4 = 61.9 
-08/06/2020 00:43:44 - INFO - __main__ -     ********************
-08/06/2020 00:43:44 - INFO - __main__ -     Best bleu:61.9
-08/06/2020 00:43:44 - INFO - __main__ -     ********************
-loss 0.8512:  36% 17998/50000 [9:35:54<10:06:35,  1.14s/it]08/06/2020 01:02:48 - INFO - __main__ -   
+08/06/2020 23:40:58 - INFO - __main__ -     bleu-4 = 60.46
+08/06/2020 23:40:58 - INFO - __main__ -     ********************
+08/06/2020 23:40:58 - INFO - __main__ -     Best bleu:60.46
+08/06/2020 23:40:58 - INFO - __main__ -     ********************
+loss 0.9206:  36%|██████████████████████████████████████████████▍                                                                                  | 17998/50000 [8:38:03<4:57:45,  1.79it/s]08/06/2020 23:50:24 - INFO - __main__ -
 ***** Running evaluation *****
-08/06/2020 01:02:48 - INFO - __main__ -     Num examples = 5946
-08/06/2020 01:02:48 - INFO - __main__ -     Batch size = 16
-08/06/2020 01:05:12 - INFO - __main__ -     eval_ppl = 2.85027
-08/06/2020 01:05:12 - INFO - __main__ -     global_step = 18000
-08/06/2020 01:05:12 - INFO - __main__ -     train_loss = 0.8512
-08/06/2020 01:05:12 - INFO - __main__ -     ********************
-08/06/2020 01:05:15 - INFO - __main__ -     Best ppl:2.85027
-08/06/2020 01:05:15 - INFO - __main__ -     ********************
+08/06/2020 23:50:24 - INFO - __main__ -     Num examples = 5946
+08/06/2020 23:50:24 - INFO - __main__ -     Batch size = 6
+08/06/2020 23:52:54 - INFO - __main__ -     eval_ppl = 2.90181
+08/06/2020 23:52:54 - INFO - __main__ -     global_step = 18000
+08/06/2020 23:52:54 - INFO - __main__ -     train_loss = 0.9206
+08/06/2020 23:52:54 - INFO - __main__ -     ********************
+08/06/2020 23:52:55 - INFO - __main__ -     Best ppl:2.90181
+08/06/2020 23:52:55 - INFO - __main__ -     ********************
 Total: 1000
-08/06/2020 01:16:33 - INFO - __main__ -     bleu-4 = 62.12 
-08/06/2020 01:16:33 - INFO - __main__ -     ********************
-08/06/2020 01:16:33 - INFO - __main__ -     Best bleu:62.12
-08/06/2020 01:16:33 - INFO - __main__ -     ********************
+08/07/2020 00:11:35 - INFO - __main__ -     bleu-4 = 61.4 
+08/07/2020 00:11:35 - INFO - __main__ -     ********************
+08/07/2020 00:11:35 - INFO - __main__ -     Best bleu:61.4
+08/07/2020 00:11:35 - INFO - __main__ -     ********************
+loss 0.8807:  38%|█████████████████████████████████████████████████                                                                                | 18998/50000 [9:08:50<4:49:31,  1.78it/s]08/07/2020 00:21:12 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 00:21:12 - INFO - __main__ -     Num examples = 5946
+08/07/2020 00:21:12 - INFO - __main__ -     Batch size = 6
+08/07/2020 00:23:41 - INFO - __main__ -     eval_ppl = 2.87098
+08/07/2020 00:23:41 - INFO - __main__ -     global_step = 19000
+08/07/2020 00:23:41 - INFO - __main__ -     train_loss = 0.8807
+08/07/2020 00:23:41 - INFO - __main__ -     ********************
+08/07/2020 00:23:42 - INFO - __main__ -     Best ppl:2.87098
+08/07/2020 00:23:42 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 00:43:14 - INFO - __main__ -     bleu-4 = 59.45 
+08/07/2020 00:43:14 - INFO - __main__ -     ********************
+loss 0.8522:  40%|███████████████████████████████████████████████████▌                                                                             | 19998/50000 [9:40:19<4:47:29,  1.74it/s]08/07/2020 00:52:40 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 00:52:40 - INFO - __main__ -     Num examples = 5946
+08/07/2020 00:52:40 - INFO - __main__ -     Batch size = 6
+08/07/2020 00:55:12 - INFO - __main__ -     eval_ppl = 2.85145
+08/07/2020 00:55:12 - INFO - __main__ -     global_step = 20000
+08/07/2020 00:55:12 - INFO - __main__ -     train_loss = 0.8522
+08/07/2020 00:55:12 - INFO - __main__ -     ********************
+08/07/2020 00:55:14 - INFO - __main__ -     Best ppl:2.85145
+08/07/2020 00:55:14 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 01:14:12 - INFO - __main__ -     bleu-4 = 59.29
+08/07/2020 01:14:12 - INFO - __main__ -     ********************
+loss 0.8225:  42%|█████████████████████████████████████████████████████▊                                                                          | 20998/50000 [10:11:25<4:40:08,  1.73it/s]08/07/2020 01:23:47 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 01:23:47 - INFO - __main__ -     Num examples = 5946
+08/07/2020 01:23:47 - INFO - __main__ -     Batch size = 6
+08/07/2020 01:26:19 - INFO - __main__ -     eval_ppl = 2.86159
+08/07/2020 01:26:19 - INFO - __main__ -     global_step = 21000
+08/07/2020 01:26:19 - INFO - __main__ -     train_loss = 0.8225
+08/07/2020 01:26:19 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 01:44:30 - INFO - __main__ -     bleu-4 = 61.2
+08/07/2020 01:44:30 - INFO - __main__ -     ********************
+loss 0.7979:  44%|████████████████████████████████████████████████████████▎                                                                       | 21998/50000 [10:41:03<4:19:42,  1.80it/s]08/07/2020 01:53:25 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 01:53:25 - INFO - __main__ -     Num examples = 5946
+08/07/2020 01:53:25 - INFO - __main__ -     Batch size = 6
+08/07/2020 01:55:49 - INFO - __main__ -     eval_ppl = 2.82638
+08/07/2020 01:55:49 - INFO - __main__ -     global_step = 22000
+08/07/2020 01:55:49 - INFO - __main__ -     train_loss = 0.7979
+08/07/2020 01:55:49 - INFO - __main__ -     ********************
+08/07/2020 01:55:50 - INFO - __main__ -     Best ppl:2.82638
+08/07/2020 01:55:50 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 02:14:01 - INFO - __main__ -     bleu-4 = 61.42 
+08/07/2020 02:14:01 - INFO - __main__ -     ********************
+08/07/2020 02:14:01 - INFO - __main__ -     Best bleu:61.42
+08/07/2020 02:14:01 - INFO - __main__ -     ********************
+loss 0.7815:  46%|██████████████████████████████████████████████████████████▊                                                                     | 22998/50000 [11:10:53<4:09:32,  1.80it/s]08/07/2020 02:23:15 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 02:23:15 - INFO - __main__ -     Num examples = 5946
+08/07/2020 02:23:15 - INFO - __main__ -     Batch size = 6
+08/07/2020 02:25:41 - INFO - __main__ -     eval_ppl = 2.80322
+08/07/2020 02:25:41 - INFO - __main__ -     global_step = 23000
+08/07/2020 02:25:41 - INFO - __main__ -     train_loss = 0.7815
+08/07/2020 02:25:41 - INFO - __main__ -     ********************
+08/07/2020 02:25:42 - INFO - __main__ -     Best ppl:2.80322
+08/07/2020 02:25:42 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 02:44:41 - INFO - __main__ -     bleu-4 = 62.04 
+08/07/2020 02:44:41 - INFO - __main__ -     ********************
+08/07/2020 02:44:41 - INFO - __main__ -     Best bleu:62.04
+08/07/2020 02:44:41 - INFO - __main__ -     ********************
+loss 0.7679:  48%|█████████████████████████████████████████████████████████████▍                                                                  | 23998/50000 [11:41:14<3:47:08,  1.91it/s]08/07/2020 02:53:35 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 02:53:35 - INFO - __main__ -     Num examples = 5946
+08/07/2020 02:53:35 - INFO - __main__ -     Batch size = 6
+08/07/2020 02:55:56 - INFO - __main__ -     eval_ppl = 2.78824
+08/07/2020 02:55:56 - INFO - __main__ -     global_step = 24000
+08/07/2020 02:55:56 - INFO - __main__ -     train_loss = 0.7679
+08/07/2020 02:55:56 - INFO - __main__ -     ********************
+08/07/2020 02:55:57 - INFO - __main__ -     Best ppl:2.78824
+08/07/2020 02:55:57 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 03:13:18 - INFO - __main__ -     bleu-4 = 62.36 
+08/07/2020 03:13:18 - INFO - __main__ -     ********************
+08/07/2020 03:13:18 - INFO - __main__ -     Best bleu:62.36
+08/07/2020 03:13:18 - INFO - __main__ -     ********************
+loss 0.7593:  50%|███████████████████████████████████████████████████████████████▉                                                                | 24998/50000 [12:09:50<3:44:45,  1.85it/s]08/07/2020 03:22:12 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 03:22:12 - INFO - __main__ -     Num examples = 5946
+08/07/2020 03:22:12 - INFO - __main__ -     Batch size = 6
+08/07/2020 03:24:33 - INFO - __main__ -     eval_ppl = 2.7739
+08/07/2020 03:24:33 - INFO - __main__ -     global_step = 25000
+08/07/2020 03:24:33 - INFO - __main__ -     train_loss = 0.7593
+08/07/2020 03:24:33 - INFO - __main__ -     ********************
+08/07/2020 03:24:34 - INFO - __main__ -     Best ppl:2.7739
+08/07/2020 03:24:34 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 03:41:41 - INFO - __main__ -     bleu-4 = 62.83 
+08/07/2020 03:41:41 - INFO - __main__ -     ********************
+08/07/2020 03:41:41 - INFO - __main__ -     Best bleu:62.83
+08/07/2020 03:41:41 - INFO - __main__ -     ********************
+loss 0.7461:  52%|██████████████████████████████████████████████████████████████████▌                                                             | 25998/50000 [12:38:13<3:35:35,  1.86it/s]08/07/2020 03:50:34 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 03:50:34 - INFO - __main__ -     Num examples = 5946
+08/07/2020 03:50:34 - INFO - __main__ -     Batch size = 6
+08/07/2020 03:52:55 - INFO - __main__ -     eval_ppl = 2.75178
+08/07/2020 03:52:55 - INFO - __main__ -     global_step = 26000
+08/07/2020 03:52:55 - INFO - __main__ -     train_loss = 0.7461
+08/07/2020 03:52:55 - INFO - __main__ -     ********************
+08/07/2020 03:52:56 - INFO - __main__ -     Best ppl:2.75178
+08/07/2020 03:52:56 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 04:10:21 - INFO - __main__ -     bleu-4 = 63.0 
+08/07/2020 04:10:21 - INFO - __main__ -     ********************
+08/07/2020 04:10:21 - INFO - __main__ -     Best bleu:63.0
+08/07/2020 04:10:21 - INFO - __main__ -     ********************
+loss 0.7315:  54%|█████████████████████████████████████████████████████████████████████                                                           | 26998/50000 [13:06:52<3:20:18,  1.91it/s]08/07/2020 04:19:14 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 04:19:14 - INFO - __main__ -     Num examples = 5946
+08/07/2020 04:19:14 - INFO - __main__ -     Batch size = 6
+08/07/2020 04:21:34 - INFO - __main__ -     eval_ppl = 2.74658
+08/07/2020 04:21:34 - INFO - __main__ -     global_step = 27000
+08/07/2020 04:21:34 - INFO - __main__ -     train_loss = 0.7315
+08/07/2020 04:21:34 - INFO - __main__ -     ********************
+08/07/2020 04:21:35 - INFO - __main__ -     Best ppl:2.74658
+08/07/2020 04:21:35 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 04:38:52 - INFO - __main__ -     bleu-4 = 62.88 
+08/07/2020 04:38:52 - INFO - __main__ -     ********************
+loss 0.7002:  56%|███████████████████████████████████████████████████████████████████████▋                                                        | 27998/50000 [13:35:21<3:15:02,  1.88it/s]08/07/2020 04:47:42 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 04:47:42 - INFO - __main__ -     Num examples = 5946
+08/07/2020 04:47:42 - INFO - __main__ -     Batch size = 6
+08/07/2020 04:50:03 - INFO - __main__ -     eval_ppl = 2.71951
+08/07/2020 04:50:03 - INFO - __main__ -     global_step = 28000
+08/07/2020 04:50:03 - INFO - __main__ -     train_loss = 0.7002
+08/07/2020 04:50:03 - INFO - __main__ -     ********************
+08/07/2020 04:50:04 - INFO - __main__ -     Best ppl:2.71951
+08/07/2020 04:50:04 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 05:07:19 - INFO - __main__ -     bleu-4 = 63.17 
+08/07/2020 05:07:19 - INFO - __main__ -     ********************
+08/07/2020 05:07:19 - INFO - __main__ -     Best bleu:63.17
+08/07/2020 05:07:19 - INFO - __main__ -     ********************
+loss 0.6869:  58%|██████████████████████████████████████████████████████████████████████████▏                                                     | 28998/50000 [14:04:03<3:14:33,  1.80it/s]08/07/2020 05:16:24 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 05:16:24 - INFO - __main__ -     Num examples = 5946
+08/07/2020 05:16:24 - INFO - __main__ -     Batch size = 6
+08/07/2020 05:18:49 - INFO - __main__ -     eval_ppl = 2.7357
+08/07/2020 05:18:49 - INFO - __main__ -     global_step = 29000
+08/07/2020 05:18:49 - INFO - __main__ -     train_loss = 0.6869
+08/07/2020 05:18:49 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 05:36:41 - INFO - __main__ -     bleu-4 = 62.64 
+08/07/2020 05:36:41 - INFO - __main__ -     ********************
+loss 0.6634:  60%|████████████████████████████████████████████████████████████████████████████▊                                                   | 29998/50000 [14:33:28<3:02:36,  1.83it/s]08/07/2020 05:45:49 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 05:45:49 - INFO - __main__ -     Num examples = 5946
+08/07/2020 05:45:49 - INFO - __main__ -     Batch size = 6
+08/07/2020 05:48:13 - INFO - __main__ -     eval_ppl = 2.72267
+08/07/2020 05:48:13 - INFO - __main__ -     global_step = 30000
+08/07/2020 05:48:13 - INFO - __main__ -     train_loss = 0.6634
+08/07/2020 05:48:13 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 06:06:26 - INFO - __main__ -     bleu-4 = 63.94 
+08/07/2020 06:06:26 - INFO - __main__ -     ********************
+08/07/2020 06:06:26 - INFO - __main__ -     Best bleu:63.94
+08/07/2020 06:06:26 - INFO - __main__ -     ********************
+loss 0.6411:  62%|███████████████████████████████████████████████████████████████████████████████▎                                                | 30998/50000 [15:03:20<2:49:16,  1.87it/s]0***** Running evaluation *****
+08/07/2020 06:15:42 - INFO - __main__ -     Num examples = 5946
+08/07/2020 06:15:42 - INFO - __main__ -     Batch size = 6
+08/07/2020 06:18:06 - INFO - __main__ -     eval_ppl = 2.72191
+08/07/2020 06:18:06 - INFO - __main__ -     global_step = 31000
+08/07/2020 06:18:06 - INFO - __main__ -     train_loss = 0.6411
+08/07/2020 06:18:06 - INFO - __main__ -     ********************
+Total: 1000
+Total: 1000
+08/07/2020 06:36:02 - INFO - __main__ -     bleu-4 = 63.41
+08/07/2020 06:36:02 - INFO - __main__ -     ********************                         ██████████▌                                              | 31998/50000 [15:32:49<2:43:11,  1.84it/s]0
+loss 0.634:  64%|██████████████████████████████████████████████████████████████████████████████████▌                                              | 31998/50000 [15:32:49<2:43:11,  1.84it/s]08/07/2020 06:45:10 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 06:45:10 - INFO - __main__ -     Num examples = 5946
+08/07/2020 06:45:10 - INFO - __main__ -     Batch size = 6
+08/07/2020 06:47:31 - INFO - __main__ -     eval_ppl = 2.72196
+08/07/2020 06:47:31 - INFO - __main__ -     global_step = 32000
+08/07/2020 06:47:31 - INFO - __main__ -     train_loss = 0.634
+08/07/2020 06:47:31 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 07:06:25 - INFO - __main__ -     bleu-4 = 64.18
+08/07/2020 07:06:25 - INFO - __main__ -     ********************
+08/07/2020 07:06:25 - INFO - __main__ -     Best bleu:64.18
+08/07/2020 07:06:25 - INFO - __main__ -     ********************
+loss 0.6214:  65%|██████████████████████████████████████████████████████████████████████████████████▌                                             | 32255/50000 [15:56:32<3:26:59,loss 0.6214:  65%|██████████████████████████████████████████████████████████████████████████████████▌                                             | 32256/50000 [15:56:32<3:18:54,loss 0.6209:  65%|██████████████████████████████████████████████████████████████████████████████████▌                                             | 32256/50000 [15:56:32<3:18:54,loss 0.6209:  65%|██████████████████████████████████████████████████████████████████████████████████▌                                             | 32257/50000 [15:56:33<3:10:55,loss 0.6202:  65%|██████████████████████████████████████████████████████████████████████████████████▌                                             | 32257/50000 [15:56:33<3:10:55,loss 0.6202:  65%|██████████████████████████████████████████████████████████████████████████████████▌                                             | 32258/50000 [15:56:33<3:02:49,loss 0.6203:  65%|██████████████████████████████████████████████████████loss 0.6173:  66%|████████████████████████████████████████████████████████████████████████████████████▍                                           | 32998/50000 [16:03:38<2:53:49,  1.63it/s]08/07/2020 07:15:59 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 07:15:59 - INFO - __main__ -     Num examples = 5946
+08/07/2020 07:15:59 - INFO - __main__ -     Batch size = 6
+08/07/2020 07:18:31 - INFO - __main__ -     eval_ppl = 2.71352
+08/07/2020 07:18:31 - INFO - __main__ -     global_step = 33000
+08/07/2020 07:18:31 - INFO - __main__ -     train_loss = 0.6173
+08/07/2020 07:18:31 - INFO - __main__ -     ********************
+08/07/2020 07:18:32 - INFO - __main__ -     Best ppl:2.71352
+08/07/2020 07:18:32 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 07:38:15 - INFO - __main__ -     bleu-4 = 64.4
+08/07/2020 07:38:15 - INFO - __main__ -     ********************
+08/07/2020 07:38:15 - INFO - __main__ -     Best bleu:64.4
+08/07/2020 07:38:15 - INFO - __main__ -     ********************
+loss 0.6176:  68%|███████████████████████████████████████████████████████████████████████████████████████                                         | 33998/50000 [16:35:34<2:49:54,  1.57it/s]08/07/2020 07:47:55 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 07:47:55 - INFO - __main__ -     Num examples = 5946
+08/07/2020 07:47:55 - INFO - __main__ -     Batch size = 6
+08/07/2020 07:50:28 - INFO - __main__ -     eval_ppl = 2.70171
+08/07/2020 07:50:28 - INFO - __main__ -     global_step = 34000
+08/07/2020 07:50:28 - INFO - __main__ -     train_loss = 0.6176
+08/07/2020 07:50:28 - INFO - __main__ -     ********************
+08/07/2020 07:50:29 - INFO - __main__ -     Best ppl:2.70171
+08/07/2020 07:50:29 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 08:11:18 - INFO - __main__ -     bleu-4 = 64.4
+08/07/2020 08:11:18 - INFO - __main__ -     ********************
+loss 0.6033:  70%|█████████████████████████████████████████████████████████████████████████████████████████▌                                      | 34998/50000 [17:08:43<2:17:19,  1.82it/s]08/07/2020 08:21:04 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 08:21:04 - INFO - __main__ -     Batch size = 6
+08/07/2020 08:23:35 - INFO - __main__ -     eval_ppl = 2.69127
+08/07/2020 08:23:35 - INFO - __main__ -     global_step = 35000
+08/07/2020 08:23:35 - INFO - __main__ -     train_loss = 0.6033
+08/07/2020 08:23:35 - INFO - __main__ -     ********************
+08/07/2020 08:23:37 - INFO - __main__ -     Best ppl:2.69127
+08/07/2020 08:23:37 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 08:44:11 - INFO - __main__ -     bleu-4 = 64.06
+08/07/2020 08:44:11 - INFO - __main__ -     ********************
+loss 0.5978:  72%|████████████████████████████████████████████████████████████████████████████████████████████▏                                   | 35998/50000 [17:41:15<2:08:28,  1.82it/s]08/07/2020 08:53:36 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 08:53:36 - INFO - __main__ -     Num examples = 5946
+08/07/2020 08:53:36 - INFO - __main__ -     Batch size = 6
+08/07/2020 08:56:09 - INFO - __main__ -     eval_ppl = 2.69335
+08/07/2020 08:56:09 - INFO - __main__ -     global_step = 36000
+08/07/2020 08:56:09 - INFO - __main__ -     train_loss = 0.5978
+08/07/2020 08:56:09 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 09:14:38 - INFO - __main__ -     bleu-4 = 63.93 
+08/07/2020 09:14:38 - INFO - __main__ -     ********************
+loss 0.5694:  74%|██████████████████████████████████████████████████████████████████████████████████████████████▋                                 | 36998/50000 [18:10:52<1:50:45,  1.96it/s]08/07/2020 09:23:14 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 09:23:14 - INFO - __main__ -     Num examples = 5946
+08/07/2020 09:23:14 - INFO - __main__ -     Batch size = 6
+08/07/2020 09:25:30 - INFO - __main__ -     eval_ppl = 2.67699
+08/07/2020 09:25:30 - INFO - __main__ -     global_step = 37000
+08/07/2020 09:25:30 - INFO - __main__ -     train_loss = 0.5694
+08/07/2020 09:25:30 - INFO - __main__ -     ********************
+08/07/2020 09:25:32 - INFO - __main__ -     Best ppl:2.67699
+08/07/2020 09:25:32 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 09:41:37 - INFO - __main__ -     bleu-4 = 65.27 
+08/07/2020 09:41:37 - INFO - __main__ -     ********************
+08/07/2020 09:41:37 - INFO - __main__ -     Best bleu:65.27
+08/07/2020 09:41:37 - INFO - __main__ -     ********************
+loss 0.5635:  76%|█████████████████████████████████████████████████████████████████████████████████████████████████▎                              | 37998/50000 [18:37:53<1:42:16,  1.96it/s]08/07/2020 09:50:15 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 09:50:15 - INFO - __main__ -     Num examples = 5946
+08/07/2020 09:50:15 - INFO - __main__ -     Batch size = 6
+08/07/2020 09:52:31 - INFO - __main__ -     eval_ppl = 2.67714
+08/07/2020 09:52:31 - INFO - __main__ -     global_step = 38000
+08/07/2020 09:52:31 - INFO - __main__ -     train_loss = 0.5635
+08/07/2020 09:52:31 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 10:08:24 - INFO - __main__ -     bleu-4 = 64.33 
+08/07/2020 10:08:24 - INFO - __main__ -     ********************
+loss 0.541:  78%|████████████████████████████████████████████████████████████████████████████████████████████████████▌                            | 38998/50000 [19:04:39<1:34:51,  1.93it/s]08/07/2020 10:17:01 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 10:17:01 - INFO - __main__ -     Num examples = 5946
+08/07/2020 10:17:01 - INFO - __main__ -     Batch size = 6
+08/07/2020 10:19:17 - INFO - __main__ -     eval_ppl = 2.67573
+08/07/2020 10:19:18 - INFO - __main__ -     global_step = 39000
+08/07/2020 10:19:18 - INFO - __main__ -     train_loss = 0.541
+08/07/2020 10:19:18 - INFO - __main__ -     ********************
+08/07/2020 10:19:19 - INFO - __main__ -     Best ppl:2.67573
+08/07/2020 10:19:19 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 10:35:33 - INFO - __main__ -     bleu-4 = 65.29 
+08/07/2020 10:35:33 - INFO - __main__ -     ********************
+08/07/2020 10:35:33 - INFO - __main__ -     Best bleu:65.29
+08/07/2020 10:35:33 - INFO - __main__ -     ********************
+loss 0.5308:  80%|██████████████████████████████████████████████████████████████████████████████████████████████████████▍                         | 39998/50000 [19:31:49<1:25:59,  1.94it/s]08/07/2020 10:44:11 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 10:44:11 - INFO - __main__ -     Num examples = 5946
+08/07/2020 10:44:11 - INFO - __main__ -     Batch size = 6
+08/07/2020 10:46:28 - INFO - __main__ -     eval_ppl = 2.67743
+08/07/2020 10:46:28 - INFO - __main__ -     global_step = 40000
+08/07/2020 10:46:28 - INFO - __main__ -     train_loss = 0.5308
+08/07/2020 10:46:28 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 11:02:28 - INFO - __main__ -     bleu-4 = 64.89 
+08/07/2020 11:02:28 - INFO - __main__ -     ********************
+loss 0.5178:  82%|████████████████████████████████████████████████████████████████████████████████████████████████████████▉                       | 40998/50000 [19:58:44<1:17:06,  1.95it/s]08/07/2020 11:11:05 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 11:11:05 - INFO - __main__ -     Num examples = 5946
+08/07/2020 11:11:05 - INFO - __main__ -     Batch size = 6
+08/07/2020 11:13:22 - INFO - __main__ -     eval_ppl = 2.67763
+08/07/2020 11:13:22 - INFO - __main__ -     global_step = 41000
+08/07/2020 11:13:22 - INFO - __main__ -     train_loss = 0.5178
+08/07/2020 11:13:22 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 11:29:27 - INFO - __main__ -     bleu-4 = 65.23 
+08/07/2020 11:29:27 - INFO - __main__ -     ********************
+loss 0.5108:  84%|███████████████████████████████████████████████████████████████████████████████████████████████████████████▌                    | 41998/50000 [20:25:41<1:08:26,  1.95it/s]08/07/2020 11:38:03 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 11:38:03 - INFO - __main__ -     Num examples = 5946
+08/07/2020 11:38:03 - INFO - __main__ -     Batch size = 6
+08/07/2020 11:40:19 - INFO - __main__ -     eval_ppl = 2.67202
+08/07/2020 11:40:19 - INFO - __main__ -     global_step = 42000
+08/07/2020 11:40:19 - INFO - __main__ -     train_loss = 0.5108
+08/07/2020 11:40:19 - INFO - __main__ -     ********************
+08/07/2020 11:40:21 - INFO - __main__ -     Best ppl:2.67202
+08/07/2020 11:40:21 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 11:56:22 - INFO - __main__ -     bleu-4 = 65.01 
+08/07/2020 11:56:22 - INFO - __main__ -     ********************
+loss 0.5136:  86%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                  | 42998/50000 [20:52:37<59:56,  1.95it/s]08/07/2020 12:04:58 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 12:04:58 - INFO - __main__ -     Num examples = 5946
+08/07/2020 12:04:58 - INFO - __main__ -     Batch size = 6
+08/07/2020 12:07:15 - INFO - __main__ -     eval_ppl = 2.67128
+08/07/2020 12:07:15 - INFO - __main__ -     global_step = 43000
+08/07/2020 12:07:15 - INFO - __main__ -     train_loss = 0.5136
+08/07/2020 12:07:15 - INFO - __main__ -     ********************
+08/07/2020 12:07:16 - INFO - __main__ -     Best ppl:2.67128
+08/07/2020 12:07:16 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 12:23:18 - INFO - __main__ -     bleu-4 = 65.13 
+08/07/2020 12:23:18 - INFO - __main__ -     ********************
+loss 0.5013:  88%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍               | 43998/50000 [21:19:33<51:51,  1.93it/s]08/07/2020 12:31:54 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 12:31:54 - INFO - __main__ -     Num examples = 5946
+08/07/2020 12:31:54 - INFO - __main__ -     Batch size = 6
+08/07/2020 12:34:11 - INFO - __main__ -     eval_ppl = 2.67617
+08/07/2020 12:34:11 - INFO - __main__ -     global_step = 44000
+08/07/2020 12:34:11 - INFO - __main__ -     train_loss = 0.5013
+08/07/2020 12:34:11 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 12:50:16 - INFO - __main__ -     bleu-4 = 65.19 
+08/07/2020 12:50:16 - INFO - __main__ -     ********************
+loss 0.4988:  90%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉             | 44998/50000 [21:46:31<43:35,  1.91it/s]08/07/2020 12:58:53 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 12:58:53 - INFO - __main__ -     Num examples = 5946
+08/07/2020 12:58:53 - INFO - __main__ -     Batch size = 6
+08/07/2020 13:01:09 - INFO - __main__ -     eval_ppl = 2.66249
+08/07/2020 13:01:09 - INFO - __main__ -     global_step = 45000
+08/07/2020 13:01:09 - INFO - __main__ -     train_loss = 0.4988
+08/07/2020 13:01:09 - INFO - __main__ -     ********************
+08/07/2020 13:01:11 - INFO - __main__ -     Best ppl:2.66249
+08/07/2020 13:01:11 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 13:17:06 - INFO - __main__ -     bleu-4 = 65.15 
+08/07/2020 13:17:06 - INFO - __main__ -     ********************
+loss 0.4802:  92%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌          | 45998/50000 [22:13:20<34:14,  1.95it/s]08/07/2020 13:25:41 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 13:25:41 - INFO - __main__ -     Num examples = 5946
+08/07/2020 13:25:42 - INFO - __main__ -     Batch size = 6
+08/07/2020 13:27:58 - INFO - __main__ -     eval_ppl = 2.65801
+08/07/2020 13:27:58 - INFO - __main__ -     global_step = 46000
+08/07/2020 13:27:58 - INFO - __main__ -     train_loss = 0.4802
+08/07/2020 13:27:58 - INFO - __main__ -     ********************
+08/07/2020 13:27:59 - INFO - __main__ -     Best ppl:2.65801
+08/07/2020 13:27:59 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 13:43:57 - INFO - __main__ -     bleu-4 = 65.5 
+08/07/2020 13:43:57 - INFO - __main__ -     ********************
+08/07/2020 13:43:57 - INFO - __main__ -     Best bleu:65.5
+08/07/2020 13:43:57 - INFO - __main__ -     ********************
+loss 0.4792:  94%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏       | 46998/50000 [22:40:13<26:27,  1.89it/s]08/07/2020 13:52:35 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 13:52:35 - INFO - __main__ -     Num examples = 5946
+08/07/2020 13:52:35 - INFO - __main__ -     Batch size = 6
+08/07/2020 13:54:52 - INFO - __main__ -     eval_ppl = 2.66426
+08/07/2020 13:54:52 - INFO - __main__ -     global_step = 47000
+08/07/2020 13:54:52 - INFO - __main__ -     train_loss = 0.4792
+08/07/2020 13:54:52 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 14:10:57 - INFO - __main__ -     bleu-4 = 65.59 
+08/07/2020 14:10:57 - INFO - __main__ -     ********************
+08/07/2020 14:10:57 - INFO - __main__ -     Best bleu:65.59
+08/07/2020 14:10:57 - INFO - __main__ -     ********************
+loss 0.4658:  96%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊     | 47998/50000 [23:07:14<17:12,  1.94it/s]08/07/2020 14:19:36 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 14:19:36 - INFO - __main__ -     Num examples = 5946
+08/07/2020 14:19:36 - INFO - __main__ -     Batch size = 6
+08/07/2020 14:21:53 - INFO - __main__ -     eval_ppl = 2.6617
+08/07/2020 14:21:53 - INFO - __main__ -     global_step = 48000
+08/07/2020 14:21:53 - INFO - __main__ -     train_loss = 0.4658
+08/07/2020 14:21:53 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 14:37:56 - INFO - __main__ -     bleu-4 = 65.83 
+08/07/2020 14:37:56 - INFO - __main__ -     ********************
+08/07/2020 14:37:56 - INFO - __main__ -     Best bleu:65.83
+08/07/2020 14:37:56 - INFO - __main__ -     ********************
+loss 0.4595:  98%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍  | 48998/50000 [23:34:12<08:37,  1.94it/s]08/07/2020 14:46:34 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 14:46:34 - INFO - __main__ -     Num examples = 5946
+08/07/2020 14:46:34 - INFO - __main__ -     Batch size = 6
+08/07/2020 14:48:50 - INFO - __main__ -     eval_ppl = 2.65511
+08/07/2020 14:48:50 - INFO - __main__ -     global_step = 49000
+08/07/2020 14:48:50 - INFO - __main__ -     train_loss = 0.4595
+08/07/2020 14:48:50 - INFO - __main__ -     ********************
+08/07/2020 14:48:52 - INFO - __main__ -     Best ppl:2.65511
+08/07/2020 14:48:52 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 15:05:11 - INFO - __main__ -     bleu-4 = 65.64
+08/07/2020 15:05:11 - INFO - __main__ -     ********************
+loss 0.4529: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉| 49998/50000 [24:01:41<00:01,  1.89it/s]08/07/2020 15:14:02 - INFO - __main__ -
+***** Running evaluation *****
+08/07/2020 15:14:02 - INFO - __main__ -     Num examples = 5946
+08/07/2020 15:14:02 - INFO - __main__ -     Batch size = 6
+08/07/2020 15:16:28 - INFO - __main__ -     eval_ppl = 2.65478
+08/07/2020 15:16:28 - INFO - __main__ -     global_step = 50000
+08/07/2020 15:16:28 - INFO - __main__ -     train_loss = 0.4529
+08/07/2020 15:16:28 - INFO - __main__ -     ********************
+08/07/2020 15:16:29 - INFO - __main__ -     Best ppl:2.65478
+08/07/2020 15:16:29 - INFO - __main__ -     ********************
+Total: 1000
+08/07/2020 15:33:10 - INFO - __main__ -     bleu-4 = 65.79
+08/07/2020 15:33:10 - INFO - __main__ -     ********************
+loss 0.3323: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 50000/50000 [24:20:49<00:00,  1.75s/it] 

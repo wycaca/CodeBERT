@@ -67,7 +67,7 @@ class CodeGenerationResult:
 def code_generation_plot():
     code_generation_log_path = r'F:\AIForProgram\CodeBERT\code2nl\log\\'
     results = {}
-    file_names = ["eval=300 train=3000", "eval=600 train=20000", "eval=1000 train=50000"]
+    file_names = ["eval=300 train=3000", "eval=600 train=20000", "eval=1000 train=50000", "eval=1000 train=50000bs=16"]
     for file_name in file_names:
         score_result = read_code_generation_log(os.path.join(code_generation_log_path, file_name + ".txt"))
         # {"loss": [....], "ppl": [...], "bleu": [...]}
